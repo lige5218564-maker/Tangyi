@@ -1,0 +1,157 @@
+.role-modal-mask {
+  position: fixed;
+  inset: 0;
+  z-index: 20000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.role-modal-mask.is-open {
+  display: flex;
+}
+
+.role-modal {
+  width: 620px;
+  max-width: calc(100vw - 64px);
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+
+.role-modal-header {
+  height: 64px;
+  padding: 0 24px;
+  border-bottom: 1px solid #EBEEF5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.role-modal-header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #303133;
+}
+
+.role-modal-close {
+  border: 0;
+  background: transparent;
+  font-size: 28px;
+  line-height: 1;
+  color: #909399;
+  cursor: pointer;
+}
+
+.role-modal-body {
+  padding: 28px 36px;
+}
+
+.role-form {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 20px 16px;
+  align-items: start;
+}
+
+.role-form label {
+  padding-top: 10px;
+  text-align: right;
+  font-size: 15px;
+  color: #606266;
+  font-weight: 500;
+}
+
+.role-required {
+  margin-right: 4px;
+  color: #F56C6C;
+}
+
+.role-input,
+.role-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #DCDFE6;
+  border-radius: 6px;
+  background: #fff;
+  color: #303133;
+  font-size: 15px;
+  outline: none;
+}
+
+.role-input {
+  height: 42px;
+  padding: 0 14px;
+}
+
+.role-textarea {
+  min-height: 96px;
+  padding: 12px 14px;
+  resize: vertical;
+}
+
+.role-input:focus,
+.role-textarea:focus {
+  border-color: #2F63F6;
+  box-shadow: 0 0 0 2px rgba(47, 99, 246, 0.12);
+}
+
+.role-help {
+  margin-top: 6px;
+  color: #909399;
+  font-size: 13px;
+}
+
+.role-modal-footer {
+  height: 64px;
+  padding: 0 24px;
+  border-top: 1px solid #EBEEF5;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.role-btn {
+  min-width: 88px;
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 6px;
+  border: 1px solid #DCDFE6;
+  background: #fff;
+  color: #303133;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.role-btn-primary {
+  border-color: #2F63F6;
+  background: #2F63F6;
+  color: #fff;
+}
+
+.role-toast {
+  position: fixed;
+  left: 50%;
+  top: 28px;
+  z-index: 21000;
+  transform: translateX(-50%);
+  display: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  background: rgba(48, 49, 51, 0.92);
+  color: #fff;
+  font-size: 14px;
+}
+
+.role-toast.is-open {
+  display: block;
+}
+
+body.role-modal-open #u18127 {
+  display: none !important;
+  visibility: hidden !important;
+}

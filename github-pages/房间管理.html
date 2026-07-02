@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>房间管理</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link href="resources/custom-menu.css" type="text/css" rel="stylesheet"/>
+    <link href="resources/container-management.css" type="text/css" rel="stylesheet"/>
+    <link href="resources/auth-flow.css" type="text/css" rel="stylesheet"/>
+    <script src="resources/custom-menu.js"></script>
+  </head>
+  <body>
+    <div class="cm-page room-page">
+      <div class="cm-header">
+        <div class="cm-logo"></div>
+        <div class="cm-title">类器库管理系统</div>
+        <div class="cm-search">搜索</div>
+      </div>
+
+      <main class="cm-main">
+        <div class="cm-breadcrumb">☰  ⟳  首页 / 容器管理 / 房间管理</div>
+
+        <section class="cm-card room-filter-card">
+          <div class="room-filter">
+            <label>房间名称：</label>
+            <input class="cm-input room-name-input" id="roomKeyword" placeholder="请输入房间名称"/>
+            <button class="cm-btn cm-btn-primary" id="searchRoom">⌕ 查询</button>
+            <button class="cm-btn cm-btn-primary" id="resetRoom">⟳ 重置</button>
+          </div>
+        </section>
+
+        <section class="cm-card">
+          <div class="cm-toolbar room-toolbar">
+            <button class="cm-btn cm-btn-primary" id="openRoomModal">＋ 新增房间</button>
+          </div>
+          <div class="room-selected-bar">
+            <span>已选择 <strong id="selectedCount">0</strong>项</span>
+            <button id="clearSelection">清空</button>
+          </div>
+          <table class="cm-table room-table">
+            <thead>
+              <tr>
+                <th style="width:64px;"><input type="checkbox" id="checkAll"/></th>
+                <th>房间名称</th>
+                <th>楼层</th>
+                <th>面积</th>
+                <th>用途</th>
+                <th style="width:180px;">操作</th>
+              </tr>
+            </thead>
+            <tbody id="roomRows">
+              <tr>
+                <td><input type="checkbox" class="room-check"/></td>
+                <td>样本库A区-101</td>
+                <td>1层</td>
+                <td>32 m²</td>
+                <td>液氮罐、冻存架存放</td>
+                <td><span class="cm-link" data-action="edit">编辑</span><span class="cm-link-danger" data-action="delete">删除</span></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="room-check"/></td>
+                <td>样本库B区-102</td>
+                <td>1层</td>
+                <td>28 m²</td>
+                <td>超低温冰箱存放</td>
+                <td><span class="cm-link" data-action="edit">编辑</span><span class="cm-link-danger" data-action="delete">删除</span></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="room-check"/></td>
+                <td>培养室-201</td>
+                <td>2层</td>
+                <td>45 m²</td>
+                <td>培养箱、实验设备存放</td>
+                <td><span class="cm-link" data-action="edit">编辑</span><span class="cm-link-danger" data-action="delete">删除</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <div class="cm-modal-mask" id="roomModal">
+      <div class="cm-modal room-modal">
+        <div class="cm-modal-header room-modal-header">
+          <span id="roomModalTitle">新增房间</span>
+          <span class="room-modal-icon">↗</span>
+          <button class="cm-modal-close" id="closeRoomModal">×</button>
+        </div>
+        <div class="room-form">
+          <label><span class="cm-required">*</span> 房间名称：</label>
+          <input class="cm-input" id="roomName" placeholder="请输入房间名称"/>
+          <label>楼层：</label>
+          <input class="cm-input" id="roomFloor" placeholder="请输入楼层"/>
+          <label>面积：</label>
+          <div class="room-area-wrap">
+            <input class="cm-input" id="roomArea" placeholder="m²"/>
+            <span>m²</span>
+          </div>
+          <label>用途：</label>
+          <textarea class="cm-textarea" id="roomPurpose" placeholder="请输入用途"></textarea>
+        </div>
+        <div class="cm-modal-footer">
+          <button class="cm-btn" id="cancelRoom">关闭</button>
+          <button class="cm-btn cm-btn-primary" id="saveRoom">确定</button>
+        </div>
+      </div>
+    </div>
+    <div class="cm-toast" id="toast">操作成功</div>
+
+    <script>
+      (function () {
+        var editingRow = null;
+        var modal = document.getElementById('roomModal');
+        var toast = document.getElementById('toast');
+        function showToast(text) {
+          toast.textContent = text;
+          toast.classList.add('is-open');
+          setTimeout(function () { toast.classList.remove('is-open'); }, 1800);
+        }
+        function updateSelection() {
+          var checks = document.querySelectorAll('.room-check');
+          var selected = document.querySelectorAll('.room-check:checked').length;
+          document.getElementById('selectedCount').textContent = selected;
+          document.getElementById('checkAll').checked = selected > 0 && selected === checks.length;
+        }
+        function openModal(row) {
+          editingRow = row || null;
+          document.getElementById('roomModalTitle').textContent = editingRow ? '编辑房间' : '新增房间';
+          document.getElementById('roomName').value = editingRow ? editingRow.children[1].textContent : '';
+          document.getElementById('roomFloor').value = editingRow ? editingRow.children[2].textContent : '';
+          document.getElementById('roomArea').value = editingRow ? editingRow.children[3].textContent.replace(' m²', '') : '';
+          document.getElementById('roomPurpose').value = editingRow ? editingRow.children[4].textContent : '';
+          modal.classList.add('is-open');
+        }
+        function closeModal() {
+          modal.classList.remove('is-open');
+        }
+        document.getElementById('openRoomModal').addEventListener('click', function () { openModal(null); });
+        document.getElementById('closeRoomModal').addEventListener('click', closeModal);
+        document.getElementById('cancelRoom').addEventListener('click', closeModal);
+        document.getElementById('saveRoom').addEventListener('click', function () {
+          var name = document.getElementById('roomName').value || '新房间';
+          var floor = document.getElementById('roomFloor').value || '-';
+          var area = document.getElementById('roomArea').value || '-';
+          var purpose = document.getElementById('roomPurpose').value || '-';
+          var row = editingRow || document.createElement('tr');
+          row.innerHTML = '<td><input type="checkbox" class="room-check"/></td><td>' + name + '</td><td>' + floor + '</td><td>' + area + ' m²</td><td>' + purpose + '</td><td><span class="cm-link" data-action="edit">编辑</span><span class="cm-link-danger" data-action="delete">删除</span></td>';
+          if (!editingRow) document.getElementById('roomRows').appendChild(row);
+          closeModal();
+          updateSelection();
+          showToast(editingRow ? '房间已更新' : '房间已新增');
+        });
+        document.getElementById('roomRows').addEventListener('click', function (event) {
+          var action = event.target.getAttribute('data-action');
+          if (event.target.className === 'room-check') updateSelection();
+          if (action === 'edit') openModal(event.target.closest('tr'));
+          if (action === 'delete') {
+            event.target.closest('tr').remove();
+            updateSelection();
+            showToast('房间已删除');
+          }
+        });
+        document.getElementById('checkAll').addEventListener('change', function () {
+          var checked = this.checked;
+          Array.prototype.forEach.call(document.querySelectorAll('.room-check'), function (item) { item.checked = checked; });
+          updateSelection();
+        });
+        document.getElementById('clearSelection').addEventListener('click', function () {
+          Array.prototype.forEach.call(document.querySelectorAll('.room-check'), function (item) { item.checked = false; });
+          updateSelection();
+        });
+        document.getElementById('searchRoom').addEventListener('click', function () { showToast('已按房间名称查询'); });
+        document.getElementById('resetRoom').addEventListener('click', function () {
+          document.getElementById('roomKeyword').value = '';
+          showToast('筛选条件已重置');
+        });
+      })();
+    </script>
+    <script src="resources/auth-flow.js"></script>
+  </body>
+</html>

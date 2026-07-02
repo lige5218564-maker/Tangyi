@@ -1,0 +1,5198 @@
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+	<br />
+	<div style="width:100%; text-align:center; font-family:Arial; font-size:12px;" id=other></div>
+	<br />
+	<div style="width:100%; text-align:center; font-family:Arial; font-size:12px;">
+	    <button onclick="parent.window.close();">
+		    Close
+	    </button>
+	</div>
+	
+	<SCRIPT src="axurerp_pagescript.js"></SCRIPT>
+	
+	<script language=javascript>
+	function getQueryVariable(variable) {
+      var query = window.location.hash.substring(1);
+      var vars = query.split("&&&");
+      for (var i=0;i<vars.length;i++) {
+        var pair = vars[i].split("=");
+        if (pair[0] == variable) {
+          return decodeURI(pair[1]);
+        }
+      } 
+    }
+
+	var other = document.getElementById('other');
+	other.innerHTML = getQueryVariable('other');
+
+	</script>
+	
+	
+
+
+
+
+
+
+<!-- Prototype Annotator runtime -->
+<script>
+window.PROTOTYPE_ANNOTATOR_CONFIG = Object.assign({}, window.PROTOTYPE_ANNOTATOR_CONFIG || {}, { dataUrl: "../.prototype-annotations/annotations.json" });
+</script>
+<link rel="stylesheet" href="../.prototype-annotations/runtime/prototype-annotator.css">
+<script id="prototype-annotations-data" type="application/json">
+{
+  "version": 1,
+  "project": {
+    "id": "organoid-biobank-prototype",
+    "name": "类器官样本库信息管理平台",
+    "source": "local-axure-html"
+  },
+  "productProfile": {
+    "productName": "类器官样本库信息管理平台",
+    "productType": "enterprise_web_app",
+    "productForms": [
+      "B端应用",
+      "样本库管理",
+      "实验流程管理",
+      "审批/审核系统"
+    ],
+    "primaryUsers": [
+      "样本登记人员",
+      "审核人员",
+      "实验人员",
+      "样本库管理员",
+      "系统管理员"
+    ],
+    "annotationMode": "product-review",
+    "enabledAnnotationTypes": [
+      "P",
+      "A",
+      "J",
+      "S",
+      "R",
+      "PERM",
+      "DATA"
+    ]
+  },
+  "pages": [
+    {
+      "pageKey": "P01",
+      "title": "首页",
+      "path": "首页.html",
+      "route": "首页.html",
+      "type": "看板页",
+      "axureId": "ib5twq"
+    },
+    {
+      "pageKey": "P02",
+      "title": "登录",
+      "path": "登录.html",
+      "route": "登录.html",
+      "type": "登录页",
+      "axureId": "g0dm0e"
+    },
+    {
+      "pageKey": "P03",
+      "title": "流程",
+      "path": "流程.html",
+      "route": "流程.html",
+      "type": "流程总览页",
+      "axureId": "on7mag"
+    },
+    {
+      "pageKey": "P04",
+      "title": "样本登记",
+      "path": "样本登记.html",
+      "route": "样本登记.html",
+      "type": "列表管理页",
+      "axureId": "5imzko"
+    },
+    {
+      "pageKey": "P05",
+      "title": "新增",
+      "path": "新增.html",
+      "route": "新增.html",
+      "type": "表单页",
+      "axureId": "cugaz3"
+    },
+    {
+      "pageKey": "P06",
+      "title": "样本审核",
+      "path": "样本审核.html",
+      "route": "样本审核.html",
+      "type": "列表/审核页",
+      "axureId": "mnqrar"
+    },
+    {
+      "pageKey": "P07",
+      "title": "处理管理",
+      "path": "处理管理.html",
+      "route": "处理管理.html",
+      "type": "列表管理页",
+      "axureId": "adgbkx"
+    },
+    {
+      "pageKey": "P08",
+      "title": "模型构建",
+      "path": "模型构建.html",
+      "route": "模型构建.html",
+      "type": "列表/表单页",
+      "axureId": "g4bp8i"
+    },
+    {
+      "pageKey": "P09",
+      "title": "培养方案",
+      "path": "培养方案.html",
+      "route": "培养方案.html",
+      "type": "列表/表单页",
+      "axureId": "7wykd7"
+    },
+    {
+      "pageKey": "P10",
+      "title": "培养方案（菌株）",
+      "path": "培养方案__菌株）.html",
+      "route": "培养方案__菌株）.html",
+      "type": "列表/表单页",
+      "axureId": "ymwtyk"
+    },
+    {
+      "pageKey": "P11",
+      "title": "培养记录",
+      "path": "培养记录.html",
+      "route": "培养记录.html",
+      "type": "列表管理页",
+      "axureId": "p3nu75"
+    },
+    {
+      "pageKey": "P12",
+      "title": "新增培养",
+      "path": "新增培养.html",
+      "route": "新增培养.html",
+      "type": "表单页",
+      "axureId": "bpc33l"
+    },
+    {
+      "pageKey": "P13",
+      "title": "培养记录（菌株）",
+      "path": "培养记录__菌株_.html",
+      "route": "培养记录__菌株_.html",
+      "type": "列表管理页",
+      "axureId": "pctajl"
+    },
+    {
+      "pageKey": "P14",
+      "title": "新增培养（菌株）",
+      "path": "新增培养_1.html",
+      "route": "新增培养_1.html",
+      "type": "表单页",
+      "axureId": "gw5dog"
+    },
+    {
+      "pageKey": "P15",
+      "title": "传代管理",
+      "path": "传代管理.html",
+      "route": "传代管理.html",
+      "type": "列表管理页",
+      "axureId": "s6hdvy"
+    },
+    {
+      "pageKey": "P16",
+      "title": "新增传代",
+      "path": "新增传代.html",
+      "route": "新增传代.html",
+      "type": "表单页",
+      "axureId": "s4le45"
+    },
+    {
+      "pageKey": "P17",
+      "title": "查看",
+      "path": "查看.html",
+      "route": "查看.html",
+      "type": "详情页",
+      "axureId": "2zgcrv"
+    },
+    {
+      "pageKey": "P18",
+      "title": "传代管理（菌株）",
+      "path": "传代管理__菌株_.html",
+      "route": "传代管理__菌株_.html",
+      "type": "列表管理页",
+      "axureId": "qryoc8"
+    },
+    {
+      "pageKey": "P19",
+      "title": "新增传代（菌株）",
+      "path": "新增传代_1.html",
+      "route": "新增传代_1.html",
+      "type": "表单页",
+      "axureId": "rtl0vv"
+    },
+    {
+      "pageKey": "P20",
+      "title": "查看（菌株）",
+      "path": "查看_1.html",
+      "route": "查看_1.html",
+      "type": "详情页",
+      "axureId": "voq8x6"
+    },
+    {
+      "pageKey": "P21",
+      "title": "传代审核",
+      "path": "传代审核.html",
+      "route": "传代审核.html",
+      "type": "列表管理页",
+      "axureId": "3u1fw6"
+    },
+    {
+      "pageKey": "P22",
+      "title": "查看（传代审核）",
+      "path": "查看_2.html",
+      "route": "查看_2.html",
+      "type": "详情页",
+      "axureId": "2uknmx"
+    },
+    {
+      "pageKey": "P23",
+      "title": "审核（传代审核）",
+      "path": "审核.html",
+      "route": "审核.html",
+      "type": "审核表单页",
+      "axureId": "tg8lu1"
+    },
+    {
+      "pageKey": "P24",
+      "title": "冻存管理",
+      "path": "冻存管理.html",
+      "route": "冻存管理.html",
+      "type": "列表/表单页",
+      "axureId": "7yj260"
+    },
+    {
+      "pageKey": "P25",
+      "title": "样本复苏",
+      "path": "样本复苏.html",
+      "route": "样本复苏.html",
+      "type": "列表/表单页",
+      "axureId": "ku1eii"
+    },
+    {
+      "pageKey": "P26",
+      "title": "复苏冻存",
+      "path": "复苏冻存.html",
+      "route": "复苏冻存.html",
+      "type": "列表/表单页",
+      "axureId": "9l95lj"
+    },
+    {
+      "pageKey": "P27",
+      "title": "病理鉴定",
+      "path": "病理鉴定.html",
+      "route": "病理鉴定.html",
+      "type": "列表/表单页",
+      "axureId": "w15x1s"
+    },
+    {
+      "pageKey": "P28",
+      "title": "药敏实验",
+      "path": "药敏实验.html",
+      "route": "药敏实验.html",
+      "type": "列表/表单页",
+      "axureId": "qiqrnr"
+    },
+    {
+      "pageKey": "P29",
+      "title": "样本入库",
+      "path": "样本入库.html",
+      "route": "样本入库.html",
+      "type": "列表管理页",
+      "axureId": "kbplsk"
+    },
+    {
+      "pageKey": "P30",
+      "title": "样本入库 子",
+      "path": "样本入库_子.html",
+      "route": "样本入库_子.html",
+      "type": "入库操作页",
+      "axureId": "r9ld3w"
+    },
+    {
+      "pageKey": "P31",
+      "title": "样本库出",
+      "path": "样本库出.html",
+      "route": "样本库出.html",
+      "type": "列表管理页",
+      "axureId": "lu5rwp"
+    },
+    {
+      "pageKey": "P32",
+      "title": "单据管理",
+      "path": "单据管理.html",
+      "route": "单据管理.html",
+      "type": "列表/详情页",
+      "axureId": "useqi0"
+    },
+    {
+      "pageKey": "P33",
+      "title": "角色管理",
+      "path": "角色管理.html",
+      "route": "角色管理.html",
+      "type": "RBAC页",
+      "axureId": "5b8wie"
+    },
+    {
+      "pageKey": "P34",
+      "title": "菜单管理",
+      "path": "菜单管理.html",
+      "route": "菜单管理.html",
+      "type": "RBAC页",
+      "axureId": "icah89"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "ANN-P02-001",
+      "pageKey": "P02",
+      "target": {
+        "selector": "#u594_input",
+        "fallbackText": "登录页面说明",
+        "strategy": "id",
+        "sourceElementId": "P02-E001",
+        "boundsHint": {
+          "text": "登录页面说明",
+          "tag": "input"
+        }
+      },
+      "title": "登录页面说明",
+      "contentMarkdown": "### 页面功能介绍\n登录 是登录页，用于账号、密码、验证码登录。该标注帮助评审人员先理解页面职责，再查看页面内关键操作与状态规则。\n\n### 核心内容\n页面包含筛选、列表/表单、状态展示和对应业务操作，具体以当前原型可见字段为准。\n\n### 业务流程\n进入页面后，用户先查看或筛选业务数据，再执行新增、查看、编辑、审核、确认等操作；操作成功后更新当前页面数据或进入下一业务页面。\n\n### 主要操作\n- 查看页面核心业务数据。\n- 按条件筛选或补充表单信息。\n- 执行页面主操作，并根据系统反馈继续下一步。\n\n### 待确认\n- 具体字段校验、按钮权限和异常提示以业务方最终确认为准。",
+      "annotationType": "P",
+      "kind": "note",
+      "dimension": "Page overview",
+      "topics": [
+        "business"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P02",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "order": 1
+    },
+    {
+      "id": "ANN-P03-001",
+      "pageKey": "P03",
+      "target": {
+        "selector": "div \u003e a",
+        "fallbackText": "流程页面说明",
+        "strategy": "path",
+        "sourceElementId": "P03-E001",
+        "boundsHint": {
+          "text": "\").text(t).html() }, hide: !0, items: \"[title]:not([disabled])\", position: { my: \"left top+15\", at: \"left bottom\", collision: \"flipfit flip\" }, show: !0, track:",
+          "tag": "a"
+        }
+      },
+      "title": "流程页面说明",
+      "contentMarkdown": "### 页面功能介绍\n流程 是流程总览页，用于端到端业务流程。该标注帮助评审人员先理解页面职责，再查看页面内关键操作与状态规则。\n\n### 核心内容\n页面包含筛选、列表/表单、状态展示和对应业务操作，具体以当前原型可见字段为准。\n\n### 业务流程\n样本登记 → 样本审核 → 样本处理/直接入库 → 模型构建 → 培养 → 传代 → 传代审核 → 冻存/复苏/实验鉴定。\n\n### 主要操作\n- 查看页面核心业务数据。\n- 按条件筛选或补充表单信息。\n- 执行页面主操作，并根据系统反馈继续下一步。\n\n### 待确认\n- 具体字段校验、按钮权限和异常提示以业务方最终确认为准。",
+      "annotationType": "P",
+      "kind": "note",
+      "dimension": "Page overview",
+      "topics": [
+        "business"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P03",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "order": 1
+    },
+    {
+      "id": "ANN-P04-001",
+      "pageKey": "P04",
+      "target": {
+        "selector": "#u894_input",
+        "fallbackText": "样本登记页面说明",
+        "strategy": "id",
+        "sourceElementId": "P04-E001",
+        "boundsHint": {
+          "text": "样本登记页面说明",
+          "tag": "input"
+        }
+      },
+      "title": "样本登记页面说明",
+      "contentMarkdown": "### 页面功能介绍\n样本登记 是列表管理页，用于样本查询、审核状态、进入新增。该标注帮助评审人员先理解页面职责，再查看页面内关键操作与状态规则。\n\n### 核心内容\n页面包含筛选、列表/表单、状态展示和对应业务操作，具体以当前原型可见字段为准。\n\n### 业务流程\n进入页面后，用户先查看或筛选业务数据，再执行新增、查看、编辑、审核、确认等操作；操作成功后更新当前页面数据或进入下一业务页面。\n\n### 主要操作\n- 查看页面核心业务数据。\n- 按条件筛选或补充表单信息。\n- 执行页面主操作，并根据系统反馈继续下一步。\n\n### 待确认\n- 具体字段校验、按钮权限和异常提示以业务方最终确认为准。",
+      "annotationType": "P",
+      "kind": "note",
+      "dimension": "Page overview",
+      "topics": [
+        "business"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P04",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "order": 1
+    },
+    {
+      "id": "ANN-P05-001",
+      "pageKey": "P05",
+      "target": {
+        "selector": "#u1363_input",
+        "fallbackText": "新增页面说明",
+        "strategy": "id",
+        "sourceElementId": "P05-E001",
+        "boundsHint": {
+          "text": "新增页面说明",
+          "tag": "input"
+        }
+      },
+      "title": "新增页面说明",
+      "contentMarkdown": "### 页面功能介绍\n新增 是表单页，用于新增样本登记、生成样本。该标注帮助评审人员先理解页面职责，再查看页面内关键操作与状态规则。\n\n### 核心内容\n页面包含筛选、列表/表单、状态展示和对应业务操作，具体以当前原型可见字段为准。\n\n### 业务流程\n进入页面后，用户先查看或筛选业务数据，再执行新增、查看、编辑、审核、确认等操作；操作成功后更新当前页面数据或进入下一业务页面。\n\n### 主要操作\n- 查看页面核心业务数据。\n- 按条件筛选或补充表单信息。\n- 执行页面主操作，并根据系统反馈继续下一步。\n\n### 待确认\n- 具体字段校验、按钮权限和异常提示以业务方最终确认为准。",
+      "annotationType": "P",
+      "kind": "note",
+      "dimension": "Page overview",
+      "topics": [
+        "business"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P05",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "order": 1
+    },
+    {
+      "id": "ANN-P06-001",
+      "pageKey": "P06",
+      "target": {
+        "selector": "#u2321_input",
+        "fallbackText": "样本审核页面说明",
+        "strategy": "id",
+        "sourceElementId": "P06-E001",
+        "boundsHint": {
+          "text": "样本审核页面说明",
+          "tag": "input"
+        }
+      },
+      "title": "样本审核页面说明",
+      "contentMarkdown": "### 页面功能介绍\n样本审核 是列表/审核页，用于样本审核、通过或驳回。该标注帮助评审人员先理解页面职责，再查看页面内关键操作与状态规则。\n\n### 核心内容\n页面包含筛选、列表/表单、状态展示和对应业务操作，具体以当前原型可见字段为准。\n\n### 业务流程\n进入页面后，用户先查看或筛选业务数据，再执行新增、查看、编辑、审核、确认等操作；操作成功后更新当前页面数据或进入下一业务页面。\n\n### 主要操作\n- 查看页面核心业务数据。\n- 按条件筛选或补充表单信息。\n- 执行页面主操作，并根据系统反馈继续下一步。\n\n### 待确认\n- 具体字段校验、按钮权限和异常提示以业务方最终确认为准。",
+      "annotationType": "P",
+      "kind": "note",
+      "dimension": "Page overview",
+      "topics": [
+        "business"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P06",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "order": 1
+    },
+    {
+      "id": "ANN-P07-001",
+      "pageKey": "P07",
+      "target": {
+        "selector": "#u3545_input",
+        "fallbackText": "处理管理页面说明",
+        "strategy": "id",
+        "sourceElementId": "P07-E001",
+        "boundsHint": {
+          "text": "处理管理页面说明",
+          "tag": "input"
+        }
+      },
+      "title": "处理管理页面说明",
+      "contentMarkdown": "### 页面功能介绍\n处理管理 是列表管理页，用于已审核样本处理。该标注帮助评审人员先理解页面职责，再查看页面内关键操作与状态规则。\n\n### 核心内容\n页面包含筛选、列表/表单、状态展示和对应业务操作，具体以当前原型可见字段为准。\n\n### 业务流程\n进入页面后，用户先查看或筛选业务数据，再执行新增、查看、编辑、审核、确认等操作；操作成功后更新当前页面数据或进入下一业务页面。\n\n### 主要操作\n- 查看页面核心业务数据。\n- 按条件筛选或补充表单信息。\n- 执行页面主操作，并根据系统反馈继续下一步。\n\n### 待确认\n- 具体字段校验、按钮权限和异常提示以业务方最终确认为准。",
+      "annotationType": "P",
+      "kind": "note",
+      "dimension": "Page overview",
+      "topics": [
+        "business"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P07",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "order": 1
+    },
+    {
+      "id": "ANN-P08-001",
+      "pageKey": "P08",
+      "target": {
+        "selector": "#u4559_input",
+        "fallbackText": "模型构建页面说明",
+        "strategy": "id",
+        "sourceElementId": "P08-E001",
+        "boundsHint": {
+          "text": "模型构建页面说明",
+          "tag": "input"
+        }
+      },
+      "title": "模型构建页面说明",
+      "contentMarkdown": "### 页面功能介绍\n模型构建 是列表/表单页，用于构建模型、分配实验人员。该标注帮助评审人员先理解页面职责，再查看页面内关键操作与状态规则。\n\n### 核心内容\n页面包含筛选、列表/表单、状态展示和对应业务操作，具体以当前原型可见字段为准。\n\n### 业务流程\n进入页面后，用户先查看或筛选业务数据，再执行新增、查看、编辑、审核、确认等操作；操作成功后更新当前页面数据或进入下一业务页面。\n\n### 主要操作\n- 查看页面核心业务数据。\n- 按条件筛选或补充表单信息。\n- 执行页面主操作，并根据系统反馈继续下一步。\n\n### 待确认\n- 具体字段校验、按钮权限和异常提示以业务方最终确认为准。",
+      "annotationType": "P",
+      "kind": "note",
+      "dimension": "Page overview",
+      "topics": [
+        "business"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P08",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "order": 1
+    },
+    {
+      "id": "ANN-P09-001",
+      "pageKey": "P09",
+      "target": {
+        "selector": "#u5027_input",
+        "fallbackText": "培养方案页面说明",
+        "strategy": "manual",
+        "sourceElementId": "P09-E001",
+        "boundsHint": {
+          "text": "培养方案页面说明",
+          "tag": "input"
+        }
+      },
+      "title": "培养方案页面说明",
+      "contentMarkdown": "### 页面功能介绍\n培养方案 是列表/表单页，用于类器官培养方案维护。该标注帮助评审人员先理解页面职责，再查看页面内关键操作与状态规则。\n\n### 核心内容\n页面包含筛选、列表/表单、状态展示和对应业务操作，具体以当前原型可见字段为准。\n\n### 业务流程\n进入页面后，用户先查看或筛选业务数据，再执行新增、查看、编辑、审核、确认等操作；操作成功后更新当前页面数据或进入下一业务页面。\n\n### 主要操作\n- 查看页面核心业务数据。\n- 按条件筛选或补充表单信息。\n- 执行页面主操作，并根据系统反馈继续下一步。\n\n### 待确认\n- 具体字段校验、按钮权限和异常提示以业务方最终确认为准。",
+      "annotationType": "P",
+      "kind": "note",
+      "dimension": "Page overview",
+      "topics": [
+        "business"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P09",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T04:24:28.394Z",
+      "order": 1,
+      "devNotesMarkdown": null,
+      "audienceMode": "product-review"
+    },
+    {
+      "id": "ANN-P10-001",
+      "pageKey": "P10",
+      "target": {
+        "selector": "#u5487_input",
+        "fallbackText": "培养方案（菌株）页面说明",
+        "strategy": "id",
+        "sourceElementId": "P10-E001",
+        "boundsHint": {
+          "text": "培养方案（菌株）页面说明",
+          "tag": "input"
+        }
+      },
+      "title": "培养方案（菌株）页面说明",
+      "contentMarkdown": "### 页面功能介绍\n培养方案（菌株） 是列表/表单页，用于菌株培养方案维护。该标注帮助评审人员先理解页面职责，再查看页面内关键操作与状态规则。\n\n### 核心内容\n页面包含筛选、列表/表单、状态展示和对应业务操作，具体以当前原型可见字段为准。\n\n### 业务流程\n进入页面后，用户先查看或筛选业务数据，再执行新增、查看、编辑、审核、确认等操作；操作成功后更新当前页面数据或进入下一业务页面。\n\n### 主要操作\n- 查看页面核心业务数据。\n- 按条件筛选或补充表单信息。\n- 执行页面主操作，并根据系统反馈继续下一步。\n\n### 待确认\n- 具体字段校验、按钮权限和异常提示以业务方最终确认为准。",
+      "annotationType": "P",
+      "kind": "note",
+      "dimension": "Page overview",
+      "topics": [
+        "business"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P10",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "order": 1
+    },
+    {
+      "id": "ANN-P11-001",
+      "pageKey": "P11",
+      "target": {
+        "selector": "#u5946_input",
+        "fallbackText": "培养记录页面说明",
+        "strategy": "id",
+        "sourceElementId": "P11-E001",
+        "boundsHint": {
+          "text": "培养记录页面说明",
+          "tag": "input"
+        }
+      },
+      "title": "培养记录页面说明",
+      "contentMarkdown": "### 页面功能介绍\n培养记录 是列表管理页，用于培养、换液、记录查看。该标注帮助评审人员先理解页面职责，再查看页面内关键操作与状态规则。\n\n### 核心内容\n页面包含筛选、列表/表单、状态展示和对应业务操作，具体以当前原型可见字段为准。\n\n### 业务流程\n进入页面后，用户先查看或筛选业务数据，再执行新增、查看、编辑、审核、确认等操作；操作成功后更新当前页面数据或进入下一业务页面。\n\n### 主要操作\n- 查看页面核心业务数据。\n- 按条件筛选或补充表单信息。\n- 执行页面主操作，并根据系统反馈继续下一步。\n\n### 待确认\n- 具体字段校验、按钮权限和异常提示以业务方最终确认为准。",
+      "annotationType": "P",
+      "kind": "note",
+      "dimension": "Page overview",
+      "topics": [
+        "business"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P11",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "order": 1
+    },
+    {
+      "id": "ANN-P12-001",
+      "pageKey": "P12",
+      "target": {
+        "selector": "#u6508_input",
+        "fallbackText": "新增培养页面说明",
+        "strategy": "id",
+        "sourceElementId": "P12-E001",
+        "boundsHint": {
+          "text": "新增培养页面说明",
+          "tag": "input"
+        }
+      },
+      "title": "新增培养页面说明",
+      "contentMarkdown": "### 页面功能介绍\n新增培养 是表单页，用于新增培养记录。该标注帮助评审人员先理解页面职责，再查看页面内关键操作与状态规则。\n\n### 核心内容\n页面包含筛选、列表/表单、状态展示和对应业务操作，具体以当前原型可见字段为准。\n\n### 业务流程\n进入页面后，用户先查看或筛选业务数据，再执行新增、查看、编辑、审核、确认等操作；操作成功后更新当前页面数据或进入下一业务页面。\n\n### 主要操作\n- 查看页面核心业务数据。\n- 按条件筛选或补充表单信息。\n- 执行页面主操作，并根据系统反馈继续下一步。\n\n### 待确认\n- 具体字段校验、按钮权限和异常提示以业务方最终确认为准。",
+      "annotationType": "P",
+      "kind": "note",
+      "dimension": "Page overview",
+      "topics": [
+        "business"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P12",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "order": 1
+    },
+    {
+      "id": "ANN-P13-001",
+      "pageKey": "P13",
+      "target": {
+        "selector": "#u7499_input",
+        "fallbackText": "培养记录（菌株）页面说明",
+        "strategy": "id",
+        "sourceElementId": "P13-E001",
+        "boundsHint": {
+          "text": "培养记录（菌株）页面说明",
+          "tag": "input"
+        }
+      },
+      "title": "培养记录（菌株）页面说明",
+      "contentMarkdown": "### 页面功能介绍\n培养记录（菌株） 是列表管理页，用于菌株培养记录。该标注帮助评审人员先理解页面职责，再查看页面内关键操作与状态规则。\n\n### 核心内容\n页面包含筛选、列表/表单、状态展示和对应业务操作，具体以当前原型可见字段为准。\n\n### 业务流程\n进入页面后，用户先查看或筛选业务数据，再执行新增、查看、编辑、审核、确认等操作；操作成功后更新当前页面数据或进入下一业务页面。\n\n### 主要操作\n- 查看页面核心业务数据。\n- 按条件筛选或补充表单信息。\n- 执行页面主操作，并根据系统反馈继续下一步。\n\n### 待确认\n- 具体字段校验、按钮权限和异常提示以业务方最终确认为准。",
+      "annotationType": "P",
+      "kind": "note",
+      "dimension": "Page overview",
+      "topics": [
+        "business"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P13",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "order": 1
+    },
+    {
+      "id": "ANN-P14-001",
+      "pageKey": "P14",
+      "target": {
+        "selector": "#u8061_input",
+        "fallbackText": "新增培养（菌株）页面说明",
+        "strategy": "id",
+        "sourceElementId": "P14-E001",
+        "boundsHint": {
+          "text": "新增培养（菌株）页面说明",
+          "tag": "input"
+        }
+      },
+      "title": "新增培养（菌株）页面说明",
+      "contentMarkdown": "### 页面功能介绍\n新增培养（菌株） 是表单页，用于新增菌株培养记录。该标注帮助评审人员先理解页面职责，再查看页面内关键操作与状态规则。\n\n### 核心内容\n页面包含筛选、列表/表单、状态展示和对应业务操作，具体以当前原型可见字段为准。\n\n### 业务流程\n进入页面后，用户先查看或筛选业务数据，再执行新增、查看、编辑、审核、确认等操作；操作成功后更新当前页面数据或进入下一业务页面。\n\n### 主要操作\n- 查看页面核心业务数据。\n- 按条件筛选或补充表单信息。\n- 执行页面主操作，并根据系统反馈继续下一步。\n\n### 待确认\n- 具体字段校验、按钮权限和异常提示以业务方最终确认为准。",
+      "annotationType": "P",
+      "kind": "note",
+      "dimension": "Page overview",
+      "topics": [
+        "business"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P14",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "order": 1
+    },
+    {
+      "id": "ANN-P15-001",
+      "pageKey": "P15",
+      "target": {
+        "selector": "#u9052_input",
+        "fallbackText": "传代管理页面说明",
+        "strategy": "id",
+        "sourceElementId": "P15-E001",
+        "boundsHint": {
+          "text": "传代管理页面说明",
+          "tag": "input"
+        }
+      },
+      "title": "传代管理页面说明",
+      "contentMarkdown": "### 页面功能介绍\n传代管理 是列表管理页，用于类器官传代管理。该标注帮助评审人员先理解页面职责，再查看页面内关键操作与状态规则。\n\n### 核心内容\n页面包含筛选、列表/表单、状态展示和对应业务操作，具体以当前原型可见字段为准。\n\n### 业务流程\n进入页面后，用户先查看或筛选业务数据，再执行新增、查看、编辑、审核、确认等操作；操作成功后更新当前页面数据或进入下一业务页面。\n\n### 主要操作\n- 查看页面核心业务数据。\n- 按条件筛选或补充表单信息。\n- 执行页面主操作，并根据系统反馈继续下一步。\n\n### 待确认\n- 具体字段校验、按钮权限和异常提示以业务方最终确认为准。",
+      "annotationType": "P",
+      "kind": "note",
+      "dimension": "Page overview",
+      "topics": [
+        "business"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P15",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "order": 1
+    },
+    {
+      "id": "ANN-P16-001",
+      "pageKey": "P16",
+      "target": {
+        "selector": "#u9435_input",
+        "fallbackText": "新增传代页面说明",
+        "strategy": "id",
+        "sourceElementId": "P16-E001",
+        "boundsHint": {
+          "text": "新增传代页面说明",
+          "tag": "input"
+        }
+      },
+      "title": "新增传代页面说明",
+      "contentMarkdown": "### 页面功能介绍\n新增传代 是表单页，用于新增类器官传代。该标注帮助评审人员先理解页面职责，再查看页面内关键操作与状态规则。\n\n### 核心内容\n页面包含筛选、列表/表单、状态展示和对应业务操作，具体以当前原型可见字段为准。\n\n### 业务流程\n进入页面后，用户先查看或筛选业务数据，再执行新增、查看、编辑、审核、确认等操作；操作成功后更新当前页面数据或进入下一业务页面。\n\n### 主要操作\n- 查看页面核心业务数据。\n- 按条件筛选或补充表单信息。\n- 执行页面主操作，并根据系统反馈继续下一步。\n\n### 待确认\n- 具体字段校验、按钮权限和异常提示以业务方最终确认为准。",
+      "annotationType": "P",
+      "kind": "note",
+      "dimension": "Page overview",
+      "topics": [
+        "business"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P16",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "order": 1
+    },
+    {
+      "id": "ANN-P17-001",
+      "pageKey": "P17",
+      "target": {
+        "selector": "#u9930_input",
+        "fallbackText": "查看页面说明",
+        "strategy": "id",
+        "sourceElementId": "P17-E001",
+        "boundsHint": {
+          "text": "查看页面说明",
+          "tag": "input"
+        }
+      },
+      "title": "查看页面说明",
+      "contentMarkdown": "### 页面功能介绍\n查看 是详情页，用于查看类器官传代记录。该标注帮助评审人员先理解页面职责，再查看页面内关键操作与状态规则。\n\n### 核心内容\n页面包含筛选、列表/表单、状态展示和对应业务操作，具体以当前原型可见字段为准。\n\n### 业务流程\n进入页面后，用户先查看或筛选业务数据，再执行新增、查看、编辑、审核、确认等操作；操作成功后更新当前页面数据或进入下一业务页面。\n\n### 主要操作\n- 查看页面核心业务数据。\n- 按条件筛选或补充表单信息。\n- 执行页面主操作，并根据系统反馈继续下一步。\n\n### 待确认\n- 具体字段校验、按钮权限和异常提示以业务方最终确认为准。",
+      "annotationType": "P",
+      "kind": "note",
+      "dimension": "Page overview",
+      "topics": [
+        "business"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P17",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "order": 1
+    },
+    {
+      "id": "ANN-P18-001",
+      "pageKey": "P18",
+      "target": {
+        "selector": "#u10357_input",
+        "fallbackText": "传代管理（菌株）页面说明",
+        "strategy": "id",
+        "sourceElementId": "P18-E001",
+        "boundsHint": {
+          "text": "传代管理（菌株）页面说明",
+          "tag": "input"
+        }
+      },
+      "title": "传代管理（菌株）页面说明",
+      "contentMarkdown": "### 页面功能介绍\n传代管理（菌株） 是列表管理页，用于菌株传代管理。该标注帮助评审人员先理解页面职责，再查看页面内关键操作与状态规则。\n\n### 核心内容\n页面包含筛选、列表/表单、状态展示和对应业务操作，具体以当前原型可见字段为准。\n\n### 业务流程\n进入页面后，用户先查看或筛选业务数据，再执行新增、查看、编辑、审核、确认等操作；操作成功后更新当前页面数据或进入下一业务页面。\n\n### 主要操作\n- 查看页面核心业务数据。\n- 按条件筛选或补充表单信息。\n- 执行页面主操作，并根据系统反馈继续下一步。\n\n### 待确认\n- 具体字段校验、按钮权限和异常提示以业务方最终确认为准。",
+      "annotationType": "P",
+      "kind": "note",
+      "dimension": "Page overview",
+      "topics": [
+        "business"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P18",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "order": 1
+    },
+    {
+      "id": "ANN-P19-001",
+      "pageKey": "P19",
+      "target": {
+        "selector": "#u10740_input",
+        "fallbackText": "新增传代（菌株）页面说明",
+        "strategy": "id",
+        "sourceElementId": "P19-E001",
+        "boundsHint": {
+          "text": "新增传代（菌株）页面说明",
+          "tag": "input"
+        }
+      },
+      "title": "新增传代（菌株）页面说明",
+      "contentMarkdown": "### 页面功能介绍\n新增传代（菌株） 是表单页，用于新增菌株传代。该标注帮助评审人员先理解页面职责，再查看页面内关键操作与状态规则。\n\n### 核心内容\n页面包含筛选、列表/表单、状态展示和对应业务操作，具体以当前原型可见字段为准。\n\n### 业务流程\n进入页面后，用户先查看或筛选业务数据，再执行新增、查看、编辑、审核、确认等操作；操作成功后更新当前页面数据或进入下一业务页面。\n\n### 主要操作\n- 查看页面核心业务数据。\n- 按条件筛选或补充表单信息。\n- 执行页面主操作，并根据系统反馈继续下一步。\n\n### 待确认\n- 具体字段校验、按钮权限和异常提示以业务方最终确认为准。",
+      "annotationType": "P",
+      "kind": "note",
+      "dimension": "Page overview",
+      "topics": [
+        "business"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P19",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "order": 1
+    },
+    {
+      "id": "ANN-P20-001",
+      "pageKey": "P20",
+      "target": {
+        "selector": "#u11235_input",
+        "fallbackText": "查看（菌株）页面说明",
+        "strategy": "id",
+        "sourceElementId": "P20-E001",
+        "boundsHint": {
+          "text": "查看（菌株）页面说明",
+          "tag": "input"
+        }
+      },
+      "title": "查看（菌株）页面说明",
+      "contentMarkdown": "### 页面功能介绍\n查看（菌株） 是详情页，用于查看菌株传代记录。该标注帮助评审人员先理解页面职责，再查看页面内关键操作与状态规则。\n\n### 核心内容\n页面包含筛选、列表/表单、状态展示和对应业务操作，具体以当前原型可见字段为准。\n\n### 业务流程\n进入页面后，用户先查看或筛选业务数据，再执行新增、查看、编辑、审核、确认等操作；操作成功后更新当前页面数据或进入下一业务页面。\n\n### 主要操作\n- 查看页面核心业务数据。\n- 按条件筛选或补充表单信息。\n- 执行页面主操作，并根据系统反馈继续下一步。\n\n### 待确认\n- 具体字段校验、按钮权限和异常提示以业务方最终确认为准。",
+      "annotationType": "P",
+      "kind": "note",
+      "dimension": "Page overview",
+      "topics": [
+        "business"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P20",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "order": 1
+    },
+    {
+      "id": "ANN-P21-001",
+      "pageKey": "P21",
+      "target": {
+        "selector": "#u11662_input",
+        "fallbackText": "传代审核页面说明",
+        "strategy": "id",
+        "sourceElementId": "P21-E001",
+        "boundsHint": {
+          "text": "传代审核页面说明",
+          "tag": "input"
+        }
+      },
+      "title": "传代审核页面说明",
+      "contentMarkdown": "### 页面功能介绍\n传代审核 是列表管理页，用于待审核传代记录。该标注帮助评审人员先理解页面职责，再查看页面内关键操作与状态规则。\n\n### 核心内容\n页面包含筛选、列表/表单、状态展示和对应业务操作，具体以当前原型可见字段为准。\n\n### 业务流程\n进入页面后，用户先查看或筛选业务数据，再执行新增、查看、编辑、审核、确认等操作；操作成功后更新当前页面数据或进入下一业务页面。\n\n### 主要操作\n- 查看页面核心业务数据。\n- 按条件筛选或补充表单信息。\n- 执行页面主操作，并根据系统反馈继续下一步。\n\n### 待确认\n- 具体字段校验、按钮权限和异常提示以业务方最终确认为准。",
+      "annotationType": "P",
+      "kind": "note",
+      "dimension": "Page overview",
+      "topics": [
+        "business"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P21",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "order": 1
+    },
+    {
+      "id": "ANN-P22-001",
+      "pageKey": "P22",
+      "target": {
+        "selector": "#u12055_input",
+        "fallbackText": "查看（传代审核）页面说明",
+        "strategy": "id",
+        "sourceElementId": "P22-E001",
+        "boundsHint": {
+          "text": "查看（传代审核）页面说明",
+          "tag": "input"
+        }
+      },
+      "title": "查看（传代审核）页面说明",
+      "contentMarkdown": "### 页面功能介绍\n查看（传代审核） 是详情页，用于查看审核记录。该标注帮助评审人员先理解页面职责，再查看页面内关键操作与状态规则。\n\n### 核心内容\n页面包含筛选、列表/表单、状态展示和对应业务操作，具体以当前原型可见字段为准。\n\n### 业务流程\n进入页面后，用户先查看或筛选业务数据，再执行新增、查看、编辑、审核、确认等操作；操作成功后更新当前页面数据或进入下一业务页面。\n\n### 主要操作\n- 查看页面核心业务数据。\n- 按条件筛选或补充表单信息。\n- 执行页面主操作，并根据系统反馈继续下一步。\n\n### 待确认\n- 具体字段校验、按钮权限和异常提示以业务方最终确认为准。",
+      "annotationType": "P",
+      "kind": "note",
+      "dimension": "Page overview",
+      "topics": [
+        "business"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P22",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "order": 1
+    },
+    {
+      "id": "ANN-P23-001",
+      "pageKey": "P23",
+      "target": {
+        "selector": "#u12474_input",
+        "fallbackText": "审核（传代审核）页面说明",
+        "strategy": "id",
+        "sourceElementId": "P23-E001",
+        "boundsHint": {
+          "text": "审核（传代审核）页面说明",
+          "tag": "input"
+        }
+      },
+      "title": "审核（传代审核）页面说明",
+      "contentMarkdown": "### 页面功能介绍\n审核（传代审核） 是审核表单页，用于传代审核结论。该标注帮助评审人员先理解页面职责，再查看页面内关键操作与状态规则。\n\n### 核心内容\n页面包含筛选、列表/表单、状态展示和对应业务操作，具体以当前原型可见字段为准。\n\n### 业务流程\n进入页面后，用户先查看或筛选业务数据，再执行新增、查看、编辑、审核、确认等操作；操作成功后更新当前页面数据或进入下一业务页面。\n\n### 主要操作\n- 查看页面核心业务数据。\n- 按条件筛选或补充表单信息。\n- 执行页面主操作，并根据系统反馈继续下一步。\n\n### 待确认\n- 具体字段校验、按钮权限和异常提示以业务方最终确认为准。",
+      "annotationType": "P",
+      "kind": "note",
+      "dimension": "Page overview",
+      "topics": [
+        "business"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P23",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "order": 1
+    },
+    {
+      "id": "ANN-P24-001",
+      "pageKey": "P24",
+      "target": {
+        "selector": "#u12917_input",
+        "fallbackText": "冻存管理页面说明",
+        "strategy": "id",
+        "sourceElementId": "P24-E001",
+        "boundsHint": {
+          "text": "冻存管理页面说明",
+          "tag": "input"
+        }
+      },
+      "title": "冻存管理页面说明",
+      "contentMarkdown": "### 页面功能介绍\n冻存管理 是列表/表单页，用于冻存位置、配方、程序。该标注帮助评审人员先理解页面职责，再查看页面内关键操作与状态规则。\n\n### 核心内容\n页面包含筛选、列表/表单、状态展示和对应业务操作，具体以当前原型可见字段为准。\n\n### 业务流程\n进入页面后，用户先查看或筛选业务数据，再执行新增、查看、编辑、审核、确认等操作；操作成功后更新当前页面数据或进入下一业务页面。\n\n### 主要操作\n- 查看页面核心业务数据。\n- 按条件筛选或补充表单信息。\n- 执行页面主操作，并根据系统反馈继续下一步。\n\n### 待确认\n- 具体字段校验、按钮权限和异常提示以业务方最终确认为准。",
+      "annotationType": "P",
+      "kind": "note",
+      "dimension": "Page overview",
+      "topics": [
+        "business"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P24",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "order": 1
+    },
+    {
+      "id": "ANN-P25-001",
+      "pageKey": "P25",
+      "target": {
+        "selector": "#u13492_input",
+        "fallbackText": "样本复苏页面说明",
+        "strategy": "id",
+        "sourceElementId": "P25-E001",
+        "boundsHint": {
+          "text": "样本复苏页面说明",
+          "tag": "input"
+        }
+      },
+      "title": "样本复苏页面说明",
+      "contentMarkdown": "### 页面功能介绍\n样本复苏 是列表/表单页，用于样本复苏处理。该标注帮助评审人员先理解页面职责，再查看页面内关键操作与状态规则。\n\n### 核心内容\n页面包含筛选、列表/表单、状态展示和对应业务操作，具体以当前原型可见字段为准。\n\n### 业务流程\n进入页面后，用户先查看或筛选业务数据，再执行新增、查看、编辑、审核、确认等操作；操作成功后更新当前页面数据或进入下一业务页面。\n\n### 主要操作\n- 查看页面核心业务数据。\n- 按条件筛选或补充表单信息。\n- 执行页面主操作，并根据系统反馈继续下一步。\n\n### 待确认\n- 具体字段校验、按钮权限和异常提示以业务方最终确认为准。",
+      "annotationType": "P",
+      "kind": "note",
+      "dimension": "Page overview",
+      "topics": [
+        "business"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P25",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "order": 1
+    },
+    {
+      "id": "ANN-P26-001",
+      "pageKey": "P26",
+      "target": {
+        "selector": "#u14010_input",
+        "fallbackText": "复苏冻存页面说明",
+        "strategy": "id",
+        "sourceElementId": "P26-E001",
+        "boundsHint": {
+          "text": "复苏冻存页面说明",
+          "tag": "input"
+        }
+      },
+      "title": "复苏冻存页面说明",
+      "contentMarkdown": "### 页面功能介绍\n复苏冻存 是列表/表单页，用于复苏后再冻存。该标注帮助评审人员先理解页面职责，再查看页面内关键操作与状态规则。\n\n### 核心内容\n页面包含筛选、列表/表单、状态展示和对应业务操作，具体以当前原型可见字段为准。\n\n### 业务流程\n进入页面后，用户先查看或筛选业务数据，再执行新增、查看、编辑、审核、确认等操作；操作成功后更新当前页面数据或进入下一业务页面。\n\n### 主要操作\n- 查看页面核心业务数据。\n- 按条件筛选或补充表单信息。\n- 执行页面主操作，并根据系统反馈继续下一步。\n\n### 待确认\n- 具体字段校验、按钮权限和异常提示以业务方最终确认为准。",
+      "annotationType": "P",
+      "kind": "note",
+      "dimension": "Page overview",
+      "topics": [
+        "business"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P26",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "order": 1
+    },
+    {
+      "id": "ANN-P27-001",
+      "pageKey": "P27",
+      "target": {
+        "selector": "#u14582_input",
+        "fallbackText": "病理鉴定页面说明",
+        "strategy": "id",
+        "sourceElementId": "P27-E001",
+        "boundsHint": {
+          "text": "病理鉴定页面说明",
+          "tag": "input"
+        }
+      },
+      "title": "病理鉴定页面说明",
+      "contentMarkdown": "### 页面功能介绍\n病理鉴定 是列表/表单页，用于病理报告、切片、蜡块。该标注帮助评审人员先理解页面职责，再查看页面内关键操作与状态规则。\n\n### 核心内容\n页面包含筛选、列表/表单、状态展示和对应业务操作，具体以当前原型可见字段为准。\n\n### 业务流程\n进入页面后，用户先查看或筛选业务数据，再执行新增、查看、编辑、审核、确认等操作；操作成功后更新当前页面数据或进入下一业务页面。\n\n### 主要操作\n- 查看页面核心业务数据。\n- 按条件筛选或补充表单信息。\n- 执行页面主操作，并根据系统反馈继续下一步。\n\n### 待确认\n- 具体字段校验、按钮权限和异常提示以业务方最终确认为准。",
+      "annotationType": "P",
+      "kind": "note",
+      "dimension": "Page overview",
+      "topics": [
+        "business"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P27",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "order": 1
+    },
+    {
+      "id": "ANN-P28-001",
+      "pageKey": "P28",
+      "target": {
+        "selector": "#u15066_input",
+        "fallbackText": "药敏实验页面说明",
+        "strategy": "id",
+        "sourceElementId": "P28-E001",
+        "boundsHint": {
+          "text": "药敏实验页面说明",
+          "tag": "input"
+        }
+      },
+      "title": "药敏实验页面说明",
+      "contentMarkdown": "### 页面功能介绍\n药敏实验 是列表/表单页，用于药物、IC50、耐药情况。该标注帮助评审人员先理解页面职责，再查看页面内关键操作与状态规则。\n\n### 核心内容\n页面包含筛选、列表/表单、状态展示和对应业务操作，具体以当前原型可见字段为准。\n\n### 业务流程\n进入页面后，用户先查看或筛选业务数据，再执行新增、查看、编辑、审核、确认等操作；操作成功后更新当前页面数据或进入下一业务页面。\n\n### 主要操作\n- 查看页面核心业务数据。\n- 按条件筛选或补充表单信息。\n- 执行页面主操作，并根据系统反馈继续下一步。\n\n### 待确认\n- 具体字段校验、按钮权限和异常提示以业务方最终确认为准。",
+      "annotationType": "P",
+      "kind": "note",
+      "dimension": "Page overview",
+      "topics": [
+        "business"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P28",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "order": 1
+    },
+    {
+      "id": "ANN-P29-001",
+      "pageKey": "P29",
+      "target": {
+        "selector": "#u15568_input",
+        "fallbackText": "样本入库页面说明",
+        "strategy": "id",
+        "sourceElementId": "P29-E001",
+        "boundsHint": {
+          "text": "样本入库页面说明",
+          "tag": "input"
+        }
+      },
+      "title": "样本入库页面说明",
+      "contentMarkdown": "### 页面功能介绍\n样本入库 是列表管理页，用于待入库样本管理。该标注帮助评审人员先理解页面职责，再查看页面内关键操作与状态规则。\n\n### 核心内容\n页面包含筛选、列表/表单、状态展示和对应业务操作，具体以当前原型可见字段为准。\n\n### 业务流程\n进入页面后，用户先查看或筛选业务数据，再执行新增、查看、编辑、审核、确认等操作；操作成功后更新当前页面数据或进入下一业务页面。\n\n### 主要操作\n- 查看页面核心业务数据。\n- 按条件筛选或补充表单信息。\n- 执行页面主操作，并根据系统反馈继续下一步。\n\n### 待确认\n- 具体字段校验、按钮权限和异常提示以业务方最终确认为准。",
+      "annotationType": "P",
+      "kind": "note",
+      "dimension": "Page overview",
+      "topics": [
+        "business"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P29",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "order": 1
+    },
+    {
+      "id": "ANN-P30-001",
+      "pageKey": "P30",
+      "target": {
+        "selector": "#u16040_input",
+        "fallbackText": "样本入库 子页面说明",
+        "strategy": "id",
+        "sourceElementId": "P30-E001",
+        "boundsHint": {
+          "text": "样本入库 子页面说明",
+          "tag": "input"
+        }
+      },
+      "title": "样本入库 子页面说明",
+      "contentMarkdown": "### 页面功能介绍\n样本入库 子 是入库操作页，用于生成单据、绑定冷冻管、确认库位。该标注帮助评审人员先理解页面职责，再查看页面内关键操作与状态规则。\n\n### 核心内容\n页面包含筛选、列表/表单、状态展示和对应业务操作，具体以当前原型可见字段为准。\n\n### 业务流程\n进入页面后，用户先查看或筛选业务数据，再执行新增、查看、编辑、审核、确认等操作；操作成功后更新当前页面数据或进入下一业务页面。\n\n### 主要操作\n- 查看页面核心业务数据。\n- 按条件筛选或补充表单信息。\n- 执行页面主操作，并根据系统反馈继续下一步。\n\n### 待确认\n- 具体字段校验、按钮权限和异常提示以业务方最终确认为准。",
+      "annotationType": "P",
+      "kind": "note",
+      "dimension": "Page overview",
+      "topics": [
+        "business"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P30",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "order": 1
+    },
+    {
+      "id": "ANN-P31-001",
+      "pageKey": "P31",
+      "target": {
+        "selector": "#u16796_input",
+        "fallbackText": "样本库出页面说明",
+        "strategy": "id",
+        "sourceElementId": "P31-E001",
+        "boundsHint": {
+          "text": "样本库出页面说明",
+          "tag": "input"
+        }
+      },
+      "title": "样本库出页面说明",
+      "contentMarkdown": "### 页面功能介绍\n样本库出 是列表管理页，用于待出库样本管理。该标注帮助评审人员先理解页面职责，再查看页面内关键操作与状态规则。\n\n### 核心内容\n页面包含筛选、列表/表单、状态展示和对应业务操作，具体以当前原型可见字段为准。\n\n### 业务流程\n进入页面后，用户先查看或筛选业务数据，再执行新增、查看、编辑、审核、确认等操作；操作成功后更新当前页面数据或进入下一业务页面。\n\n### 主要操作\n- 查看页面核心业务数据。\n- 按条件筛选或补充表单信息。\n- 执行页面主操作，并根据系统反馈继续下一步。\n\n### 待确认\n- 具体字段校验、按钮权限和异常提示以业务方最终确认为准。",
+      "annotationType": "P",
+      "kind": "note",
+      "dimension": "Page overview",
+      "topics": [
+        "business"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P31",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "order": 1
+    },
+    {
+      "id": "ANN-P32-001",
+      "pageKey": "P32",
+      "target": {
+        "selector": "#u17418_input",
+        "fallbackText": "单据管理页面说明",
+        "strategy": "id",
+        "sourceElementId": "P32-E001",
+        "boundsHint": {
+          "text": "单据管理页面说明",
+          "tag": "input"
+        }
+      },
+      "title": "单据管理页面说明",
+      "contentMarkdown": "### 页面功能介绍\n单据管理 是列表/详情页，用于入库/出库单据状态。该标注帮助评审人员先理解页面职责，再查看页面内关键操作与状态规则。\n\n### 核心内容\n页面包含筛选、列表/表单、状态展示和对应业务操作，具体以当前原型可见字段为准。\n\n### 业务流程\n进入页面后，用户先查看或筛选业务数据，再执行新增、查看、编辑、审核、确认等操作；操作成功后更新当前页面数据或进入下一业务页面。\n\n### 主要操作\n- 查看页面核心业务数据。\n- 按条件筛选或补充表单信息。\n- 执行页面主操作，并根据系统反馈继续下一步。\n\n### 待确认\n- 具体字段校验、按钮权限和异常提示以业务方最终确认为准。",
+      "annotationType": "P",
+      "kind": "note",
+      "dimension": "Page overview",
+      "topics": [
+        "business"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P32",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "order": 1
+    },
+    {
+      "id": "ANN-P33-001",
+      "pageKey": "P33",
+      "target": {
+        "selector": "#u17957_input",
+        "fallbackText": "角色管理页面说明",
+        "strategy": "id",
+        "sourceElementId": "P33-E001",
+        "boundsHint": {
+          "text": "角色管理页面说明",
+          "tag": "input"
+        }
+      },
+      "title": "角色管理页面说明",
+      "contentMarkdown": "### 页面功能介绍\n角色管理 是RBAC页，用于角色、授权用户、分配权限。该标注帮助评审人员先理解页面职责，再查看页面内关键操作与状态规则。\n\n### 核心内容\n页面包含筛选、列表/表单、状态展示和对应业务操作，具体以当前原型可见字段为准。\n\n### 业务流程\n进入页面后，用户先查看或筛选业务数据，再执行新增、查看、编辑、审核、确认等操作；操作成功后更新当前页面数据或进入下一业务页面。\n\n### 主要操作\n- 查看页面核心业务数据。\n- 按条件筛选或补充表单信息。\n- 执行页面主操作，并根据系统反馈继续下一步。\n\n### 待确认\n- 具体字段校验、按钮权限和异常提示以业务方最终确认为准。",
+      "annotationType": "P",
+      "kind": "note",
+      "dimension": "Page overview",
+      "topics": [
+        "business"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P33",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "order": 1
+    },
+    {
+      "id": "ANN-P34-001",
+      "pageKey": "P34",
+      "target": {
+        "selector": "#u18661_input",
+        "fallbackText": "菜单管理页面说明",
+        "strategy": "id",
+        "sourceElementId": "P34-E001",
+        "boundsHint": {
+          "text": "菜单管理页面说明",
+          "tag": "input"
+        }
+      },
+      "title": "菜单管理页面说明",
+      "contentMarkdown": "### 页面功能介绍\n菜单管理 是RBAC页，用于菜单、路由、权限标识。该标注帮助评审人员先理解页面职责，再查看页面内关键操作与状态规则。\n\n### 核心内容\n页面包含筛选、列表/表单、状态展示和对应业务操作，具体以当前原型可见字段为准。\n\n### 业务流程\n进入页面后，用户先查看或筛选业务数据，再执行新增、查看、编辑、审核、确认等操作；操作成功后更新当前页面数据或进入下一业务页面。\n\n### 主要操作\n- 查看页面核心业务数据。\n- 按条件筛选或补充表单信息。\n- 执行页面主操作，并根据系统反馈继续下一步。\n\n### 待确认\n- 具体字段校验、按钮权限和异常提示以业务方最终确认为准。",
+      "annotationType": "P",
+      "kind": "note",
+      "dimension": "Page overview",
+      "topics": [
+        "business"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P34",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "order": 1
+    },
+    {
+      "id": "ANN-P02-002",
+      "pageKey": "P02",
+      "target": {
+        "selector": "#u594_input",
+        "fallbackText": "登录校验与进入首页",
+        "strategy": "id",
+        "sourceElementId": "P02-E001",
+        "boundsHint": {
+          "text": "登录校验与进入首页",
+          "tag": "input"
+        }
+      },
+      "title": "登录校验与进入首页",
+      "contentMarkdown": "### 登录校验与进入首页\n账号、密码、验证码均为进入系统的前置条件；认证失败时应提示错误并停留在登录页，认证成功后进入首页。\n\n### 状态与异常\n操作失败时应显示明确提示，并保留当前页面上下文。\n\n### 待确认\n- 验证码类型和失败锁定规则待确认",
+      "annotationType": "A",
+      "kind": "interaction",
+      "dimension": "Primary action",
+      "topics": [
+        "interaction",
+        "exception"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P02",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "openQuestions": [
+        "验证码类型和失败锁定规则待确认"
+      ],
+      "order": 2
+    },
+    {
+      "id": "ANN-P04-002",
+      "pageKey": "P04",
+      "target": {
+        "selector": "#u894_input",
+        "fallbackText": "样本列表筛选与审核状态",
+        "strategy": "id",
+        "sourceElementId": "P04-E001",
+        "boundsHint": {
+          "text": "样本列表筛选与审核状态",
+          "tag": "input"
+        }
+      },
+      "title": "样本列表筛选与审核状态",
+      "contentMarkdown": "### 样本列表筛选与审核状态\n页面通过样本类型、登记日期和审核状态定位样本。待审核/已审核是后续处理、入库和建模的关键前置状态。\n\n### 状态与异常\n操作失败时应显示明确提示，并保留当前页面上下文。\n\n### 待确认\n- 审核状态枚举是否包含驳回待确认",
+      "annotationType": "S",
+      "kind": "state",
+      "dimension": "State explanation",
+      "topics": [
+        "filter",
+        "state"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P04",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "openQuestions": [
+        "审核状态枚举是否包含驳回待确认"
+      ],
+      "order": 2
+    },
+    {
+      "id": "ANN-P05-002",
+      "pageKey": "P05",
+      "target": {
+        "selector": "#u1363_input",
+        "fallbackText": "生成样本与继续登记",
+        "strategy": "id",
+        "sourceElementId": "P05-E001",
+        "boundsHint": {
+          "text": "生成样本与继续登记",
+          "tag": "input"
+        }
+      },
+      "title": "生成样本与继续登记",
+      "contentMarkdown": "### 生成样本与继续登记\n点击生成样本前需完成样本源信息、标本信息、采集信息和配对组织信息。继续登记用于批量录入同来源样本。\n\n### 状态与异常\n操作失败时应显示明确提示，并保留当前页面上下文。\n\n### 待确认\n- 样本编号生成规则待确认",
+      "annotationType": "A",
+      "kind": "form",
+      "dimension": "Primary action",
+      "topics": [
+        "form",
+        "validation",
+        "flow"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P05",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "openQuestions": [
+        "样本编号生成规则待确认"
+      ],
+      "order": 2
+    },
+    {
+      "id": "ANN-P06-002",
+      "pageKey": "P06",
+      "target": {
+        "selector": "#u2321_input",
+        "fallbackText": "样本审核通过/驳回",
+        "strategy": "id",
+        "sourceElementId": "P06-E001",
+        "boundsHint": {
+          "text": "样本审核通过/驳回",
+          "tag": "input"
+        }
+      },
+      "title": "样本审核通过/驳回",
+      "contentMarkdown": "### 样本审核通过/驳回\n审核通过后样本可进入处理、入库或建模；驳回时应填写原因并退回登记修改。\n\n### 状态与异常\n操作失败时应显示明确提示，并保留当前页面上下文。\n\n### 待确认\n- 是否初审/复审两级审批待确认",
+      "annotationType": "R",
+      "kind": "state",
+      "dimension": "Business rule",
+      "topics": [
+        "approval",
+        "state",
+        "exception"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P06",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "openQuestions": [
+        "是否初审/复审两级审批待确认"
+      ],
+      "order": 2
+    },
+    {
+      "id": "ANN-P08-002",
+      "pageKey": "P08",
+      "target": {
+        "selector": "#u4559_input",
+        "fallbackText": "模型构建状态",
+        "strategy": "id",
+        "sourceElementId": "P08-E001",
+        "boundsHint": {
+          "text": "模型构建状态",
+          "tag": "input"
+        }
+      },
+      "title": "模型构建状态",
+      "contentMarkdown": "### 模型构建状态\n模型构建围绕样本编号、模型编号、实验室编号和实验人员展开，状态包括进行中、已完成、失败。\n\n### 状态与异常\n操作失败时应显示明确提示，并保留当前页面上下文。\n\n### 待确认\n- 模型编号生成规则待确认",
+      "annotationType": "S",
+      "kind": "state",
+      "dimension": "State explanation",
+      "topics": [
+        "state",
+        "dependency"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P08",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "openQuestions": [
+        "模型编号生成规则待确认"
+      ],
+      "order": 2
+    },
+    {
+      "id": "ANN-P12-002",
+      "pageKey": "P12",
+      "target": {
+        "selector": "#u6508_input",
+        "fallbackText": "新增培养记录分区",
+        "strategy": "id",
+        "sourceElementId": "P12-E001",
+        "boundsHint": {
+          "text": "新增培养记录分区",
+          "tag": "input"
+        }
+      },
+      "title": "新增培养记录分区",
+      "contentMarkdown": "### 新增培养记录分区\n新增培养包含污染观察、支原体检测、日常观察和换液记录，不同记录类型应显示不同字段并保存到同一培养记录链路。\n\n### 状态与异常\n操作失败时应显示明确提示，并保留当前页面上下文。\n\n### 待确认\n- 不同记录类型的必填字段待确认",
+      "annotationType": "R",
+      "kind": "form",
+      "dimension": "Business rule",
+      "topics": [
+        "form",
+        "field-rule"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P12",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "openQuestions": [
+        "不同记录类型的必填字段待确认"
+      ],
+      "order": 2
+    },
+    {
+      "id": "ANN-P16-002",
+      "pageKey": "P16",
+      "target": {
+        "selector": "#u9435_input",
+        "fallbackText": "传代后子样本生成",
+        "strategy": "id",
+        "sourceElementId": "P16-E001",
+        "boundsHint": {
+          "text": "传代后子样本生成",
+          "tag": "input"
+        }
+      },
+      "title": "传代后子样本生成",
+      "contentMarkdown": "### 传代后子样本生成\n新增传代不仅记录试剂和操作参数，还会生成子样本信息，用于后续培养、传代审核和冻存追踪。\n\n### 状态与异常\n操作失败时应显示明确提示，并保留当前页面上下文。\n\n### 待确认\n- 子样本编号规则待确认",
+      "annotationType": "R",
+      "kind": "form",
+      "dimension": "Business rule",
+      "topics": [
+        "flow",
+        "dependency"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P16",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "openQuestions": [
+        "子样本编号规则待确认"
+      ],
+      "order": 2
+    },
+    {
+      "id": "ANN-P21-002",
+      "pageKey": "P21",
+      "target": {
+        "selector": "#u11662_input",
+        "fallbackText": "传代审核状态流转",
+        "strategy": "id",
+        "sourceElementId": "P21-E001",
+        "boundsHint": {
+          "text": "传代审核状态流转",
+          "tag": "input"
+        }
+      },
+      "title": "传代审核状态流转",
+      "contentMarkdown": "### 传代审核状态流转\n待审核记录可执行审核；审核通过后进入后续冻存/复苏链路，审核不通过应退回传代记录补充或修改。\n\n### 状态与异常\n操作失败时应显示明确提示，并保留当前页面上下文。\n\n### 待确认\n- 审核不通过后的修改入口待确认",
+      "annotationType": "S",
+      "kind": "state",
+      "dimension": "State explanation",
+      "topics": [
+        "approval",
+        "state"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P21",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "openQuestions": [
+        "审核不通过后的修改入口待确认"
+      ],
+      "order": 2
+    },
+    {
+      "id": "ANN-P23-002",
+      "pageKey": "P23",
+      "target": {
+        "selector": "#u12474_input",
+        "fallbackText": "是否通过与审核备注",
+        "strategy": "id",
+        "sourceElementId": "P23-E001",
+        "boundsHint": {
+          "text": "是否通过与审核备注",
+          "tag": "input"
+        }
+      },
+      "title": "是否通过与审核备注",
+      "contentMarkdown": "### 是否通过与审核备注\n是否通过是传代审核结论字段；选择否时，备注应作为驳回原因，供实验人员修改传代记录。\n\n### 状态与异常\n操作失败时应显示明确提示，并保留当前页面上下文。\n\n### 待确认\n- 不通过时备注是否必填待确认",
+      "annotationType": "A",
+      "kind": "form",
+      "dimension": "Primary action",
+      "topics": [
+        "approval",
+        "validation"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P23",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "openQuestions": [
+        "不通过时备注是否必填待确认"
+      ],
+      "order": 2
+    },
+    {
+      "id": "ANN-P24-002",
+      "pageKey": "P24",
+      "target": {
+        "selector": "#u12917_input",
+        "fallbackText": "冻存位置与冻存参数",
+        "strategy": "id",
+        "sourceElementId": "P24-E001",
+        "boundsHint": {
+          "text": "冻存位置与冻存参数",
+          "tag": "input"
+        }
+      },
+      "title": "冻存位置与冻存参数",
+      "contentMarkdown": "### 冻存位置与冻存参数\n冻存记录需要同时说明冻存位置、冻存液配方、冻存体积、降温程序和冻存管类型，避免样本位置和状态不一致。\n\n### 状态与异常\n操作失败时应显示明确提示，并保留当前页面上下文。\n\n### 待确认\n- 冻存是否生成库存单据待确认",
+      "annotationType": "R",
+      "kind": "form",
+      "dimension": "Business rule",
+      "topics": [
+        "field-rule",
+        "risk"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P24",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "openQuestions": [
+        "冻存是否生成库存单据待确认"
+      ],
+      "order": 2
+    },
+    {
+      "id": "ANN-P25-002",
+      "pageKey": "P25",
+      "target": {
+        "selector": "#u13492_input",
+        "fallbackText": "复苏前置条件",
+        "strategy": "id",
+        "sourceElementId": "P25-E001",
+        "boundsHint": {
+          "text": "复苏前置条件",
+          "tag": "input"
+        }
+      },
+      "title": "复苏前置条件",
+      "contentMarkdown": "### 复苏前置条件\n样本复苏仅应作用于已冻存样本，保存时记录细胞数量、活细胞比例、解冻方法和复苏后处理。\n\n### 状态与异常\n操作失败时应显示明确提示，并保留当前页面上下文。\n\n### 待确认\n- 复苏失败状态待确认",
+      "annotationType": "R",
+      "kind": "state",
+      "dimension": "Business rule",
+      "topics": [
+        "state",
+        "validation"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P25",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "openQuestions": [
+        "复苏失败状态待确认"
+      ],
+      "order": 2
+    },
+    {
+      "id": "ANN-P27-002",
+      "pageKey": "P27",
+      "target": {
+        "selector": "#u14582_input",
+        "fallbackText": "病理鉴定结果记录",
+        "strategy": "id",
+        "sourceElementId": "P27-E001",
+        "boundsHint": {
+          "text": "病理鉴定结果记录",
+          "tag": "input"
+        }
+      },
+      "title": "病理鉴定结果记录",
+      "contentMarkdown": "### 病理鉴定结果记录\n病理鉴定需关联样本编号，记录病理类型、蜡块、切片、鉴定人、诊断意见和报告附件。\n\n### 状态与异常\n操作失败时应显示明确提示，并保留当前页面上下文。\n\n### 待确认\n- 报告附件格式和大小待确认",
+      "annotationType": "DATA",
+      "kind": "data",
+      "dimension": "Data explanation",
+      "topics": [
+        "data",
+        "attachment"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P27",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "openQuestions": [
+        "报告附件格式和大小待确认"
+      ],
+      "order": 2
+    },
+    {
+      "id": "ANN-P28-002",
+      "pageKey": "P28",
+      "target": {
+        "selector": "#u15066_input",
+        "fallbackText": "药敏实验结果项",
+        "strategy": "id",
+        "sourceElementId": "P28-E001",
+        "boundsHint": {
+          "text": "药敏实验结果项",
+          "tag": "input"
+        }
+      },
+      "title": "药敏实验结果项",
+      "contentMarkdown": "### 药敏实验结果项\n药敏实验以药物为结果行，记录 IC50、浓度、抑制率、耐药情况、耐药基因和耐药类型。\n\n### 状态与异常\n操作失败时应显示明确提示，并保留当前页面上下文。\n\n### 待确认\n- IC50单位和数值精度待确认",
+      "annotationType": "DATA",
+      "kind": "data",
+      "dimension": "Data explanation",
+      "topics": [
+        "data",
+        "field-rule"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P28",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "openQuestions": [
+        "IC50单位和数值精度待确认"
+      ],
+      "order": 2
+    },
+    {
+      "id": "ANN-P30-002",
+      "pageKey": "P30",
+      "target": {
+        "selector": "#u16040_input",
+        "fallbackText": "入库库位确认规则",
+        "strategy": "id",
+        "sourceElementId": "P30-E001",
+        "boundsHint": {
+          "text": "入库库位确认规则",
+          "tag": "input"
+        }
+      },
+      "title": "入库库位确认规则",
+      "contentMarkdown": "### 入库库位确认规则\n样本入库子页支持冷冻管绑定、自动化入库、手工挑选和库位矩阵确认。库位冲突时不得生成入库单据。\n\n### 状态与异常\n操作失败时应显示明确提示，并保留当前页面上下文。\n\n### 待确认\n- 库位锁定和冲突处理规则待确认",
+      "annotationType": "R",
+      "kind": "interaction",
+      "dimension": "Business rule",
+      "topics": [
+        "risk",
+        "flow",
+        "state"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P30",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "openQuestions": [
+        "库位锁定和冲突处理规则待确认"
+      ],
+      "order": 2
+    },
+    {
+      "id": "ANN-P32-002",
+      "pageKey": "P32",
+      "target": {
+        "selector": "#u17418_input",
+        "fallbackText": "单据状态流转",
+        "strategy": "id",
+        "sourceElementId": "P32-E001",
+        "boundsHint": {
+          "text": "单据状态流转",
+          "tag": "input"
+        }
+      },
+      "title": "单据状态流转",
+      "contentMarkdown": "### 单据状态流转\n单据状态包括待处理、完成、撤销。确认单据后完成库存动作；撤销需同步回滚库存影响。\n\n### 状态与异常\n操作失败时应显示明确提示，并保留当前页面上下文。\n\n### 待确认\n- 撤销后的库存回滚规则待确认",
+      "annotationType": "S",
+      "kind": "state",
+      "dimension": "State explanation",
+      "topics": [
+        "state",
+        "risk"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P32",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "openQuestions": [
+        "撤销后的库存回滚规则待确认"
+      ],
+      "order": 2
+    },
+    {
+      "id": "ANN-P33-002",
+      "pageKey": "P33",
+      "target": {
+        "selector": "#u17957_input",
+        "fallbackText": "角色权限树",
+        "strategy": "id",
+        "sourceElementId": "P33-E001",
+        "boundsHint": {
+          "text": "角色权限树",
+          "tag": "input"
+        }
+      },
+      "title": "角色权限树",
+      "contentMarkdown": "### 角色权限树\n角色管理用于维护角色编码、角色名称、授权人数和权限树；分配权限时需支持父子联动和授权用户查看。\n\n### 状态与异常\n操作失败时应显示明确提示，并保留当前页面上下文。\n\n### 待确认\n- 按钮级权限与数据权限待确认",
+      "annotationType": "PERM",
+      "kind": "permission",
+      "dimension": "Permission control",
+      "topics": [
+        "permission",
+        "rbac"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P33",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "openQuestions": [
+        "按钮级权限与数据权限待确认"
+      ],
+      "order": 2
+    },
+    {
+      "id": "ANN-P34-002",
+      "pageKey": "P34",
+      "target": {
+        "selector": "#u18661_input",
+        "fallbackText": "菜单显示与停用规则",
+        "strategy": "id",
+        "sourceElementId": "P34-E001",
+        "boundsHint": {
+          "text": "菜单显示与停用规则",
+          "tag": "input"
+        }
+      },
+      "title": "菜单显示与停用规则",
+      "contentMarkdown": "### 菜单显示与停用规则\n隐藏菜单不出现在侧边栏但仍可访问；停用菜单不出现在侧边栏且不能访问。该规则影响权限验收。\n\n### 状态与异常\n操作失败时应显示明确提示，并保留当前页面上下文。\n\n### 待确认\n- 菜单停用是否立即影响在线用户待确认",
+      "annotationType": "PERM",
+      "kind": "permission",
+      "dimension": "Permission control",
+      "topics": [
+        "permission",
+        "state"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "页面：P34",
+        "PRD Coverage Index 与 HTML sitemap"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:36:37+08:00",
+      "openQuestions": [
+        "菜单停用是否立即影响在线用户待确认"
+      ],
+      "order": 2
+    },
+    {
+      "id": "ANN-P04-003",
+      "pageKey": "P04",
+      "target": {
+        "selector": "#u936_input",
+        "fallbackText": "筛选区规则",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "筛选区规则",
+          "tag": "input"
+        },
+        "sourceElementId": "P04-E002"
+      },
+      "title": "筛选区规则",
+      "contentMarkdown": "### 筛选区规则\n样本登记页面的筛选条件用于缩小业务数据范围。日期类字段应校验开始时间不晚于结束时间；状态类字段应与表格状态枚举保持一致。\n\n### 业务影响\n筛选结果会影响列表展示、导出范围和后续批量操作对象。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "R",
+      "kind": "table",
+      "dimension": "Business rule",
+      "topics": [
+        "filter",
+        "field-rule"
+      ],
+      "priority": "medium",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 3
+    },
+    {
+      "id": "ANN-P04-004",
+      "pageKey": "P04",
+      "target": {
+        "selector": "div \u003e a",
+        "fallbackText": "列表行操作组",
+        "strategy": "path",
+        "boundsHint": {
+          "text": "\").text(t).html() }, hide: !0, items: \"[title]:not([disabled])\", position: { my: \"left top+15\", at: \"left bottom\", collision: \"flipfit flip\" }, show: !0, track:",
+          "tag": "a"
+        },
+        "sourceElementId": "P04-E003"
+      },
+      "title": "列表行操作组",
+      "contentMarkdown": "### 列表行操作组\n行内查看、编辑、审核、处理、传代、冻存、复苏、删除等操作应按当前记录状态和用户权限展示。重复行操作不逐行标注，统一按操作列规则理解。\n\n### 状态规则\n危险操作如删除、撤销、驳回、确认单据应二次确认；成功后刷新列表并保留筛选条件。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "A",
+      "kind": "table",
+      "dimension": "Primary action",
+      "topics": [
+        "interaction",
+        "state",
+        "risk"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 4
+    },
+    {
+      "id": "ANN-P06-003",
+      "pageKey": "P06",
+      "target": {
+        "selector": "#u2370_input",
+        "fallbackText": "筛选区规则",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "筛选区规则",
+          "tag": "input"
+        },
+        "sourceElementId": "P06-E002"
+      },
+      "title": "筛选区规则",
+      "contentMarkdown": "### 筛选区规则\n样本审核页面的筛选条件用于缩小业务数据范围。日期类字段应校验开始时间不晚于结束时间；状态类字段应与表格状态枚举保持一致。\n\n### 业务影响\n筛选结果会影响列表展示、导出范围和后续批量操作对象。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "R",
+      "kind": "table",
+      "dimension": "Business rule",
+      "topics": [
+        "filter",
+        "field-rule"
+      ],
+      "priority": "medium",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 3
+    },
+    {
+      "id": "ANN-P06-004",
+      "pageKey": "P06",
+      "target": {
+        "selector": "#u2375_input",
+        "fallbackText": "列表行操作组",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "列表行操作组",
+          "tag": "input"
+        },
+        "sourceElementId": "P06-E003"
+      },
+      "title": "列表行操作组",
+      "contentMarkdown": "### 列表行操作组\n行内查看、编辑、审核、处理、传代、冻存、复苏、删除等操作应按当前记录状态和用户权限展示。重复行操作不逐行标注，统一按操作列规则理解。\n\n### 状态规则\n危险操作如删除、撤销、驳回、确认单据应二次确认；成功后刷新列表并保留筛选条件。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "A",
+      "kind": "table",
+      "dimension": "Primary action",
+      "topics": [
+        "interaction",
+        "state",
+        "risk"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 4
+    },
+    {
+      "id": "ANN-P07-002",
+      "pageKey": "P07",
+      "target": {
+        "selector": "#u3587_input",
+        "fallbackText": "筛选区规则",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "筛选区规则",
+          "tag": "input"
+        },
+        "sourceElementId": "P07-E002"
+      },
+      "title": "筛选区规则",
+      "contentMarkdown": "### 筛选区规则\n处理管理页面的筛选条件用于缩小业务数据范围。日期类字段应校验开始时间不晚于结束时间；状态类字段应与表格状态枚举保持一致。\n\n### 业务影响\n筛选结果会影响列表展示、导出范围和后续批量操作对象。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "R",
+      "kind": "table",
+      "dimension": "Business rule",
+      "topics": [
+        "filter",
+        "field-rule"
+      ],
+      "priority": "medium",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 2
+    },
+    {
+      "id": "ANN-P07-003",
+      "pageKey": "P07",
+      "target": {
+        "selector": "#u3657_input",
+        "fallbackText": "列表行操作组",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "列表行操作组",
+          "tag": "input"
+        },
+        "sourceElementId": "P07-E003"
+      },
+      "title": "列表行操作组",
+      "contentMarkdown": "### 列表行操作组\n行内查看、编辑、审核、处理、传代、冻存、复苏、删除等操作应按当前记录状态和用户权限展示。重复行操作不逐行标注，统一按操作列规则理解。\n\n### 状态规则\n危险操作如删除、撤销、驳回、确认单据应二次确认；成功后刷新列表并保留筛选条件。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "A",
+      "kind": "table",
+      "dimension": "Primary action",
+      "topics": [
+        "interaction",
+        "state",
+        "risk"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 3
+    },
+    {
+      "id": "ANN-P08-003",
+      "pageKey": "P08",
+      "target": {
+        "selector": "#u4589_input",
+        "fallbackText": "筛选区规则",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "筛选区规则",
+          "tag": "input"
+        },
+        "sourceElementId": "P08-E002"
+      },
+      "title": "筛选区规则",
+      "contentMarkdown": "### 筛选区规则\n模型构建页面的筛选条件用于缩小业务数据范围。日期类字段应校验开始时间不晚于结束时间；状态类字段应与表格状态枚举保持一致。\n\n### 业务影响\n筛选结果会影响列表展示、导出范围和后续批量操作对象。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "R",
+      "kind": "table",
+      "dimension": "Business rule",
+      "topics": [
+        "filter",
+        "field-rule"
+      ],
+      "priority": "medium",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 3
+    },
+    {
+      "id": "ANN-P08-004",
+      "pageKey": "P08",
+      "target": {
+        "selector": "#u4694_input",
+        "fallbackText": "列表行操作组",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "列表行操作组",
+          "tag": "input"
+        },
+        "sourceElementId": "P08-E003"
+      },
+      "title": "列表行操作组",
+      "contentMarkdown": "### 列表行操作组\n行内查看、编辑、审核、处理、传代、冻存、复苏、删除等操作应按当前记录状态和用户权限展示。重复行操作不逐行标注，统一按操作列规则理解。\n\n### 状态规则\n危险操作如删除、撤销、驳回、确认单据应二次确认；成功后刷新列表并保留筛选条件。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "A",
+      "kind": "table",
+      "dimension": "Primary action",
+      "topics": [
+        "interaction",
+        "state",
+        "risk"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 4
+    },
+    {
+      "id": "ANN-P11-002",
+      "pageKey": "P11",
+      "target": {
+        "selector": "#u6061_input",
+        "fallbackText": "筛选区规则",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "筛选区规则",
+          "tag": "input"
+        },
+        "sourceElementId": "P11-E002"
+      },
+      "title": "筛选区规则",
+      "contentMarkdown": "### 筛选区规则\n培养记录页面的筛选条件用于缩小业务数据范围。日期类字段应校验开始时间不晚于结束时间；状态类字段应与表格状态枚举保持一致。\n\n### 业务影响\n筛选结果会影响列表展示、导出范围和后续批量操作对象。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "R",
+      "kind": "table",
+      "dimension": "Business rule",
+      "topics": [
+        "filter",
+        "field-rule"
+      ],
+      "priority": "medium",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 2
+    },
+    {
+      "id": "ANN-P11-003",
+      "pageKey": "P11",
+      "target": {
+        "selector": "#u6144_input",
+        "fallbackText": "列表行操作组",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "列表行操作组",
+          "tag": "input"
+        },
+        "sourceElementId": "P11-E003"
+      },
+      "title": "列表行操作组",
+      "contentMarkdown": "### 列表行操作组\n行内查看、编辑、审核、处理、传代、冻存、复苏、删除等操作应按当前记录状态和用户权限展示。重复行操作不逐行标注，统一按操作列规则理解。\n\n### 状态规则\n危险操作如删除、撤销、驳回、确认单据应二次确认；成功后刷新列表并保留筛选条件。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "A",
+      "kind": "table",
+      "dimension": "Primary action",
+      "topics": [
+        "interaction",
+        "state",
+        "risk"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 3
+    },
+    {
+      "id": "ANN-P13-002",
+      "pageKey": "P13",
+      "target": {
+        "selector": "#u7614_input",
+        "fallbackText": "筛选区规则",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "筛选区规则",
+          "tag": "input"
+        },
+        "sourceElementId": "P13-E002"
+      },
+      "title": "筛选区规则",
+      "contentMarkdown": "### 筛选区规则\n培养记录（菌株）页面的筛选条件用于缩小业务数据范围。日期类字段应校验开始时间不晚于结束时间；状态类字段应与表格状态枚举保持一致。\n\n### 业务影响\n筛选结果会影响列表展示、导出范围和后续批量操作对象。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "R",
+      "kind": "table",
+      "dimension": "Business rule",
+      "topics": [
+        "filter",
+        "field-rule"
+      ],
+      "priority": "medium",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 2
+    },
+    {
+      "id": "ANN-P13-003",
+      "pageKey": "P13",
+      "target": {
+        "selector": "#u7697_input",
+        "fallbackText": "列表行操作组",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "列表行操作组",
+          "tag": "input"
+        },
+        "sourceElementId": "P13-E003"
+      },
+      "title": "列表行操作组",
+      "contentMarkdown": "### 列表行操作组\n行内查看、编辑、审核、处理、传代、冻存、复苏、删除等操作应按当前记录状态和用户权限展示。重复行操作不逐行标注，统一按操作列规则理解。\n\n### 状态规则\n危险操作如删除、撤销、驳回、确认单据应二次确认；成功后刷新列表并保留筛选条件。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "A",
+      "kind": "table",
+      "dimension": "Primary action",
+      "topics": [
+        "interaction",
+        "state",
+        "risk"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 3
+    },
+    {
+      "id": "ANN-P15-002",
+      "pageKey": "P15",
+      "target": {
+        "selector": "#u9135_input",
+        "fallbackText": "筛选区规则",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "筛选区规则",
+          "tag": "input"
+        },
+        "sourceElementId": "P15-E002"
+      },
+      "title": "筛选区规则",
+      "contentMarkdown": "### 筛选区规则\n传代管理页面的筛选条件用于缩小业务数据范围。日期类字段应校验开始时间不晚于结束时间；状态类字段应与表格状态枚举保持一致。\n\n### 业务影响\n筛选结果会影响列表展示、导出范围和后续批量操作对象。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "R",
+      "kind": "table",
+      "dimension": "Business rule",
+      "topics": [
+        "filter",
+        "field-rule"
+      ],
+      "priority": "medium",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 2
+    },
+    {
+      "id": "ANN-P15-003",
+      "pageKey": "P15",
+      "target": {
+        "selector": "div \u003e a",
+        "fallbackText": "列表行操作组",
+        "strategy": "path",
+        "boundsHint": {
+          "text": "\").text(t).html() }, hide: !0, items: \"[title]:not([disabled])\", position: { my: \"left top+15\", at: \"left bottom\", collision: \"flipfit flip\" }, show: !0, track:",
+          "tag": "a"
+        },
+        "sourceElementId": "P15-E003"
+      },
+      "title": "列表行操作组",
+      "contentMarkdown": "### 列表行操作组\n行内查看、编辑、审核、处理、传代、冻存、复苏、删除等操作应按当前记录状态和用户权限展示。重复行操作不逐行标注，统一按操作列规则理解。\n\n### 状态规则\n危险操作如删除、撤销、驳回、确认单据应二次确认；成功后刷新列表并保留筛选条件。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "A",
+      "kind": "table",
+      "dimension": "Primary action",
+      "topics": [
+        "interaction",
+        "state",
+        "risk"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 3
+    },
+    {
+      "id": "ANN-P18-002",
+      "pageKey": "P18",
+      "target": {
+        "selector": "#u10440_input",
+        "fallbackText": "筛选区规则",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "筛选区规则",
+          "tag": "input"
+        },
+        "sourceElementId": "P18-E002"
+      },
+      "title": "筛选区规则",
+      "contentMarkdown": "### 筛选区规则\n传代管理（菌株）页面的筛选条件用于缩小业务数据范围。日期类字段应校验开始时间不晚于结束时间；状态类字段应与表格状态枚举保持一致。\n\n### 业务影响\n筛选结果会影响列表展示、导出范围和后续批量操作对象。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "R",
+      "kind": "table",
+      "dimension": "Business rule",
+      "topics": [
+        "filter",
+        "field-rule"
+      ],
+      "priority": "medium",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 2
+    },
+    {
+      "id": "ANN-P18-003",
+      "pageKey": "P18",
+      "target": {
+        "selector": "div \u003e a",
+        "fallbackText": "列表行操作组",
+        "strategy": "path",
+        "boundsHint": {
+          "text": "\").text(t).html() }, hide: !0, items: \"[title]:not([disabled])\", position: { my: \"left top+15\", at: \"left bottom\", collision: \"flipfit flip\" }, show: !0, track:",
+          "tag": "a"
+        },
+        "sourceElementId": "P18-E003"
+      },
+      "title": "列表行操作组",
+      "contentMarkdown": "### 列表行操作组\n行内查看、编辑、审核、处理、传代、冻存、复苏、删除等操作应按当前记录状态和用户权限展示。重复行操作不逐行标注，统一按操作列规则理解。\n\n### 状态规则\n危险操作如删除、撤销、驳回、确认单据应二次确认；成功后刷新列表并保留筛选条件。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "A",
+      "kind": "table",
+      "dimension": "Primary action",
+      "topics": [
+        "interaction",
+        "state",
+        "risk"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 3
+    },
+    {
+      "id": "ANN-P21-003",
+      "pageKey": "P21",
+      "target": {
+        "selector": "#u11751_input",
+        "fallbackText": "筛选区规则",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "筛选区规则",
+          "tag": "input"
+        },
+        "sourceElementId": "P21-E002"
+      },
+      "title": "筛选区规则",
+      "contentMarkdown": "### 筛选区规则\n传代审核页面的筛选条件用于缩小业务数据范围。日期类字段应校验开始时间不晚于结束时间；状态类字段应与表格状态枚举保持一致。\n\n### 业务影响\n筛选结果会影响列表展示、导出范围和后续批量操作对象。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "R",
+      "kind": "table",
+      "dimension": "Business rule",
+      "topics": [
+        "filter",
+        "field-rule"
+      ],
+      "priority": "medium",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 3
+    },
+    {
+      "id": "ANN-P21-004",
+      "pageKey": "P21",
+      "target": {
+        "selector": "div \u003e a",
+        "fallbackText": "列表行操作组",
+        "strategy": "path",
+        "boundsHint": {
+          "text": "\").text(t).html() }, hide: !0, items: \"[title]:not([disabled])\", position: { my: \"left top+15\", at: \"left bottom\", collision: \"flipfit flip\" }, show: !0, track:",
+          "tag": "a"
+        },
+        "sourceElementId": "P21-E003"
+      },
+      "title": "列表行操作组",
+      "contentMarkdown": "### 列表行操作组\n行内查看、编辑、审核、处理、传代、冻存、复苏、删除等操作应按当前记录状态和用户权限展示。重复行操作不逐行标注，统一按操作列规则理解。\n\n### 状态规则\n危险操作如删除、撤销、驳回、确认单据应二次确认；成功后刷新列表并保留筛选条件。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "A",
+      "kind": "table",
+      "dimension": "Primary action",
+      "topics": [
+        "interaction",
+        "state",
+        "risk"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 4
+    },
+    {
+      "id": "ANN-P24-003",
+      "pageKey": "P24",
+      "target": {
+        "selector": "#u12975_input",
+        "fallbackText": "筛选区规则",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "筛选区规则",
+          "tag": "input"
+        },
+        "sourceElementId": "P24-E002"
+      },
+      "title": "筛选区规则",
+      "contentMarkdown": "### 筛选区规则\n冻存管理页面的筛选条件用于缩小业务数据范围。日期类字段应校验开始时间不晚于结束时间；状态类字段应与表格状态枚举保持一致。\n\n### 业务影响\n筛选结果会影响列表展示、导出范围和后续批量操作对象。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "R",
+      "kind": "table",
+      "dimension": "Business rule",
+      "topics": [
+        "filter",
+        "field-rule"
+      ],
+      "priority": "medium",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 3
+    },
+    {
+      "id": "ANN-P24-004",
+      "pageKey": "P24",
+      "target": {
+        "selector": "#u13078_input",
+        "fallbackText": "列表行操作组",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "列表行操作组",
+          "tag": "input"
+        },
+        "sourceElementId": "P24-E003"
+      },
+      "title": "列表行操作组",
+      "contentMarkdown": "### 列表行操作组\n行内查看、编辑、审核、处理、传代、冻存、复苏、删除等操作应按当前记录状态和用户权限展示。重复行操作不逐行标注，统一按操作列规则理解。\n\n### 状态规则\n危险操作如删除、撤销、驳回、确认单据应二次确认；成功后刷新列表并保留筛选条件。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "A",
+      "kind": "table",
+      "dimension": "Primary action",
+      "topics": [
+        "interaction",
+        "state",
+        "risk"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 4
+    },
+    {
+      "id": "ANN-P25-003",
+      "pageKey": "P25",
+      "target": {
+        "selector": "#u13550_input",
+        "fallbackText": "筛选区规则",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "筛选区规则",
+          "tag": "input"
+        },
+        "sourceElementId": "P25-E002"
+      },
+      "title": "筛选区规则",
+      "contentMarkdown": "### 筛选区规则\n样本复苏页面的筛选条件用于缩小业务数据范围。日期类字段应校验开始时间不晚于结束时间；状态类字段应与表格状态枚举保持一致。\n\n### 业务影响\n筛选结果会影响列表展示、导出范围和后续批量操作对象。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "R",
+      "kind": "table",
+      "dimension": "Business rule",
+      "topics": [
+        "filter",
+        "field-rule"
+      ],
+      "priority": "medium",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 3
+    },
+    {
+      "id": "ANN-P25-004",
+      "pageKey": "P25",
+      "target": {
+        "selector": "#u13653_input",
+        "fallbackText": "列表行操作组",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "列表行操作组",
+          "tag": "input"
+        },
+        "sourceElementId": "P25-E003"
+      },
+      "title": "列表行操作组",
+      "contentMarkdown": "### 列表行操作组\n行内查看、编辑、审核、处理、传代、冻存、复苏、删除等操作应按当前记录状态和用户权限展示。重复行操作不逐行标注，统一按操作列规则理解。\n\n### 状态规则\n危险操作如删除、撤销、驳回、确认单据应二次确认；成功后刷新列表并保留筛选条件。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "A",
+      "kind": "table",
+      "dimension": "Primary action",
+      "topics": [
+        "interaction",
+        "state",
+        "risk"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 4
+    },
+    {
+      "id": "ANN-P26-002",
+      "pageKey": "P26",
+      "target": {
+        "selector": "#u14068_input",
+        "fallbackText": "筛选区规则",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "筛选区规则",
+          "tag": "input"
+        },
+        "sourceElementId": "P26-E002"
+      },
+      "title": "筛选区规则",
+      "contentMarkdown": "### 筛选区规则\n复苏冻存页面的筛选条件用于缩小业务数据范围。日期类字段应校验开始时间不晚于结束时间；状态类字段应与表格状态枚举保持一致。\n\n### 业务影响\n筛选结果会影响列表展示、导出范围和后续批量操作对象。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "R",
+      "kind": "table",
+      "dimension": "Business rule",
+      "topics": [
+        "filter",
+        "field-rule"
+      ],
+      "priority": "medium",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 2
+    },
+    {
+      "id": "ANN-P26-003",
+      "pageKey": "P26",
+      "target": {
+        "selector": "#u14171_input",
+        "fallbackText": "列表行操作组",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "列表行操作组",
+          "tag": "input"
+        },
+        "sourceElementId": "P26-E003"
+      },
+      "title": "列表行操作组",
+      "contentMarkdown": "### 列表行操作组\n行内查看、编辑、审核、处理、传代、冻存、复苏、删除等操作应按当前记录状态和用户权限展示。重复行操作不逐行标注，统一按操作列规则理解。\n\n### 状态规则\n危险操作如删除、撤销、驳回、确认单据应二次确认；成功后刷新列表并保留筛选条件。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "A",
+      "kind": "table",
+      "dimension": "Primary action",
+      "topics": [
+        "interaction",
+        "state",
+        "risk"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 3
+    },
+    {
+      "id": "ANN-P27-003",
+      "pageKey": "P27",
+      "target": {
+        "selector": "#u14608_input",
+        "fallbackText": "筛选区规则",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "筛选区规则",
+          "tag": "input"
+        },
+        "sourceElementId": "P27-E002"
+      },
+      "title": "筛选区规则",
+      "contentMarkdown": "### 筛选区规则\n病理鉴定页面的筛选条件用于缩小业务数据范围。日期类字段应校验开始时间不晚于结束时间；状态类字段应与表格状态枚举保持一致。\n\n### 业务影响\n筛选结果会影响列表展示、导出范围和后续批量操作对象。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "R",
+      "kind": "table",
+      "dimension": "Business rule",
+      "topics": [
+        "filter",
+        "field-rule"
+      ],
+      "priority": "medium",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 3
+    },
+    {
+      "id": "ANN-P27-004",
+      "pageKey": "P27",
+      "target": {
+        "selector": "#u14677_input",
+        "fallbackText": "列表行操作组",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "列表行操作组",
+          "tag": "input"
+        },
+        "sourceElementId": "P27-E003"
+      },
+      "title": "列表行操作组",
+      "contentMarkdown": "### 列表行操作组\n行内查看、编辑、审核、处理、传代、冻存、复苏、删除等操作应按当前记录状态和用户权限展示。重复行操作不逐行标注，统一按操作列规则理解。\n\n### 状态规则\n危险操作如删除、撤销、驳回、确认单据应二次确认；成功后刷新列表并保留筛选条件。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "A",
+      "kind": "table",
+      "dimension": "Primary action",
+      "topics": [
+        "interaction",
+        "state",
+        "risk"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 4
+    },
+    {
+      "id": "ANN-P28-003",
+      "pageKey": "P28",
+      "target": {
+        "selector": "#u15155_input",
+        "fallbackText": "筛选区规则",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "筛选区规则",
+          "tag": "input"
+        },
+        "sourceElementId": "P28-E002"
+      },
+      "title": "筛选区规则",
+      "contentMarkdown": "### 筛选区规则\n药敏实验页面的筛选条件用于缩小业务数据范围。日期类字段应校验开始时间不晚于结束时间；状态类字段应与表格状态枚举保持一致。\n\n### 业务影响\n筛选结果会影响列表展示、导出范围和后续批量操作对象。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "R",
+      "kind": "table",
+      "dimension": "Business rule",
+      "topics": [
+        "filter",
+        "field-rule"
+      ],
+      "priority": "medium",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 3
+    },
+    {
+      "id": "ANN-P28-004",
+      "pageKey": "P28",
+      "target": {
+        "selector": "#u15210_input",
+        "fallbackText": "列表行操作组",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "列表行操作组",
+          "tag": "input"
+        },
+        "sourceElementId": "P28-E003"
+      },
+      "title": "列表行操作组",
+      "contentMarkdown": "### 列表行操作组\n行内查看、编辑、审核、处理、传代、冻存、复苏、删除等操作应按当前记录状态和用户权限展示。重复行操作不逐行标注，统一按操作列规则理解。\n\n### 状态规则\n危险操作如删除、撤销、驳回、确认单据应二次确认；成功后刷新列表并保留筛选条件。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "A",
+      "kind": "table",
+      "dimension": "Primary action",
+      "topics": [
+        "interaction",
+        "state",
+        "risk"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 4
+    },
+    {
+      "id": "ANN-P29-002",
+      "pageKey": "P29",
+      "target": {
+        "selector": "#u15597_input",
+        "fallbackText": "筛选区规则",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "筛选区规则",
+          "tag": "input"
+        },
+        "sourceElementId": "P29-E002"
+      },
+      "title": "筛选区规则",
+      "contentMarkdown": "### 筛选区规则\n样本入库页面的筛选条件用于缩小业务数据范围。日期类字段应校验开始时间不晚于结束时间；状态类字段应与表格状态枚举保持一致。\n\n### 业务影响\n筛选结果会影响列表展示、导出范围和后续批量操作对象。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "R",
+      "kind": "table",
+      "dimension": "Business rule",
+      "topics": [
+        "filter",
+        "field-rule"
+      ],
+      "priority": "medium",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 2
+    },
+    {
+      "id": "ANN-P29-003",
+      "pageKey": "P29",
+      "target": {
+        "selector": "#u15673_input",
+        "fallbackText": "列表行操作组",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "列表行操作组",
+          "tag": "input"
+        },
+        "sourceElementId": "P29-E003"
+      },
+      "title": "列表行操作组",
+      "contentMarkdown": "### 列表行操作组\n行内查看、编辑、审核、处理、传代、冻存、复苏、删除等操作应按当前记录状态和用户权限展示。重复行操作不逐行标注，统一按操作列规则理解。\n\n### 状态规则\n危险操作如删除、撤销、驳回、确认单据应二次确认；成功后刷新列表并保留筛选条件。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "A",
+      "kind": "table",
+      "dimension": "Primary action",
+      "topics": [
+        "interaction",
+        "state",
+        "risk"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 3
+    },
+    {
+      "id": "ANN-P31-002",
+      "pageKey": "P31",
+      "target": {
+        "selector": "#u16826_input",
+        "fallbackText": "筛选区规则",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "筛选区规则",
+          "tag": "input"
+        },
+        "sourceElementId": "P31-E002"
+      },
+      "title": "筛选区规则",
+      "contentMarkdown": "### 筛选区规则\n样本库出页面的筛选条件用于缩小业务数据范围。日期类字段应校验开始时间不晚于结束时间；状态类字段应与表格状态枚举保持一致。\n\n### 业务影响\n筛选结果会影响列表展示、导出范围和后续批量操作对象。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "R",
+      "kind": "table",
+      "dimension": "Business rule",
+      "topics": [
+        "filter",
+        "field-rule"
+      ],
+      "priority": "medium",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 2
+    },
+    {
+      "id": "ANN-P31-003",
+      "pageKey": "P31",
+      "target": {
+        "selector": "#u17043_input",
+        "fallbackText": "列表行操作组",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "列表行操作组",
+          "tag": "input"
+        },
+        "sourceElementId": "P31-E003"
+      },
+      "title": "列表行操作组",
+      "contentMarkdown": "### 列表行操作组\n行内查看、编辑、审核、处理、传代、冻存、复苏、删除等操作应按当前记录状态和用户权限展示。重复行操作不逐行标注，统一按操作列规则理解。\n\n### 状态规则\n危险操作如删除、撤销、驳回、确认单据应二次确认；成功后刷新列表并保留筛选条件。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "A",
+      "kind": "table",
+      "dimension": "Primary action",
+      "topics": [
+        "interaction",
+        "state",
+        "risk"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 3
+    },
+    {
+      "id": "ANN-P32-003",
+      "pageKey": "P32",
+      "target": {
+        "selector": "#u17447_input",
+        "fallbackText": "筛选区规则",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "筛选区规则",
+          "tag": "input"
+        },
+        "sourceElementId": "P32-E002"
+      },
+      "title": "筛选区规则",
+      "contentMarkdown": "### 筛选区规则\n单据管理页面的筛选条件用于缩小业务数据范围。日期类字段应校验开始时间不晚于结束时间；状态类字段应与表格状态枚举保持一致。\n\n### 业务影响\n筛选结果会影响列表展示、导出范围和后续批量操作对象。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "R",
+      "kind": "table",
+      "dimension": "Business rule",
+      "topics": [
+        "filter",
+        "field-rule"
+      ],
+      "priority": "medium",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 3
+    },
+    {
+      "id": "ANN-P32-004",
+      "pageKey": "P32",
+      "target": {
+        "selector": "#u17554_input",
+        "fallbackText": "列表行操作组",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "列表行操作组",
+          "tag": "input"
+        },
+        "sourceElementId": "P32-E003"
+      },
+      "title": "列表行操作组",
+      "contentMarkdown": "### 列表行操作组\n行内查看、编辑、审核、处理、传代、冻存、复苏、删除等操作应按当前记录状态和用户权限展示。重复行操作不逐行标注，统一按操作列规则理解。\n\n### 状态规则\n危险操作如删除、撤销、驳回、确认单据应二次确认；成功后刷新列表并保留筛选条件。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "A",
+      "kind": "table",
+      "dimension": "Primary action",
+      "topics": [
+        "interaction",
+        "state",
+        "risk"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 4
+    },
+    {
+      "id": "ANN-P05-003",
+      "pageKey": "P05",
+      "target": {
+        "selector": "#u1381_input",
+        "fallbackText": "关键字段组",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "关键字段组",
+          "tag": "input"
+        },
+        "sourceElementId": "P05-E002"
+      },
+      "title": "关键字段组",
+      "contentMarkdown": "### 关键字段组\n样本新增登记需要重点核对：样本源信息、标本信息、采集信息、配对组织信息。这些字段直接影响后续流程和数据追溯。\n\n### 校验建议\n必填字段为空时阻止提交；编号、时间、数量、浓度等字段需要格式或范围校验。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "R",
+      "kind": "form",
+      "dimension": "Business rule",
+      "topics": [
+        "form",
+        "field-rule"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 3
+    },
+    {
+      "id": "ANN-P05-004",
+      "pageKey": "P05",
+      "target": {
+        "selector": "#u1413_input",
+        "fallbackText": "提交/确认操作",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "提交/确认操作",
+          "tag": "input"
+        },
+        "sourceElementId": "P05-E004"
+      },
+      "title": "提交/确认操作",
+      "contentMarkdown": "### 提交/确认操作\n点击确认或保存后，系统应先执行必填、格式、状态和权限校验；校验通过后写入业务记录，并返回上一页或刷新当前列表。\n\n### 下游影响\n该操作会更新样本、模型、培养、传代、审核或入库单据等业务状态。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "A",
+      "kind": "interaction",
+      "dimension": "Primary action",
+      "topics": [
+        "interaction",
+        "flow",
+        "state"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 4
+    },
+    {
+      "id": "ANN-P05-005",
+      "pageKey": "P05",
+      "target": {
+        "selector": "#u1456_input",
+        "fallbackText": "异常与待确认",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "异常与待确认",
+          "tag": "input"
+        },
+        "sourceElementId": "P05-E006"
+      },
+      "title": "异常与待确认",
+      "contentMarkdown": "### 异常与待确认\n当前原型展示了主要字段和操作，但未完整呈现后端异常、附件限制、编号唯一性、并发保存和权限拦截。\n\n### 验收关注\n测试时应覆盖：空字段、非法日期、重复编号、上传失败、无权限、保存失败、重复提交。",
+      "annotationType": "S",
+      "kind": "state",
+      "dimension": "State explanation",
+      "topics": [
+        "exception",
+        "validation"
+      ],
+      "priority": "medium",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 5
+    },
+    {
+      "id": "ANN-P12-003",
+      "pageKey": "P12",
+      "target": {
+        "selector": "#u6515_input",
+        "fallbackText": "关键字段组",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "关键字段组",
+          "tag": "input"
+        },
+        "sourceElementId": "P12-E002"
+      },
+      "title": "关键字段组",
+      "contentMarkdown": "### 关键字段组\n新增培养需要重点核对：实验室编号、模型编号、培养状态、污染观察、支原体检测、日常观察、换液记录。这些字段直接影响后续流程和数据追溯。\n\n### 校验建议\n必填字段为空时阻止提交；编号、时间、数量、浓度等字段需要格式或范围校验。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "R",
+      "kind": "form",
+      "dimension": "Business rule",
+      "topics": [
+        "form",
+        "field-rule"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 3
+    },
+    {
+      "id": "ANN-P12-004",
+      "pageKey": "P12",
+      "target": {
+        "selector": "#u6521_input",
+        "fallbackText": "提交/确认操作",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "提交/确认操作",
+          "tag": "input"
+        },
+        "sourceElementId": "P12-E004"
+      },
+      "title": "提交/确认操作",
+      "contentMarkdown": "### 提交/确认操作\n点击确认或保存后，系统应先执行必填、格式、状态和权限校验；校验通过后写入业务记录，并返回上一页或刷新当前列表。\n\n### 下游影响\n该操作会更新样本、模型、培养、传代、审核或入库单据等业务状态。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "A",
+      "kind": "interaction",
+      "dimension": "Primary action",
+      "topics": [
+        "interaction",
+        "flow",
+        "state"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 4
+    },
+    {
+      "id": "ANN-P12-005",
+      "pageKey": "P12",
+      "target": {
+        "selector": "#u6550_input",
+        "fallbackText": "异常与待确认",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "异常与待确认",
+          "tag": "input"
+        },
+        "sourceElementId": "P12-E006"
+      },
+      "title": "异常与待确认",
+      "contentMarkdown": "### 异常与待确认\n当前原型展示了主要字段和操作，但未完整呈现后端异常、附件限制、编号唯一性、并发保存和权限拦截。\n\n### 验收关注\n测试时应覆盖：空字段、非法日期、重复编号、上传失败、无权限、保存失败、重复提交。",
+      "annotationType": "S",
+      "kind": "state",
+      "dimension": "State explanation",
+      "topics": [
+        "exception",
+        "validation"
+      ],
+      "priority": "medium",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 5
+    },
+    {
+      "id": "ANN-P14-002",
+      "pageKey": "P14",
+      "target": {
+        "selector": "#u8068_input",
+        "fallbackText": "关键字段组",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "关键字段组",
+          "tag": "input"
+        },
+        "sourceElementId": "P14-E002"
+      },
+      "title": "关键字段组",
+      "contentMarkdown": "### 关键字段组\n新增培养（菌株）需要重点核对：实验室编号、模型编号、培养状态、污染观察、支原体检测、日常观察、换液记录。这些字段直接影响后续流程和数据追溯。\n\n### 校验建议\n必填字段为空时阻止提交；编号、时间、数量、浓度等字段需要格式或范围校验。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "R",
+      "kind": "form",
+      "dimension": "Business rule",
+      "topics": [
+        "form",
+        "field-rule"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 2
+    },
+    {
+      "id": "ANN-P14-003",
+      "pageKey": "P14",
+      "target": {
+        "selector": "#u8074_input",
+        "fallbackText": "提交/确认操作",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "提交/确认操作",
+          "tag": "input"
+        },
+        "sourceElementId": "P14-E004"
+      },
+      "title": "提交/确认操作",
+      "contentMarkdown": "### 提交/确认操作\n点击确认或保存后，系统应先执行必填、格式、状态和权限校验；校验通过后写入业务记录，并返回上一页或刷新当前列表。\n\n### 下游影响\n该操作会更新样本、模型、培养、传代、审核或入库单据等业务状态。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "A",
+      "kind": "interaction",
+      "dimension": "Primary action",
+      "topics": [
+        "interaction",
+        "flow",
+        "state"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 3
+    },
+    {
+      "id": "ANN-P14-004",
+      "pageKey": "P14",
+      "target": {
+        "selector": "#u8103_input",
+        "fallbackText": "异常与待确认",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "异常与待确认",
+          "tag": "input"
+        },
+        "sourceElementId": "P14-E006"
+      },
+      "title": "异常与待确认",
+      "contentMarkdown": "### 异常与待确认\n当前原型展示了主要字段和操作，但未完整呈现后端异常、附件限制、编号唯一性、并发保存和权限拦截。\n\n### 验收关注\n测试时应覆盖：空字段、非法日期、重复编号、上传失败、无权限、保存失败、重复提交。",
+      "annotationType": "S",
+      "kind": "state",
+      "dimension": "State explanation",
+      "topics": [
+        "exception",
+        "validation"
+      ],
+      "priority": "medium",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 4
+    },
+    {
+      "id": "ANN-P16-003",
+      "pageKey": "P16",
+      "target": {
+        "selector": "#u9442_input",
+        "fallbackText": "关键字段组",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "关键字段组",
+          "tag": "input"
+        },
+        "sourceElementId": "P16-E002"
+      },
+      "title": "关键字段组",
+      "contentMarkdown": "### 关键字段组\n新增传代需要重点核对：传代比例、传代时间、试剂使用量、离心参数、子样本信息。这些字段直接影响后续流程和数据追溯。\n\n### 校验建议\n必填字段为空时阻止提交；编号、时间、数量、浓度等字段需要格式或范围校验。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "R",
+      "kind": "form",
+      "dimension": "Business rule",
+      "topics": [
+        "form",
+        "field-rule"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 3
+    },
+    {
+      "id": "ANN-P16-004",
+      "pageKey": "P16",
+      "target": {
+        "selector": "#u9448_input",
+        "fallbackText": "提交/确认操作",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "提交/确认操作",
+          "tag": "input"
+        },
+        "sourceElementId": "P16-E004"
+      },
+      "title": "提交/确认操作",
+      "contentMarkdown": "### 提交/确认操作\n点击确认或保存后，系统应先执行必填、格式、状态和权限校验；校验通过后写入业务记录，并返回上一页或刷新当前列表。\n\n### 下游影响\n该操作会更新样本、模型、培养、传代、审核或入库单据等业务状态。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "A",
+      "kind": "interaction",
+      "dimension": "Primary action",
+      "topics": [
+        "interaction",
+        "flow",
+        "state"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 4
+    },
+    {
+      "id": "ANN-P16-005",
+      "pageKey": "P16",
+      "target": {
+        "selector": "#u9471_input",
+        "fallbackText": "异常与待确认",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "异常与待确认",
+          "tag": "input"
+        },
+        "sourceElementId": "P16-E006"
+      },
+      "title": "异常与待确认",
+      "contentMarkdown": "### 异常与待确认\n当前原型展示了主要字段和操作，但未完整呈现后端异常、附件限制、编号唯一性、并发保存和权限拦截。\n\n### 验收关注\n测试时应覆盖：空字段、非法日期、重复编号、上传失败、无权限、保存失败、重复提交。",
+      "annotationType": "S",
+      "kind": "state",
+      "dimension": "State explanation",
+      "topics": [
+        "exception",
+        "validation"
+      ],
+      "priority": "medium",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 5
+    },
+    {
+      "id": "ANN-P19-002",
+      "pageKey": "P19",
+      "target": {
+        "selector": "#u10747_input",
+        "fallbackText": "关键字段组",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "关键字段组",
+          "tag": "input"
+        },
+        "sourceElementId": "P19-E002"
+      },
+      "title": "关键字段组",
+      "contentMarkdown": "### 关键字段组\n新增传代（菌株）需要重点核对：传代比例、传代时间、试剂使用量、离心参数、子样本信息。这些字段直接影响后续流程和数据追溯。\n\n### 校验建议\n必填字段为空时阻止提交；编号、时间、数量、浓度等字段需要格式或范围校验。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "R",
+      "kind": "form",
+      "dimension": "Business rule",
+      "topics": [
+        "form",
+        "field-rule"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 2
+    },
+    {
+      "id": "ANN-P19-003",
+      "pageKey": "P19",
+      "target": {
+        "selector": "#u10753_input",
+        "fallbackText": "提交/确认操作",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "提交/确认操作",
+          "tag": "input"
+        },
+        "sourceElementId": "P19-E004"
+      },
+      "title": "提交/确认操作",
+      "contentMarkdown": "### 提交/确认操作\n点击确认或保存后，系统应先执行必填、格式、状态和权限校验；校验通过后写入业务记录，并返回上一页或刷新当前列表。\n\n### 下游影响\n该操作会更新样本、模型、培养、传代、审核或入库单据等业务状态。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "A",
+      "kind": "interaction",
+      "dimension": "Primary action",
+      "topics": [
+        "interaction",
+        "flow",
+        "state"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 3
+    },
+    {
+      "id": "ANN-P19-004",
+      "pageKey": "P19",
+      "target": {
+        "selector": "#u10776_input",
+        "fallbackText": "异常与待确认",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "异常与待确认",
+          "tag": "input"
+        },
+        "sourceElementId": "P19-E006"
+      },
+      "title": "异常与待确认",
+      "contentMarkdown": "### 异常与待确认\n当前原型展示了主要字段和操作，但未完整呈现后端异常、附件限制、编号唯一性、并发保存和权限拦截。\n\n### 验收关注\n测试时应覆盖：空字段、非法日期、重复编号、上传失败、无权限、保存失败、重复提交。",
+      "annotationType": "S",
+      "kind": "state",
+      "dimension": "State explanation",
+      "topics": [
+        "exception",
+        "validation"
+      ],
+      "priority": "medium",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 4
+    },
+    {
+      "id": "ANN-P23-003",
+      "pageKey": "P23",
+      "target": {
+        "selector": "#u12477_input",
+        "fallbackText": "关键字段组",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "关键字段组",
+          "tag": "input"
+        },
+        "sourceElementId": "P23-E002"
+      },
+      "title": "关键字段组",
+      "contentMarkdown": "### 关键字段组\n传代审核需要重点核对：是否通过、审核备注。这些字段直接影响后续流程和数据追溯。\n\n### 校验建议\n必填字段为空时阻止提交；编号、时间、数量、浓度等字段需要格式或范围校验。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "R",
+      "kind": "form",
+      "dimension": "Business rule",
+      "topics": [
+        "form",
+        "field-rule"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 3
+    },
+    {
+      "id": "ANN-P23-004",
+      "pageKey": "P23",
+      "target": {
+        "selector": "#u12483_input",
+        "fallbackText": "提交/确认操作",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "提交/确认操作",
+          "tag": "input"
+        },
+        "sourceElementId": "P23-E004"
+      },
+      "title": "提交/确认操作",
+      "contentMarkdown": "### 提交/确认操作\n点击确认或保存后，系统应先执行必填、格式、状态和权限校验；校验通过后写入业务记录，并返回上一页或刷新当前列表。\n\n### 下游影响\n该操作会更新样本、模型、培养、传代、审核或入库单据等业务状态。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "A",
+      "kind": "interaction",
+      "dimension": "Primary action",
+      "topics": [
+        "interaction",
+        "flow",
+        "state"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 4
+    },
+    {
+      "id": "ANN-P23-005",
+      "pageKey": "P23",
+      "target": {
+        "selector": "#u12501_input",
+        "fallbackText": "异常与待确认",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "异常与待确认",
+          "tag": "input"
+        },
+        "sourceElementId": "P23-E006"
+      },
+      "title": "异常与待确认",
+      "contentMarkdown": "### 异常与待确认\n当前原型展示了主要字段和操作，但未完整呈现后端异常、附件限制、编号唯一性、并发保存和权限拦截。\n\n### 验收关注\n测试时应覆盖：空字段、非法日期、重复编号、上传失败、无权限、保存失败、重复提交。",
+      "annotationType": "S",
+      "kind": "state",
+      "dimension": "State explanation",
+      "topics": [
+        "exception",
+        "validation"
+      ],
+      "priority": "medium",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 5
+    },
+    {
+      "id": "ANN-P30-003",
+      "pageKey": "P30",
+      "target": {
+        "selector": "#u16046_input",
+        "fallbackText": "关键字段组",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "关键字段组",
+          "tag": "input"
+        },
+        "sourceElementId": "P30-E002"
+      },
+      "title": "关键字段组",
+      "contentMarkdown": "### 关键字段组\n样本入库子页面需要重点核对：样本复份编号、预置管编号、冷冻管绑定、库位矩阵、生成单据。这些字段直接影响后续流程和数据追溯。\n\n### 校验建议\n必填字段为空时阻止提交；编号、时间、数量、浓度等字段需要格式或范围校验。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "R",
+      "kind": "form",
+      "dimension": "Business rule",
+      "topics": [
+        "form",
+        "field-rule"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 3
+    },
+    {
+      "id": "ANN-P30-004",
+      "pageKey": "P30",
+      "target": {
+        "selector": "#u16061_input",
+        "fallbackText": "提交/确认操作",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "提交/确认操作",
+          "tag": "input"
+        },
+        "sourceElementId": "P30-E004"
+      },
+      "title": "提交/确认操作",
+      "contentMarkdown": "### 提交/确认操作\n点击确认或保存后，系统应先执行必填、格式、状态和权限校验；校验通过后写入业务记录，并返回上一页或刷新当前列表。\n\n### 下游影响\n该操作会更新样本、模型、培养、传代、审核或入库单据等业务状态。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "A",
+      "kind": "interaction",
+      "dimension": "Primary action",
+      "topics": [
+        "interaction",
+        "flow",
+        "state"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 4
+    },
+    {
+      "id": "ANN-P30-005",
+      "pageKey": "P30",
+      "target": {
+        "selector": "#u16311_input",
+        "fallbackText": "异常与待确认",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "异常与待确认",
+          "tag": "input"
+        },
+        "sourceElementId": "P30-E006"
+      },
+      "title": "异常与待确认",
+      "contentMarkdown": "### 异常与待确认\n当前原型展示了主要字段和操作，但未完整呈现后端异常、附件限制、编号唯一性、并发保存和权限拦截。\n\n### 验收关注\n测试时应覆盖：空字段、非法日期、重复编号、上传失败、无权限、保存失败、重复提交。",
+      "annotationType": "S",
+      "kind": "state",
+      "dimension": "State explanation",
+      "topics": [
+        "exception",
+        "validation"
+      ],
+      "priority": "medium",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 5
+    },
+    {
+      "id": "ANN-P14-005",
+      "pageKey": "P14",
+      "target": {
+        "selector": "#u8219_input",
+        "fallbackText": "培养记录 Tabs",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "培养记录 Tabs",
+          "tag": "input"
+        },
+        "sourceElementId": "P14-E009"
+      },
+      "title": "培养记录 Tabs",
+      "contentMarkdown": "### 培养记录 Tabs\n页面包含污染观察记录、支原体检测记录、日常观察和换液记录等记录类型。切换 Tab 时应保留已填写内容，提交时按当前记录类型校验必填项。\n\n### 待确认\n- 各 Tab 是否允许一次提交多类记录。\n- 图片是否按 Tab 独立上传和保存。",
+      "annotationType": "R",
+      "kind": "flow",
+      "dimension": "Business rule",
+      "topics": [
+        "flow",
+        "field-rule"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 5
+    },
+    {
+      "id": "ANN-P14-006",
+      "pageKey": "P14",
+      "target": {
+        "selector": "#u8235_input",
+        "fallbackText": "图片上传区域",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "图片上传区域",
+          "tag": "input"
+        },
+        "sourceElementId": "P14-E011"
+      },
+      "title": "图片上传区域",
+      "contentMarkdown": "### 图片上传区域\n培养前组织、切碎前组织、观察照片等图片用于实验过程留痕。上传失败时不得影响其他文本字段保存，用户应能重新上传。\n\n### 待确认\n- 支持的图片格式、大小、数量。\n- 是否需要高拍仪或移动端拍照接入。",
+      "annotationType": "DATA",
+      "kind": "form",
+      "dimension": "Data explanation",
+      "topics": [
+        "attachment",
+        "exception"
+      ],
+      "priority": "medium",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 6
+    },
+    {
+      "id": "ANN-P33-003",
+      "pageKey": "P33",
+      "target": {
+        "selector": "#u18183_input",
+        "fallbackText": "权限配置规则",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "权限配置规则",
+          "tag": "input"
+        },
+        "sourceElementId": "P33-E002"
+      },
+      "title": "权限配置规则",
+      "contentMarkdown": "### 权限配置规则\n角色管理影响用户能看到哪些菜单、按钮和数据。保存配置后，应及时同步到用户会话或在下次登录生效。\n\n### 风险\n错误配置可能导致越权访问或关键功能不可用。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "PERM",
+      "kind": "permission",
+      "dimension": "Permission control",
+      "topics": [
+        "permission",
+        "risk"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 3
+    },
+    {
+      "id": "ANN-P33-004",
+      "pageKey": "P33",
+      "target": {
+        "selector": "#u18188_input",
+        "fallbackText": "高风险操作",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "高风险操作",
+          "tag": "input"
+        },
+        "sourceElementId": "P33-E003"
+      },
+      "title": "高风险操作",
+      "contentMarkdown": "### 业务含义\n该操作属于权限后台的高风险操作，影响用户可访问的角色、菜单或功能范围。\n\n### 点击结果\n用户点击删除、停用、解除授权或隐藏菜单后，系统应弹出二次确认；确认后提交变更并刷新当前列表或权限树。\n\n### 成功反馈\n操作成功后显示成功提示，并同步更新角色授权、菜单状态或用户可见入口。\n\n### 失败处理\n操作失败时保留原状态，提示失败原因；若因权限不足失败，应提示无权限并阻止继续操作。\n\n### 待确认\n- 变更是否立即影响在线用户，还是下次登录生效。\n- 是否需要写入权限变更审计日志。",
+      "annotationType": "A",
+      "kind": "interaction",
+      "dimension": "Primary action",
+      "topics": [
+        "risk",
+        "permission",
+        "interaction",
+        "exception"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 4
+    },
+    {
+      "id": "ANN-P34-003",
+      "pageKey": "P34",
+      "target": {
+        "selector": "#u18668_input",
+        "fallbackText": "权限配置规则",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "权限配置规则",
+          "tag": "input"
+        },
+        "sourceElementId": "P34-E002"
+      },
+      "title": "权限配置规则",
+      "contentMarkdown": "### 权限配置规则\n菜单管理影响用户能看到哪些菜单、按钮和数据。保存配置后，应及时同步到用户会话或在下次登录生效。\n\n### 风险\n错误配置可能导致越权访问或关键功能不可用。\n\n### 状态与异常\n- 保存失败时保留当前输入内容，并提示失败原因。\n- 无权限或状态不满足时禁用操作，并给出明确提示。\n\n### 待确认\n- 具体字段必填、枚举来源和校验阈值需由业务方确认。",
+      "annotationType": "PERM",
+      "kind": "permission",
+      "dimension": "Permission control",
+      "topics": [
+        "permission",
+        "risk"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 3
+    },
+    {
+      "id": "ANN-P34-004",
+      "pageKey": "P34",
+      "target": {
+        "selector": "#u18685_input",
+        "fallbackText": "高风险操作",
+        "strategy": "id",
+        "boundsHint": {
+          "text": "高风险操作",
+          "tag": "input"
+        },
+        "sourceElementId": "P34-E003"
+      },
+      "title": "高风险操作",
+      "contentMarkdown": "### 业务含义\n该操作属于权限后台的高风险操作，影响用户可访问的角色、菜单或功能范围。\n\n### 点击结果\n用户点击删除、停用、解除授权或隐藏菜单后，系统应弹出二次确认；确认后提交变更并刷新当前列表或权限树。\n\n### 成功反馈\n操作成功后显示成功提示，并同步更新角色授权、菜单状态或用户可见入口。\n\n### 失败处理\n操作失败时保留原状态，提示失败原因；若因权限不足失败，应提示无权限并阻止继续操作。\n\n### 待确认\n- 变更是否立即影响在线用户，还是下次登录生效。\n- 是否需要写入权限变更审计日志。",
+      "annotationType": "A",
+      "kind": "interaction",
+      "dimension": "Primary action",
+      "topics": [
+        "risk",
+        "permission",
+        "interaction",
+        "exception"
+      ],
+      "priority": "high",
+      "visible": true,
+      "source": {
+        "type": "prd",
+        "ref": "/Users/licr/Documents/河北-类器官/PRD.md"
+      },
+      "evidence": [
+        "PRD 功能详细说明",
+        "HTML 原型页面字段/按钮"
+      ],
+      "review": {
+        "required": true,
+        "status": "pending"
+      },
+      "createdBy": "ai",
+      "updatedAt": "2026-06-29T10:52:20+08:00",
+      "order": 4
+    }
+  ],
+  "productContext": {
+    "productName": "类器官样本库信息管理平台",
+    "productType": "enterprise_app",
+    "productForms": [
+      "B端应用"
+    ],
+    "primaryUsers": [
+      "\").text(t).html() }, hide",
+      "\").text(t).html() }, hide"
+    ],
+    "enabledAnnotationTypes": [
+      "P",
+      "E",
+      "C",
+      "A",
+      "J",
+      "S",
+      "R",
+      "PERM",
+      "DATA"
+    ],
+    "roles": [
+      "\").text(t).html() }, hide",
+      "\").text(t).html() }, hide"
+    ],
+    "coreObjects": [],
+    "coreFlows": [],
+    "pages": [
+      {
+        "pageKey": "P01",
+        "pageName": "Untitled Document",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「Untitled Document」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P02",
+        "pageName": "Other",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「Other」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P03",
+        "pageName": "Install the Axure RP Chrome Extension",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「Install the Axure RP Chrome Extension」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P04",
+        "pageName": "Axure RP - Firefox Local File Restrictions",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「Axure RP - Firefox Local File Restrictions」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P05",
+        "pageName": "Axure RP - Safari Local File Restrictions",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「Axure RP - Safari Local File Restrictions」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P06",
+        "pageName": "images",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「images」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P07",
+        "pageName": "reload",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「reload」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P08",
+        "pageName": "Untitled Document",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「Untitled Document」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P09",
+        "pageName": "start_c_1",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「start_c_1」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P10",
+        "pageName": "start_with_pages",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「start_with_pages」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P11",
+        "pageName": "传代审核",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「传代审核」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P12",
+        "pageName": "传代管理",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「传代管理」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P13",
+        "pageName": "传代管理 (菌株)",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「传代管理 (菌株)」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P14",
+        "pageName": "冻存管理",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「冻存管理」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P15",
+        "pageName": "单据管理",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「单据管理」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P16",
+        "pageName": "培养方案",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「培养方案」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P17",
+        "pageName": "培养方案 (菌株）",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「培养方案 (菌株）」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P18",
+        "pageName": "培养记录",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「培养记录」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P19",
+        "pageName": "培养记录 (菌株)",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「培养记录 (菌株)」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P20",
+        "pageName": "处理管理",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「处理管理」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P21",
+        "pageName": "复苏冻存",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「复苏冻存」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P22",
+        "pageName": "审核",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「审核」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P23",
+        "pageName": "新增",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「新增」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P24",
+        "pageName": "新增传代",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「新增传代」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P25",
+        "pageName": "新增传代",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「新增传代」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P26",
+        "pageName": "新增培养",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「新增培养」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P27",
+        "pageName": "新增培养",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「新增培养」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P28",
+        "pageName": "查看",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「查看」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P29",
+        "pageName": "查看",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「查看」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P30",
+        "pageName": "查看",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「查看」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P31",
+        "pageName": "样本入库",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「样本入库」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P32",
+        "pageName": "样本入库 子",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「样本入库 子」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P33",
+        "pageName": "样本复苏",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「样本复苏」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P34",
+        "pageName": "样本审核",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「样本审核」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P35",
+        "pageName": "样本库出",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「样本库出」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P36",
+        "pageName": "样本登记",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「样本登记」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P37",
+        "pageName": "模型构建",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「模型构建」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P38",
+        "pageName": "流程",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「流程」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P39",
+        "pageName": "病理鉴定",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「病理鉴定」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P40",
+        "pageName": "登录",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「登录」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P41",
+        "pageName": "药敏实验",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「药敏实验」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P42",
+        "pageName": "菜单管理",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「菜单管理」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P43",
+        "pageName": "角色管理",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「角色管理」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      },
+      {
+        "pageKey": "P44",
+        "pageName": "首页",
+        "purpose": "帮助用户在 类器官样本库信息管理平台 中完成与「首页」相关的业务操作。",
+        "primaryTasks": [],
+        "mainUser": "\").text(t).html() }, hide"
+      }
+    ],
+    "generatedAt": "2026-06-29T02:33:39Z",
+    "sources": [
+      "/Users/licr/Documents/河北-类器官/PRD.md"
+    ]
+  },
+  "surfaces": []
+}
+</script>
+<script src="../.prototype-annotations/runtime/markdown-renderer.js"></script>
+<script src="../.prototype-annotations/runtime/mermaid-loader.js"></script>
+<script src="../.prototype-annotations/runtime/prototype-annotator.js"></script>
+<!-- /Prototype Annotator runtime -->
+</body>
+</html>

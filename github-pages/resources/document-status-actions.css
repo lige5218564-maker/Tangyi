@@ -1,0 +1,71 @@
+#u17504_text span,
+#u17505_text span,
+#u17506_text span,
+#u17509_text span,
+#u17512_text span,
+#u17515_text span {
+  color: #315efb !important;
+  cursor: pointer;
+}
+
+#u17508_text span,
+#u17511_text span,
+#u17514_text span {
+  color: #d9001b !important;
+  cursor: pointer;
+}
+
+#u17507,
+#u17508,
+#u17510,
+#u17511,
+#u17513,
+#u17514 {
+  display: none !important;
+}
+
+#u17504 {
+  left: 1135px !important;
+}
+
+#u17505 {
+  left: 1190px !important;
+}
+
+#u17506 {
+  left: 1270px !important;
+}
+
+#u17509 {
+  left: 1215px !important;
+}
+
+#u17512 {
+  left: 1215px !important;
+}
+
+#u17515 {
+  left: 1215px !important;
+}
+
+#u17558 {
+  left: 592px !important;
+}
+
+.doc-audit-reject-btn {
+  position: absolute;
+  left: 500px;
+  top: 456px;
+  width: 68px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  background: #d9001b;
+  color: #fff;
+  font-family: "PingFangSC-Regular", "PingFang SC", sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 100000;
+}

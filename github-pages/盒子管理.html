@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>盒子管理</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link href="resources/custom-menu.css" type="text/css" rel="stylesheet"/>
+    <link href="resources/container-management.css" type="text/css" rel="stylesheet"/>
+    <link href="resources/auth-flow.css" type="text/css" rel="stylesheet"/>
+    <script src="resources/custom-menu.js"></script>
+  </head>
+  <body>
+    <div class="cm-page">
+      <div class="cm-header">
+        <div class="cm-logo"></div>
+        <div class="cm-title">类器库管理系统</div>
+        <div class="cm-search">搜索</div>
+      </div>
+
+      <main class="cm-main">
+        <div class="cm-breadcrumb">☰  ⟳  首页 / 容器管理 / 盒子管理</div>
+
+        <section class="cm-summary">
+          <div class="cm-stat"><div class="cm-stat-label">盒子总数</div><div class="cm-stat-value">168</div></div>
+          <div class="cm-stat"><div class="cm-stat-label">空闲盒子</div><div class="cm-stat-value">42</div></div>
+          <div class="cm-stat"><div class="cm-stat-label">已占用孔位</div><div class="cm-stat-value">3,248</div></div>
+          <div class="cm-stat"><div class="cm-stat-label">锁定孔位</div><div class="cm-stat-value">26</div></div>
+        </section>
+
+        <section class="cm-card">
+          <div class="cm-filter">
+            <input class="cm-input" placeholder="请输入盒子编号/名称"/>
+            <select class="cm-select">
+              <option>所属容器</option>
+              <option>1号液氮罐</option>
+              <option>-80℃冰箱2号</option>
+              <option>培养箱3号</option>
+            </select>
+            <select class="cm-select">
+              <option>盒子规格</option>
+              <option>9 × 9</option>
+              <option>10 × 10</option>
+              <option>12 × 12</option>
+            </select>
+            <select class="cm-select">
+              <option>使用状态</option>
+              <option>正常</option>
+              <option>已满</option>
+              <option>锁定</option>
+              <option>停用</option>
+            </select>
+            <button class="cm-btn cm-btn-primary">查询</button>
+            <button class="cm-btn">重置</button>
+          </div>
+        </section>
+
+        <section class="cm-card">
+          <div class="cm-toolbar">
+            <button class="cm-btn cm-btn-primary" id="openBoxModal">＋ 新增盒子</button>
+            <button class="cm-btn">导出</button>
+          </div>
+          <div class="room-selected-bar">
+            <span>已选择 <strong id="boxSelectedCount">0</strong>项</span>
+            <button id="clearBoxSelection">清空</button>
+          </div>
+          <table class="cm-table">
+            <thead>
+              <tr>
+                <th style="width:64px;"><input type="checkbox" id="checkAllBoxes"/></th>
+                <th style="width:120px;">盒子编号</th>
+                <th>盒子名称</th>
+                <th>所属容器</th>
+                <th>所在层/架</th>
+                <th>规格</th>
+                <th>已用/总孔位</th>
+                <th>状态</th>
+                <th>更新时间</th>
+                <th style="width:170px;">操作</th>
+              </tr>
+            </thead>
+            <tbody id="boxRows">
+              <tr>
+                <td><input type="checkbox" class="box-check"/></td>
+                <td>BX-A01-001</td>
+                <td>A区冻存盒001</td>
+                <td>1号液氮罐</td>
+                <td>1架 / 1层</td>
+                <td>10 × 10</td>
+                <td>84 / 100</td>
+                <td><span class="cm-status">正常</span></td>
+                <td>2026-06-28 10:16</td>
+                <td><span class="cm-link" data-action="edit">编辑</span><span class="cm-link" data-action="positions">孔位</span></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="box-check"/></td>
+                <td>BX-A01-002</td>
+                <td>A区冻存盒002</td>
+                <td>1号液氮罐</td>
+                <td>1架 / 2层</td>
+                <td>10 × 10</td>
+                <td>100 / 100</td>
+                <td><span class="cm-status warning">已满</span></td>
+                <td>2026-06-27 14:20</td>
+                <td><span class="cm-link" data-action="edit">编辑</span><span class="cm-link" data-action="positions">孔位</span></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="box-check"/></td>
+                <td>BX-B02-006</td>
+                <td>B区冻存盒006</td>
+                <td>-80℃冰箱2号</td>
+                <td>3层 / 6位</td>
+                <td>9 × 9</td>
+                <td>34 / 81</td>
+                <td><span class="cm-status">正常</span></td>
+                <td>2026-06-24 09:30</td>
+                <td><span class="cm-link" data-action="edit">编辑</span><span class="cm-link" data-action="positions">孔位</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <div class="cm-modal-mask" id="boxModal">
+      <div class="cm-modal">
+        <div class="cm-modal-header">
+          <span id="boxModalTitle">新增盒子</span>
+          <button class="cm-modal-close" id="closeBoxModal">×</button>
+        </div>
+        <div class="cm-form">
+          <label><span class="cm-required">*</span>盒子编号</label>
+          <input class="cm-input" id="boxCode" placeholder="请输入盒子编号"/>
+          <label><span class="cm-required">*</span>盒子名称</label>
+          <input class="cm-input" id="boxName" placeholder="请输入盒子名称"/>
+          <label><span class="cm-required">*</span>所属容器</label>
+          <select class="cm-select" id="boxContainer">
+            <option>1号液氮罐</option>
+            <option>-80℃冰箱2号</option>
+            <option>培养箱3号</option>
+          </select>
+          <label>所在层/架</label>
+          <input class="cm-input" id="boxLayer" placeholder="如 1架 / 1层"/>
+          <label>行数</label>
+          <input class="cm-input" id="boxRowsCount" placeholder="如 10"/>
+          <label>列数</label>
+          <input class="cm-input" id="boxColsCount" placeholder="如 10"/>
+          <label>状态</label>
+          <select class="cm-select" id="boxStatus">
+            <option>正常</option>
+            <option>锁定</option>
+            <option>停用</option>
+          </select>
+          <label>备注</label>
+          <textarea class="cm-textarea cm-form-wide" placeholder="请输入备注"></textarea>
+        </div>
+        <div class="cm-modal-footer">
+          <button class="cm-btn" id="cancelBox">取消</button>
+          <button class="cm-btn cm-btn-primary" id="saveBox">保存</button>
+        </div>
+      </div>
+    </div>
+    <div class="cm-modal-mask" id="positionModal">
+      <div class="cm-modal cm-position-modal">
+        <div class="cm-modal-header">
+          <span id="positionTitle">孔位查看</span>
+          <button class="cm-modal-close" id="closePositionModal">×</button>
+        </div>
+        <div class="cm-position-info" id="positionInfo"></div>
+        <div class="cm-position-legend">
+          <span><i class="cm-dot empty"></i>空闲</span>
+          <span><i class="cm-dot used"></i>已占用</span>
+          <span><i class="cm-dot locked"></i>锁定</span>
+        </div>
+        <div class="cm-position-layout">
+          <div class="cm-position-grid-wrap">
+            <div class="cm-position-grid" id="positionGrid"></div>
+          </div>
+          <div class="cm-position-panel">
+            <div class="cm-position-panel-title">孔位详情</div>
+            <div class="cm-position-empty" id="positionEmpty">请选择左侧孔位</div>
+            <div class="cm-position-detail" id="positionDetail">
+              <div><span>孔位</span><strong id="selectedPositionCode">-</strong></div>
+              <div><span>状态</span><strong id="selectedPositionStatus">-</strong></div>
+              <div><span>绑定样本</span><strong id="selectedPositionSample">-</strong></div>
+              <div><span>更新时间</span><strong id="selectedPositionTime">-</strong></div>
+            </div>
+            <div class="cm-position-actions" id="positionActions">
+              <button class="cm-btn cm-btn-primary" id="lockPosition">锁定孔位</button>
+            </div>
+          </div>
+        </div>
+        <div class="cm-modal-footer">
+          <button class="cm-btn" id="closePositionFooter">关闭</button>
+        </div>
+      </div>
+    </div>
+    <div class="cm-toast" id="toast">盒子已新增，孔位自动生成</div>
+
+    <script>
+      (function () {
+        var modal = document.getElementById('boxModal');
+        var positionModal = document.getElementById('positionModal');
+        var toast = document.getElementById('toast');
+        var editingRow = null;
+        var activeBoxRow = null;
+        var selectedPosition = null;
+        var positionStore = {};
+        function showToast(text) {
+          toast.textContent = text;
+          toast.classList.add('is-open');
+          setTimeout(function () { toast.classList.remove('is-open'); }, 1800);
+        }
+        function statusClass(status) {
+          return status === '正常' ? '' : (status === '停用' ? ' disabled' : ' warning');
+        }
+        function nowText() {
+          return '当前时间';
+        }
+        function parseSize(sizeText) {
+          var parts = sizeText.split('×');
+          if (parts.length < 2) parts = sizeText.split('x');
+          return {
+            rows: Number((parts[0] || '10').trim()) || 10,
+            cols: Number((parts[1] || '10').trim()) || 10
+          };
+        }
+        function parseUsed(usedText) {
+          return Number((usedText.split('/')[0] || '0').trim()) || 0;
+        }
+        function boxKey(row) {
+          return row.children[1].textContent;
+        }
+        function positionStatusText(status) {
+          if (status === 'used') return '已占用';
+          if (status === 'locked') return '锁定';
+          return '空闲';
+        }
+        function positionClass(status) {
+          if (status === 'used') return ' is-used';
+          if (status === 'locked') return ' is-locked';
+          return ' is-empty';
+        }
+        function buildPositions(row) {
+          var key = boxKey(row);
+          if (positionStore[key]) return positionStore[key];
+          var size = parseSize(row.children[5].textContent);
+          var used = parseUsed(row.children[6].textContent);
+          var boxStatus = row.children[7].textContent.trim();
+          var total = size.rows * size.cols;
+          var lockedCount = boxStatus === '锁定' ? total : Math.min(3, Math.max(0, total - used));
+          var positions = [];
+          for (var index = 0; index < total; index += 1) {
+            var rowIndex = Math.floor(index / size.cols);
+            var colIndex = index % size.cols;
+            var code = String.fromCharCode(65 + rowIndex) + (colIndex + 1);
+            var status = 'empty';
+            if (index < used) status = 'used';
+            if (index >= total - lockedCount) status = 'locked';
+            positions.push({
+              code: code,
+              status: status,
+              sample: status === 'used' ? 'HB-ORG-202606' + String(index + 1).padStart(3, '0') : '-',
+              updated: row.children[8].textContent
+            });
+          }
+          positionStore[key] = positions;
+          return positions;
+        }
+        function refreshBoxUsage(row) {
+          var positions = buildPositions(row);
+          var used = positions.filter(function (item) { return item.status === 'used'; }).length;
+          row.children[6].textContent = used + ' / ' + positions.length;
+          if (used === positions.length) {
+            row.children[7].innerHTML = '<span class="cm-status warning">已满</span>';
+          } else if (row.children[7].textContent.trim() === '已满') {
+            row.children[7].innerHTML = '<span class="cm-status">正常</span>';
+          }
+          row.children[8].textContent = nowText();
+        }
+        function updatePositionDetail(position) {
+          selectedPosition = position || null;
+          document.getElementById('positionEmpty').style.display = selectedPosition ? 'none' : 'block';
+          document.getElementById('positionDetail').style.display = selectedPosition ? 'grid' : 'none';
+          document.getElementById('positionActions').style.display = selectedPosition && selectedPosition.status !== 'used' ? 'flex' : 'none';
+          if (!selectedPosition) return;
+          document.getElementById('selectedPositionCode').textContent = selectedPosition.code;
+          document.getElementById('selectedPositionStatus').textContent = positionStatusText(selectedPosition.status);
+          document.getElementById('selectedPositionSample').textContent = selectedPosition.sample;
+          document.getElementById('selectedPositionTime').textContent = selectedPosition.updated;
+          document.getElementById('lockPosition').textContent = selectedPosition.status === 'locked' ? '解锁孔位' : '锁定孔位';
+        }
+        function renderPositionGrid() {
+          if (!activeBoxRow) return;
+          var size = parseSize(activeBoxRow.children[5].textContent);
+          var positions = buildPositions(activeBoxRow);
+          var grid = document.getElementById('positionGrid');
+          grid.innerHTML = '';
+          grid.style.gridTemplateColumns = 'repeat(' + size.cols + ', 34px)';
+          positions.forEach(function (position, index) {
+            var cell = document.createElement('button');
+            cell.type = 'button';
+            cell.className = 'cm-position-cell' + positionClass(position.status);
+            if (selectedPosition && selectedPosition.code === position.code) cell.className += ' is-selected';
+            cell.title = position.code + ' ' + positionStatusText(position.status);
+            cell.textContent = position.code;
+            cell.addEventListener('click', function () {
+              selectedPosition = positions[index];
+              renderPositionGrid();
+              updatePositionDetail(selectedPosition);
+            });
+            grid.appendChild(cell);
+          });
+        }
+        function setModalMode(row) {
+          editingRow = row || null;
+          document.getElementById('boxModalTitle').textContent = editingRow ? '编辑盒子' : '新增盒子';
+          document.getElementById('saveBox').textContent = editingRow ? '保存修改' : '保存';
+          setStructureFieldsDisabled(false);
+          if (!editingRow) {
+            document.getElementById('boxCode').value = '';
+            document.getElementById('boxName').value = '';
+            document.getElementById('boxContainer').value = '1号液氮罐';
+            document.getElementById('boxLayer').value = '';
+            document.getElementById('boxRowsCount').value = '';
+            document.getElementById('boxColsCount').value = '';
+            document.getElementById('boxStatus').value = '正常';
+            return;
+          }
+          var cells = editingRow.children;
+          var size = parseSize(cells[4].textContent);
+          document.getElementById('boxCode').value = cells[1].textContent;
+          document.getElementById('boxName').value = cells[2].textContent;
+          document.getElementById('boxContainer').value = cells[3].textContent;
+          document.getElementById('boxLayer').value = cells[4].textContent;
+          document.getElementById('boxRowsCount').value = size.rows;
+          document.getElementById('boxColsCount').value = size.cols;
+          document.getElementById('boxStatus').value = cells[7].textContent.trim() === '已满' ? '正常' : cells[7].textContent.trim();
+          setStructureFieldsDisabled(parseUsed(cells[6].textContent) > 0);
+        }
+        function setStructureFieldsDisabled(disabled) {
+          ['boxCode', 'boxContainer', 'boxLayer', 'boxRowsCount', 'boxColsCount'].forEach(function (id) {
+            document.getElementById(id).disabled = disabled;
+          });
+        }
+        function openModal(row) {
+          setModalMode(row);
+          modal.classList.add('is-open');
+        }
+        function closeModal() { modal.classList.remove('is-open'); }
+        function renderActionHtml(status) {
+          return '<span class="cm-link" data-action="edit">编辑</span><span class="cm-link" data-action="positions">孔位</span>';
+        }
+        function upsertRow(row, data) {
+          var statusText = data.status;
+          var cls = statusClass(statusText);
+          row.innerHTML = '<td><input type="checkbox" class="box-check"/></td><td>' + data.code + '</td><td>' + data.name + '</td><td>' + data.container + '</td><td>' + data.layer + '</td><td>' + data.rows + ' × ' + data.cols + '</td><td>' + data.used + ' / ' + (data.rows * data.cols) + '</td><td><span class="cm-status' + cls + '">' + statusText + '</span></td><td>' + nowText() + '</td><td>' + renderActionHtml(statusText) + '</td>';
+        }
+        function openPositions(row) {
+          activeBoxRow = row;
+          selectedPosition = null;
+          var cells = row.children;
+          buildPositions(row);
+          document.getElementById('positionTitle').textContent = cells[2].textContent + ' 孔位';
+          document.getElementById('positionInfo').textContent = cells[1].textContent + '｜' + cells[3].textContent + '｜' + cells[4].textContent + '｜规格 ' + cells[5].textContent + '｜已用 ' + cells[6].textContent;
+          renderPositionGrid();
+          updatePositionDetail(null);
+          positionModal.classList.add('is-open');
+        }
+        function closePositions() {
+          positionModal.classList.remove('is-open');
+        }
+        document.getElementById('openBoxModal').addEventListener('click', function () { openModal(null); });
+        document.getElementById('closeBoxModal').addEventListener('click', closeModal);
+        document.getElementById('cancelBox').addEventListener('click', closeModal);
+        document.getElementById('closePositionModal').addEventListener('click', closePositions);
+        document.getElementById('closePositionFooter').addEventListener('click', closePositions);
+        function updateBoxSelection() {
+          var checks = document.querySelectorAll('.box-check');
+          var selected = document.querySelectorAll('.box-check:checked').length;
+          document.getElementById('boxSelectedCount').textContent = selected;
+          document.getElementById('checkAllBoxes').checked = selected > 0 && selected === checks.length;
+        }
+        document.getElementById('checkAllBoxes').addEventListener('change', function () {
+          var checked = this.checked;
+          Array.prototype.forEach.call(document.querySelectorAll('.box-check'), function (item) { item.checked = checked; });
+          updateBoxSelection();
+        });
+        document.getElementById('clearBoxSelection').addEventListener('click', function () {
+          Array.prototype.forEach.call(document.querySelectorAll('.box-check'), function (item) { item.checked = false; });
+          updateBoxSelection();
+        });
+        document.getElementById('lockPosition').addEventListener('click', function () {
+          if (!selectedPosition || selectedPosition.status === 'used') return;
+          selectedPosition.status = selectedPosition.status === 'locked' ? 'empty' : 'locked';
+          selectedPosition.sample = '-';
+          selectedPosition.updated = nowText();
+          refreshBoxUsage(activeBoxRow);
+          renderPositionGrid();
+          updatePositionDetail(selectedPosition);
+          showToast(selectedPosition.status === 'locked' ? '孔位已锁定' : '孔位已解锁');
+        });
+        document.getElementById('boxRows').addEventListener('click', function (event) {
+          if (event.target.className === 'box-check') updateBoxSelection();
+          var action = event.target.getAttribute('data-action');
+          if (!action) return;
+          var row = event.target.closest('tr');
+          if (action === 'edit') {
+            openModal(row);
+            return;
+          }
+          if (action === 'positions') {
+            openPositions(row);
+            return;
+          }
+        });
+        document.getElementById('saveBox').addEventListener('click', function () {
+          var code = document.getElementById('boxCode').value || 'BX-NEW-001';
+          var name = document.getElementById('boxName').value || '新冻存盒';
+          var container = document.getElementById('boxContainer').value || '1号液氮罐';
+          var layer = document.getElementById('boxLayer').value || '-';
+          var rows = Number(document.getElementById('boxRowsCount').value || 10);
+          var cols = Number(document.getElementById('boxColsCount').value || 10);
+          var status = document.getElementById('boxStatus').value || '正常';
+          var row = editingRow || document.createElement('tr');
+          var used = editingRow ? Math.min(parseUsed(editingRow.children[6].textContent), rows * cols) : 0;
+          upsertRow(row, { code: code, name: name, container: container, layer: layer, rows: rows, cols: cols, used: used, status: status });
+          if (!editingRow) document.getElementById('boxRows').prepend(row);
+          closeModal();
+          updateBoxSelection();
+          showToast(editingRow ? '盒子信息已更新' : '盒子已新增，孔位自动生成');
+          editingRow = null;
+        });
+      })();
+    </script>
+    <script src="resources/auth-flow.js"></script>
+  </body>
+</html>

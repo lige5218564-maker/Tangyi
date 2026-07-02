@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>库位管理</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link href="resources/custom-menu.css" type="text/css" rel="stylesheet"/>
+    <link href="resources/container-management.css" type="text/css" rel="stylesheet"/>
+    <link href="resources/auth-flow.css" type="text/css" rel="stylesheet"/>
+    <script src="resources/custom-menu.js"></script>
+  </head>
+  <body>
+    <div class="cm-page">
+      <div class="cm-header">
+        <div class="cm-logo"></div>
+        <div class="cm-title">类器库管理系统</div>
+        <div class="cm-search">搜索</div>
+      </div>
+
+      <main class="cm-main">
+        <div class="cm-breadcrumb">☰  ⟳  首页 / 容器管理 / 库位管理</div>
+
+        <section class="cm-summary">
+          <div class="cm-stat"><div class="cm-stat-label">库位总数</div><div class="cm-stat-value">8,640</div></div>
+          <div class="cm-stat"><div class="cm-stat-label">空闲库位</div><div class="cm-stat-value">5,366</div></div>
+          <div class="cm-stat"><div class="cm-stat-label">已占用库位</div><div class="cm-stat-value">3,248</div></div>
+          <div class="cm-stat"><div class="cm-stat-label">锁定库位</div><div class="cm-stat-value">26</div></div>
+        </section>
+
+        <section class="cm-card">
+          <div class="cm-filter">
+            <input class="cm-input" id="keyword" placeholder="请输入库位编码/样本编号"/>
+            <select class="cm-select" id="filterContainer">
+              <option>所属容器</option>
+              <option>1号液氮罐</option>
+              <option>-80℃冰箱2号</option>
+            </select>
+            <select class="cm-select" id="filterBox">
+              <option>所属盒子</option>
+              <option>A区冻存盒001</option>
+              <option>A区冻存盒002</option>
+              <option>B区冻存盒006</option>
+            </select>
+            <select class="cm-select" id="filterStatus">
+              <option>库位状态</option>
+              <option>空闲</option>
+              <option>已占用</option>
+              <option>锁定</option>
+              <option>停用</option>
+            </select>
+            <button class="cm-btn cm-btn-primary" id="searchPosition">查询</button>
+            <button class="cm-btn" id="resetPosition">重置</button>
+          </div>
+        </section>
+
+        <section class="cm-card">
+          <div class="cm-toolbar">
+            <button class="cm-btn cm-btn-primary" id="generatePositions">批量生成库位</button>
+            <button class="cm-btn" id="batchLock">锁定库位</button>
+            <button class="cm-btn" id="batchRelease">释放库位</button>
+            <button class="cm-btn" id="exportPositions">导出</button>
+          </div>
+          <table class="cm-table">
+            <thead>
+              <tr>
+                <th style="width:130px;">库位编码</th>
+                <th>所属容器</th>
+                <th>所属盒子</th>
+                <th>行</th>
+                <th>列</th>
+                <th>绑定样本</th>
+                <th>状态</th>
+                <th>更新时间</th>
+                <th style="width:150px;">操作</th>
+              </tr>
+            </thead>
+            <tbody id="positionRows">
+              <tr>
+                <td>CT-LN-001-A01-R01-C01</td>
+                <td>1号液氮罐</td>
+                <td>A区冻存盒001</td>
+                <td>1</td>
+                <td>1</td>
+                <td>HB-ORG-202606001</td>
+                <td><span class="cm-status warning">已占用</span></td>
+                <td>2026-06-28 10:16</td>
+                <td><span class="cm-link" data-action="view">查看</span><span class="cm-link" data-action="release">释放</span></td>
+              </tr>
+              <tr>
+                <td>CT-LN-001-A01-R01-C02</td>
+                <td>1号液氮罐</td>
+                <td>A区冻存盒001</td>
+                <td>1</td>
+                <td>2</td>
+                <td>-</td>
+                <td><span class="cm-status">空闲</span></td>
+                <td>2026-06-28 10:16</td>
+                <td><span class="cm-link" data-action="assign">分配</span><span class="cm-link-danger" data-action="lock">锁定</span></td>
+              </tr>
+              <tr>
+                <td>CT-FR-002-B06-R03-C09</td>
+                <td>-80℃冰箱2号</td>
+                <td>B区冻存盒006</td>
+                <td>3</td>
+                <td>9</td>
+                <td>-</td>
+                <td><span class="cm-status disabled">锁定</span></td>
+                <td>2026-06-24 09:30</td>
+                <td><span class="cm-link" data-action="unlock">解锁</span><span class="cm-link" data-action="view">查看</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+    <div class="cm-modal-mask" id="positionDetailModal">
+      <div class="cm-modal">
+        <div class="cm-modal-header">
+          <span id="detailTitle">库位详情</span>
+          <button class="cm-modal-close" id="closeDetailModal">×</button>
+        </div>
+        <div class="cm-detail-list" id="positionDetail"></div>
+        <div class="cm-modal-footer">
+          <button class="cm-btn" id="closeDetailFooter">关闭</button>
+        </div>
+      </div>
+    </div>
+    <div class="cm-modal-mask" id="assignModal">
+      <div class="cm-modal">
+        <div class="cm-modal-header">
+          <span>分配库位</span>
+          <button class="cm-modal-close" id="closeAssignModal">×</button>
+        </div>
+        <div class="cm-form">
+          <label>库位编码</label>
+          <input class="cm-input" id="assignCode" disabled/>
+          <label><span class="cm-required">*</span>绑定样本</label>
+          <input class="cm-input" id="assignSample" placeholder="请输入样本编号"/>
+          <label>所属容器</label>
+          <input class="cm-input" id="assignContainer" disabled/>
+          <label>所属盒子</label>
+          <input class="cm-input" id="assignBox" disabled/>
+          <label>备注</label>
+          <textarea class="cm-textarea cm-form-wide" placeholder="请输入备注"></textarea>
+        </div>
+        <div class="cm-modal-footer">
+          <button class="cm-btn" id="cancelAssign">取消</button>
+          <button class="cm-btn cm-btn-primary" id="saveAssign">保存</button>
+        </div>
+      </div>
+    </div>
+    <div class="cm-toast" id="toast">操作成功</div>
+    <script>
+      (function () {
+        var currentRow = null;
+        var toast = document.getElementById('toast');
+        var detailModal = document.getElementById('positionDetailModal');
+        var assignModal = document.getElementById('assignModal');
+        function nowText() { return '当前时间'; }
+        function showToast(text) {
+          toast.textContent = text;
+          toast.classList.add('is-open');
+          setTimeout(function () { toast.classList.remove('is-open'); }, 1800);
+        }
+        function statusClass(status) {
+          if (status === '空闲') return '';
+          if (status === '锁定' || status === '停用') return ' disabled';
+          return ' warning';
+        }
+        function actionHtml(status) {
+          if (status === '已占用') {
+            return '<span class="cm-link" data-action="view">查看</span><span class="cm-link" data-action="release">释放</span>';
+          }
+          if (status === '锁定') {
+            return '<span class="cm-link" data-action="unlock">解锁</span><span class="cm-link" data-action="view">查看</span>';
+          }
+          return '<span class="cm-link" data-action="assign">分配</span><span class="cm-link-danger" data-action="lock">锁定</span>';
+        }
+        function setStatus(row, status, sample) {
+          row.children[5].textContent = sample;
+          row.children[6].innerHTML = '<span class="cm-status' + statusClass(status) + '">' + status + '</span>';
+          row.children[7].textContent = nowText();
+          row.children[8].innerHTML = actionHtml(status);
+        }
+        function rowData(row) {
+          return {
+            code: row.children[0].textContent,
+            container: row.children[1].textContent,
+            box: row.children[2].textContent,
+            rowNo: row.children[3].textContent,
+            colNo: row.children[4].textContent,
+            sample: row.children[5].textContent,
+            status: row.children[6].textContent.trim(),
+            updated: row.children[7].textContent
+          };
+        }
+        function openDetail(row) {
+          var data = rowData(row);
+          document.getElementById('detailTitle').textContent = data.code + ' 详情';
+          document.getElementById('positionDetail').innerHTML =
+            '<div><span>库位编码</span><strong>' + data.code + '</strong></div>' +
+            '<div><span>所属容器</span><strong>' + data.container + '</strong></div>' +
+            '<div><span>所属盒子</span><strong>' + data.box + '</strong></div>' +
+            '<div><span>行列位置</span><strong>第 ' + data.rowNo + ' 行 / 第 ' + data.colNo + ' 列</strong></div>' +
+            '<div><span>绑定样本</span><strong>' + data.sample + '</strong></div>' +
+            '<div><span>当前状态</span><strong>' + data.status + '</strong></div>' +
+            '<div><span>更新时间</span><strong>' + data.updated + '</strong></div>';
+          detailModal.classList.add('is-open');
+        }
+        function closeDetail() { detailModal.classList.remove('is-open'); }
+        function openAssign(row) {
+          currentRow = row;
+          var data = rowData(row);
+          document.getElementById('assignCode').value = data.code;
+          document.getElementById('assignContainer').value = data.container;
+          document.getElementById('assignBox').value = data.box;
+          document.getElementById('assignSample').value = '';
+          assignModal.classList.add('is-open');
+        }
+        function closeAssign() { assignModal.classList.remove('is-open'); }
+        document.getElementById('positionRows').addEventListener('click', function (event) {
+          var action = event.target.getAttribute('data-action');
+          if (!action) return;
+          var row = event.target.closest('tr');
+          if (action === 'view') openDetail(row);
+          if (action === 'assign') openAssign(row);
+          if (action === 'release') {
+            setStatus(row, '空闲', '-');
+            showToast('库位已释放');
+          }
+          if (action === 'lock') {
+            setStatus(row, '锁定', row.children[5].textContent);
+            showToast('库位已锁定');
+          }
+          if (action === 'unlock') {
+            setStatus(row, '空闲', '-');
+            showToast('库位已解锁');
+          }
+        });
+        document.getElementById('closeDetailModal').addEventListener('click', closeDetail);
+        document.getElementById('closeDetailFooter').addEventListener('click', closeDetail);
+        document.getElementById('closeAssignModal').addEventListener('click', closeAssign);
+        document.getElementById('cancelAssign').addEventListener('click', closeAssign);
+        document.getElementById('saveAssign').addEventListener('click', function () {
+          var sample = document.getElementById('assignSample').value || 'HB-ORG-NEW';
+          setStatus(currentRow, '已占用', sample);
+          closeAssign();
+          showToast('库位已分配');
+        });
+        document.getElementById('generatePositions').addEventListener('click', function () {
+          var body = document.getElementById('positionRows');
+          var rows = [
+            ['CT-LN-001-A01-R01-C03', '1号液氮罐', 'A区冻存盒001', '1', '3'],
+            ['CT-LN-001-A01-R01-C04', '1号液氮罐', 'A区冻存盒001', '1', '4'],
+            ['CT-LN-001-A01-R01-C05', '1号液氮罐', 'A区冻存盒001', '1', '5']
+          ];
+          rows.reverse().forEach(function (item) {
+            var row = document.createElement('tr');
+            row.innerHTML = '<td>' + item[0] + '</td><td>' + item[1] + '</td><td>' + item[2] + '</td><td>' + item[3] + '</td><td>' + item[4] + '</td><td>-</td><td><span class="cm-status">空闲</span></td><td>' + nowText() + '</td><td>' + actionHtml('空闲') + '</td>';
+            body.prepend(row);
+          });
+          showToast('已生成 3 个示例库位');
+        });
+        document.getElementById('batchLock').addEventListener('click', function () {
+          var row = document.querySelector('#positionRows tr');
+          if (row) setStatus(row, '锁定', row.children[5].textContent);
+          showToast('已锁定当前列表首个库位');
+        });
+        document.getElementById('batchRelease').addEventListener('click', function () {
+          var row = document.querySelector('#positionRows tr');
+          if (row) setStatus(row, '空闲', '-');
+          showToast('已释放当前列表首个库位');
+        });
+        document.getElementById('exportPositions').addEventListener('click', function () {
+          showToast('导出任务已生成');
+        });
+        document.getElementById('searchPosition').addEventListener('click', function () {
+          showToast('已按当前条件查询');
+        });
+        document.getElementById('resetPosition').addEventListener('click', function () {
+          document.getElementById('keyword').value = '';
+          document.getElementById('filterContainer').selectedIndex = 0;
+          document.getElementById('filterBox').selectedIndex = 0;
+          document.getElementById('filterStatus').selectedIndex = 0;
+          showToast('筛选条件已重置');
+        });
+      })();
+    </script>
+    <script src="resources/auth-flow.js"></script>
+  </body>
+</html>

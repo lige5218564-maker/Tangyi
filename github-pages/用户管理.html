@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>用户管理</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link href="resources/custom-menu.css" type="text/css" rel="stylesheet"/>
+    <link href="resources/user-management.css" type="text/css" rel="stylesheet"/>
+    <script src="resources/custom-menu.js"></script>
+      <link href="resources/auth-flow.css" type="text/css" rel="stylesheet"/>
+</head>
+  <body>
+    <div class="um-page">
+      <div class="um-header">
+        <div class="um-logo"></div>
+        <div class="um-title">类器库管理系统</div>
+        <div class="um-search">搜索</div>
+      </div>
+
+      <main class="um-main">
+        <div class="um-breadcrumb">☰  ⟳  首页 / 系统管理 / 用户管理</div>
+
+        <section class="um-card">
+          <div class="um-filter">
+            <input class="um-input" placeholder="请输入用户姓名/登录账号"/>
+            <select class="um-select">
+              <option>角色</option>
+              <option>样本录入员</option>
+              <option>实验技术员</option>
+              <option>库管</option>
+              <option>科室负责人</option>
+              <option>系统管理员</option>
+            </select>
+            <select class="um-select">
+              <option>用户状态</option>
+              <option>正常</option>
+              <option>停用</option>
+            </select>
+            <button class="um-btn um-btn-primary">查询</button>
+            <button class="um-btn">重置</button>
+          </div>
+        </section>
+
+        <section class="um-card">
+          <div class="um-toolbar">
+            <button class="um-btn um-btn-primary" id="openAddUser">＋ 新增用户</button>
+            <button class="um-btn">导出</button>
+          </div>
+          <table class="um-table">
+            <thead>
+              <tr>
+                <th style="width:90px;">用户ID</th>
+                <th>用户姓名</th>
+                <th>登录账号</th>
+                <th>手机号</th>
+                <th>所属科室</th>
+                <th>绑定角色</th>
+                <th>状态</th>
+                <th>创建时间</th>
+                <th style="width:150px;">操作</th>
+              </tr>
+            </thead>
+            <tbody id="userRows">
+              <tr>
+                <td>U001</td>
+                <td>张晓风</td>
+                <td>zhangxf</td>
+                <td>13800000001</td>
+                <td>肿瘤科</td>
+                <td>实验技术员</td>
+                <td><span class="um-status">正常</span></td>
+                <td>2025-11-11 9:45</td>
+                <td><span class="um-link">编辑</span><span class="um-link">重置密码</span></td>
+              </tr>
+              <tr>
+                <td>U002</td>
+                <td>李永</td>
+                <td>liyong</td>
+                <td>13800000002</td>
+                <td>样本库</td>
+                <td>库管</td>
+                <td><span class="um-status">正常</span></td>
+                <td>2025-11-12 10:20</td>
+                <td><span class="um-link">编辑</span><span class="um-link-danger">停用</span></td>
+              </tr>
+              <tr>
+                <td>U003</td>
+                <td>王敏</td>
+                <td>wangmin</td>
+                <td>13800000003</td>
+                <td>信息科</td>
+                <td>系统管理员</td>
+                <td><span class="um-status disabled">停用</span></td>
+                <td>2025-11-13 11:00</td>
+                <td><span class="um-link">编辑</span><span class="um-link">启用</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <div class="um-modal-mask" id="userModal">
+      <div class="um-modal">
+        <div class="um-modal-header">
+          <span>新增用户</span>
+          <button class="um-modal-close" id="closeUserModal">×</button>
+        </div>
+        <div class="um-form">
+          <label><span class="um-required">*</span>用户姓名</label>
+          <input class="um-input" id="userName" placeholder="请输入用户姓名"/>
+          <label><span class="um-required">*</span>登录账号</label>
+          <input class="um-input" id="loginName" placeholder="请输入登录账号"/>
+
+          <label>手机号</label>
+          <input class="um-input" id="phone" placeholder="请输入手机号"/>
+          <label>所属科室</label>
+          <input class="um-input" id="dept" placeholder="请输入所属科室"/>
+
+          <label><span class="um-required">*</span>绑定角色</label>
+          <select class="um-select um-role-select" id="roleSelect">
+            <option value="">请选择绑定角色</option>
+            <option>样本录入员</option>
+            <option>实验技术员</option>
+            <option>库管</option>
+            <option>科室负责人</option>
+            <option>系统管理员</option>
+          </select>
+
+          <label>用户状态</label>
+          <select class="um-select" id="status">
+            <option>正常</option>
+            <option>停用</option>
+          </select>
+          <label>初始密码</label>
+          <input class="um-input" placeholder="默认 123456，可配置"/>
+
+          <label>备注</label>
+          <textarea class="um-textarea um-form-wide" placeholder="请输入备注"></textarea>
+        </div>
+        <div class="um-modal-footer">
+          <button class="um-btn" id="cancelUser">取消</button>
+          <button class="um-btn um-btn-primary" id="saveUser">保存</button>
+        </div>
+      </div>
+    </div>
+    <div class="um-toast" id="toast">用户已新增，并完成角色绑定</div>
+
+    <script>
+      (function () {
+        var modal = document.getElementById('userModal');
+        var toast = document.getElementById('toast');
+        function openModal() { modal.classList.add('is-open'); }
+        function closeModal() { modal.classList.remove('is-open'); }
+        document.getElementById('openAddUser').addEventListener('click', openModal);
+        document.getElementById('closeUserModal').addEventListener('click', closeModal);
+        document.getElementById('cancelUser').addEventListener('click', closeModal);
+        document.getElementById('saveUser').addEventListener('click', function () {
+          var name = document.getElementById('userName').value || '新用户';
+          var account = document.getElementById('loginName').value || 'newuser';
+          var phone = document.getElementById('phone').value || '-';
+          var dept = document.getElementById('dept').value || '-';
+          var role = document.getElementById('roleSelect').value;
+          var status = document.getElementById('status').value || '正常';
+          var row = document.createElement('tr');
+          row.innerHTML = '<td>U004</td><td>' + name + '</td><td>' + account + '</td><td>' + phone + '</td><td>' + dept + '</td><td>' + (role || "待绑定") + '</td><td><span class="um-status' + (status === '停用' ? ' disabled' : '') + '">' + status + '</span></td><td>当前时间</td><td><span class="um-link">编辑</span><span class="um-link">重置密码</span></td>';
+          document.getElementById('userRows').prepend(row);
+          closeModal();
+          toast.classList.add('is-open');
+          setTimeout(function () { toast.classList.remove('is-open'); }, 1800);
+        });
+      })();
+    </script>
+  <script src="resources/auth-flow.js"></script>
+</body>
+</html>

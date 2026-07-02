@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>容器管理</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link href="resources/custom-menu.css" type="text/css" rel="stylesheet"/>
+    <link href="resources/container-management.css" type="text/css" rel="stylesheet"/>
+    <link href="resources/auth-flow.css" type="text/css" rel="stylesheet"/>
+    <script src="resources/custom-menu.js"></script>
+  </head>
+  <body>
+    <div class="cm-page">
+      <div class="cm-header">
+        <div class="cm-logo"></div>
+        <div class="cm-title">类器库管理系统</div>
+        <div class="cm-search">搜索</div>
+      </div>
+
+      <main class="cm-main">
+        <div class="cm-breadcrumb">☰  ⟳  首页 / 容器管理 / 容器管理</div>
+
+        <section class="cm-card">
+          <div class="cm-filter">
+            <input class="cm-input" placeholder="请输入容器编号/名称"/>
+            <select class="cm-select">
+              <option>容器类型</option>
+              <option>液氮罐</option>
+              <option>超低温冰箱</option>
+              <option>冻存架</option>
+              <option>培养箱</option>
+            </select>
+            <select class="cm-select">
+              <option>使用状态</option>
+              <option>正常</option>
+              <option>停用</option>
+              <option>维护中</option>
+              <option>异常</option>
+            </select>
+            <button class="cm-btn cm-btn-primary">查询</button>
+            <button class="cm-btn">重置</button>
+          </div>
+        </section>
+
+        <section class="cm-card">
+          <div class="cm-toolbar">
+            <button class="cm-btn cm-btn-primary" id="openContainerModal">＋ 新增容器</button>
+            <button class="cm-btn">批量导入</button>
+            <button class="cm-btn">导出</button>
+          </div>
+          <div class="room-selected-bar">
+            <span>已选择 <strong id="containerSelectedCount">0</strong>项</span>
+            <button id="clearContainerSelection">清空</button>
+          </div>
+          <table class="cm-table">
+            <thead>
+              <tr>
+                <th style="width:64px;"><input type="checkbox" id="checkAllContainers"/></th>
+                <th style="width:120px;">容器编号</th>
+                <th>容器名称</th>
+                <th>容器类型</th>
+                <th>所属房间</th>
+                <th>规格容量</th>
+                <th>已用/总位数</th>
+                <th>状态</th>
+                <th>更新时间</th>
+                <th style="width:170px;">操作</th>
+              </tr>
+            </thead>
+            <tbody id="containerRows">
+              <tr>
+                <td><input type="checkbox" class="container-check"/></td>
+                <td>CT-LN-001</td>
+                <td>1号液氮罐</td>
+                <td>液氮罐</td>
+                <td>样本库A区-101</td>
+                <td>6架 × 12盒</td>
+                <td>486 / 720</td>
+                <td><span class="cm-status">正常</span></td>
+                <td>2026-06-28 10:12</td>
+                <td><span class="cm-link" data-action="edit">编辑</span><span class="cm-link" data-action="detail">查看位置</span><span class="cm-link-danger" data-action="toggle">停用</span></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="container-check"/></td>
+                <td>CT-FR-002</td>
+                <td>-80℃冰箱2号</td>
+                <td>超低温冰箱</td>
+                <td>样本库B区-102</td>
+                <td>5层 × 16盒</td>
+                <td>302 / 800</td>
+                <td><span class="cm-status warning">维护中</span></td>
+                <td>2026-06-25 15:40</td>
+                <td><span class="cm-link" data-action="edit">编辑</span><span class="cm-link" data-action="detail">查看位置</span></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="container-check"/></td>
+                <td>CT-INC-003</td>
+                <td>培养箱3号</td>
+                <td>培养箱</td>
+                <td>培养室-201</td>
+                <td>4层</td>
+                <td>18 / 40</td>
+                <td><span class="cm-status">正常</span></td>
+                <td>2026-06-24 09:30</td>
+                <td><span class="cm-link" data-action="edit">编辑</span><span class="cm-link" data-action="detail">查看位置</span><span class="cm-link-danger" data-action="toggle">停用</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <div class="cm-modal-mask" id="containerModal">
+      <div class="cm-modal">
+        <div class="cm-modal-header">
+          <span id="containerModalTitle">新增容器</span>
+          <button class="cm-modal-close" id="closeContainerModal">×</button>
+        </div>
+        <div class="cm-form">
+          <label><span class="cm-required">*</span>容器编号</label>
+          <input class="cm-input" id="containerCode" placeholder="请输入容器编号"/>
+          <label><span class="cm-required">*</span>容器名称</label>
+          <input class="cm-input" id="containerName" placeholder="请输入容器名称"/>
+          <label><span class="cm-required">*</span>容器类型</label>
+          <select class="cm-select" id="containerType">
+            <option>液氮罐</option>
+            <option>超低温冰箱</option>
+            <option>冻存架</option>
+            <option>培养箱</option>
+          </select>
+          <label>所属房间</label>
+          <select class="cm-select" id="containerArea">
+            <option>样本库A区-101</option>
+            <option>样本库B区-102</option>
+            <option>培养室-201</option>
+          </select>
+          <label>层/架数量</label>
+          <input class="cm-input" placeholder="请输入数量"/>
+          <label>每层盒数</label>
+          <input class="cm-input" placeholder="请输入盒数"/>
+          <label>状态</label>
+          <select class="cm-select" id="containerStatus">
+            <option>正常</option>
+            <option>停用</option>
+            <option>维护中</option>
+            <option>异常</option>
+          </select>
+          <label>备注</label>
+          <textarea class="cm-textarea cm-form-wide" placeholder="请输入备注"></textarea>
+        </div>
+        <div class="cm-modal-footer">
+          <button class="cm-btn" id="cancelContainer">取消</button>
+          <button class="cm-btn cm-btn-primary" id="saveContainer">保存</button>
+        </div>
+      </div>
+    </div>
+    <div class="cm-modal-mask" id="containerDetailModal">
+      <div class="cm-modal">
+        <div class="cm-modal-header">
+          <span id="containerDetailTitle">容器位置详情</span>
+          <button class="cm-modal-close" id="closeContainerDetail">×</button>
+        </div>
+        <div class="cm-detail-list" id="containerDetail"></div>
+        <div class="cm-modal-footer">
+          <button class="cm-btn" id="closeContainerDetailFooter">关闭</button>
+        </div>
+      </div>
+    </div>
+    <div class="cm-toast" id="toast">容器已新增</div>
+
+    <script>
+      (function () {
+        var modal = document.getElementById('containerModal');
+        var detailModal = document.getElementById('containerDetailModal');
+        var toast = document.getElementById('toast');
+        var editingRow = null;
+        function showToast(text) {
+          toast.textContent = text;
+          toast.classList.add('is-open');
+          setTimeout(function () { toast.classList.remove('is-open'); }, 1800);
+        }
+        function updateContainerSelection() {
+          var checks = document.querySelectorAll('.container-check');
+          var selected = document.querySelectorAll('.container-check:checked').length;
+          document.getElementById('containerSelectedCount').textContent = selected;
+          document.getElementById('checkAllContainers').checked = selected > 0 && selected === checks.length;
+        }
+        function statusClass(status) {
+          return status === '正常' ? '' : (status === '异常' ? ' danger' : (status === '停用' ? ' disabled' : ' warning'));
+        }
+        function actionHtml(status) {
+          var toggle = status === '停用' ? '启用' : '停用';
+          return '<span class="cm-link" data-action="edit">编辑</span><span class="cm-link" data-action="detail">查看位置</span><span class="cm-link-danger" data-action="toggle">' + toggle + '</span>';
+        }
+        function openModal(row) {
+          editingRow = row || null;
+          document.getElementById('containerModalTitle').textContent = editingRow ? '编辑容器' : '新增容器';
+          document.getElementById('containerCode').value = editingRow ? editingRow.children[1].textContent : '';
+          document.getElementById('containerName').value = editingRow ? editingRow.children[2].textContent : '';
+          document.getElementById('containerType').value = editingRow ? editingRow.children[3].textContent : '液氮罐';
+          document.getElementById('containerArea').value = editingRow ? editingRow.children[4].textContent : '样本库A区-101';
+          document.getElementById('containerStatus').value = editingRow ? editingRow.children[7].textContent.trim() : '正常';
+          modal.classList.add('is-open');
+        }
+        function closeModal() { modal.classList.remove('is-open'); }
+        function openDetail(row) {
+          document.getElementById('containerDetailTitle').textContent = row.children[2].textContent + ' 位置详情';
+          document.getElementById('containerDetail').innerHTML =
+            '<div><span>容器编号</span><strong>' + row.children[1].textContent + '</strong></div>' +
+            '<div><span>容器名称</span><strong>' + row.children[2].textContent + '</strong></div>' +
+            '<div><span>容器类型</span><strong>' + row.children[3].textContent + '</strong></div>' +
+            '<div><span>所属房间</span><strong>' + row.children[4].textContent + '</strong></div>' +
+            '<div><span>规格容量</span><strong>' + row.children[5].textContent + '</strong></div>' +
+            '<div><span>已用/总位数</span><strong>' + row.children[6].textContent + '</strong></div>' +
+            '<div><span>当前状态</span><strong>' + row.children[7].textContent.trim() + '</strong></div>' +
+            '<div><span>更新时间</span><strong>' + row.children[8].textContent + '</strong></div>';
+          detailModal.classList.add('is-open');
+        }
+        function closeDetail() { detailModal.classList.remove('is-open'); }
+        document.getElementById('openContainerModal').addEventListener('click', function () { openModal(null); });
+        document.getElementById('closeContainerModal').addEventListener('click', closeModal);
+        document.getElementById('cancelContainer').addEventListener('click', closeModal);
+        document.getElementById('closeContainerDetail').addEventListener('click', closeDetail);
+        document.getElementById('closeContainerDetailFooter').addEventListener('click', closeDetail);
+        document.getElementById('checkAllContainers').addEventListener('change', function () {
+          var checked = this.checked;
+          Array.prototype.forEach.call(document.querySelectorAll('.container-check'), function (item) { item.checked = checked; });
+          updateContainerSelection();
+        });
+        document.getElementById('clearContainerSelection').addEventListener('click', function () {
+          Array.prototype.forEach.call(document.querySelectorAll('.container-check'), function (item) { item.checked = false; });
+          updateContainerSelection();
+        });
+        document.getElementById('containerRows').addEventListener('click', function (event) {
+          if (event.target.className === 'container-check') updateContainerSelection();
+          var action = event.target.getAttribute('data-action');
+          if (!action) return;
+          var row = event.target.closest('tr');
+          if (action === 'edit') openModal(row);
+          if (action === 'detail') openDetail(row);
+          if (action === 'toggle') {
+            var status = row.children[7].textContent.trim() === '停用' ? '正常' : '停用';
+            row.children[7].innerHTML = '<span class="cm-status' + statusClass(status) + '">' + status + '</span>';
+            row.children[8].textContent = '当前时间';
+            row.children[9].innerHTML = actionHtml(status);
+            showToast(status === '停用' ? '容器已停用' : '容器已启用');
+          }
+        });
+        document.getElementById('saveContainer').addEventListener('click', function () {
+          var code = document.getElementById('containerCode').value || 'CT-NEW-001';
+          var name = document.getElementById('containerName').value || '新容器';
+          var type = document.getElementById('containerType').value || '液氮罐';
+          var area = document.getElementById('containerArea').value || '-';
+          var status = document.getElementById('containerStatus').value || '正常';
+          var row = editingRow || document.createElement('tr');
+          var spec = editingRow ? editingRow.children[5].textContent : '待配置';
+          var used = editingRow ? editingRow.children[6].textContent : '0 / 0';
+          row.innerHTML = '<td><input type="checkbox" class="container-check"/></td><td>' + code + '</td><td>' + name + '</td><td>' + type + '</td><td>' + area + '</td><td>' + spec + '</td><td>' + used + '</td><td><span class="cm-status' + statusClass(status) + '">' + status + '</span></td><td>当前时间</td><td>' + actionHtml(status) + '</td>';
+          if (!editingRow) document.getElementById('containerRows').prepend(row);
+          closeModal();
+          updateContainerSelection();
+          showToast(editingRow ? '容器信息已更新' : '容器已新增');
+          editingRow = null;
+        });
+      })();
+    </script>
+    <script src="resources/auth-flow.js"></script>
+  </body>
+</html>

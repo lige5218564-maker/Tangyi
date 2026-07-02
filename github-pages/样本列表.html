@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>样本列表</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link href="resources/custom-menu.css" type="text/css" rel="stylesheet"/>
+    <link href="resources/sample-list.css" type="text/css" rel="stylesheet"/>
+    <link href="resources/auth-flow.css" type="text/css" rel="stylesheet"/>
+    <script src="resources/custom-menu.js"></script>
+  </head>
+  <body>
+    <div class="sl-page">
+      <header class="sl-top">
+        <div class="sl-brand">类器库管理系统</div>
+        <div class="sl-search">搜索</div>
+      </header>
+
+      <main class="sl-main">
+        <div class="sl-breadcrumb">☰  ⟳  首页 / 样本管理 / 样本列表</div>
+
+        <section class="sl-card">
+          <div class="sl-filter">
+            <input class="sl-input" id="sampleCodeFilter" placeholder="请输入样本编号"/>
+            <input class="sl-input" id="hospitalFilter" placeholder="请输入医院"/>
+            <select class="sl-select" id="sampleTypeFilter">
+              <option value="">样本类型</option>
+              <option value="血浆">血浆</option>
+              <option value="血清">血清</option>
+              <option value="全血">全血</option>
+              <option value="白膜层">白膜层</option>
+              <option value="肿瘤组织">肿瘤组织</option>
+            </select>
+            <select class="sl-select" id="sampleStatusFilter">
+              <option value="">全部</option>
+              <option value="已登记">已登记</option>
+              <option value="已处理">已处理</option>
+              <option value="未处理">未处理</option>
+              <option value="在库">在库</option>
+              <option value="已出库">已出库</option>
+            </select>
+            <button class="sl-btn sl-btn-primary" id="sampleQuery">查询</button>
+            <button class="sl-btn" id="sampleReset">重置</button>
+          </div>
+        </section>
+
+        <section class="sl-card">
+          <div class="sl-section-header">
+            <div class="sl-section-title">样本列表</div>
+            <div class="sl-count" id="sampleCount">共 0 条</div>
+          </div>
+          <div class="sl-table-wrap">
+            <table class="sl-table">
+              <thead>
+                <tr>
+                  <th>样本复份编号</th>
+                  <th>预置管编号</th>
+                  <th>样本类型</th>
+                  <th>规格</th>
+                  <th>来源类型</th>
+                  <th>ID</th>
+                  <th>姓名</th>
+                  <th>耗材来源</th>
+                  <th>采样单位</th>
+                  <th>样本状态</th>
+                  <th>样本位置</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody id="sampleListRows"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="resources/sample-list.js"></script>
+    <script src="resources/auth-flow.js"></script>
+  </body>
+</html>

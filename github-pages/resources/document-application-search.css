@@ -1,0 +1,152 @@
+.doc-app-page {
+  position: absolute;
+  top: 64px;
+  left: 216px;
+  right: 0;
+  z-index: 12000;
+  min-height: calc(100vh - 64px);
+  padding: 18px 24px 80px;
+  background: #f5f7fb;
+  color: #30333a;
+  font-family: Inter, "Microsoft YaHei", Arial, sans-serif;
+}
+
+.doc-app-page * {
+  box-sizing: border-box;
+}
+
+.doc-app-card {
+  margin-bottom: 14px;
+  border: 1px solid #ebeff5;
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.doc-app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 54px;
+  padding: 0 22px;
+  border-bottom: 1px solid #eef1f6;
+}
+
+.doc-app-title {
+  position: relative;
+  padding-left: 12px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.doc-app-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 4px;
+  height: 18px;
+  border-radius: 2px;
+  background: #2f5fff;
+  transform: translateY(-50%);
+}
+
+.doc-app-help {
+  color: #7a8190;
+  font-size: 13px;
+}
+
+.doc-app-search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 22px;
+}
+
+.doc-app-input {
+  width: 360px;
+  height: 42px;
+  border: 1px solid #dfe5ef;
+  border-radius: 6px;
+  padding: 0 12px;
+  color: #30333a;
+  font-size: 14px;
+}
+
+.doc-app-btn {
+  height: 42px;
+  min-width: 92px;
+  border: 1px solid #d9e0ec;
+  border-radius: 6px;
+  background: #fff;
+  color: #30333a;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.doc-app-btn-primary {
+  border-color: #2f5fff;
+  background: #2f5fff;
+  color: #fff;
+}
+
+.doc-app-table-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.doc-app-table {
+  width: 100%;
+  min-width: 1100px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.doc-app-table th,
+.doc-app-table td {
+  height: 54px;
+  border-bottom: 1px solid #edf0f5;
+  padding: 0 14px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+}
+
+.doc-app-table th {
+  background: #f5f7fb;
+  color: #606774;
+  font-weight: 700;
+}
+
+.doc-app-status {
+  display: inline-flex;
+  align-items: center;
+  height: 24px;
+  border-radius: 6px;
+  background: #eaf8ef;
+  color: #20a45a;
+  padding: 0 10px;
+  font-weight: 600;
+}
+
+.doc-app-empty {
+  color: #8b93a3;
+  text-align: center !important;
+}
+
+@media (max-width: 900px) {
+  .doc-app-page {
+    left: 0;
+    padding: 12px;
+  }
+
+  .doc-app-search {
+    flex-wrap: wrap;
+  }
+
+  .doc-app-input {
+    width: 100%;
+  }
+}

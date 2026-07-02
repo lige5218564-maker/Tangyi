@@ -1,0 +1,83 @@
+
+/* Keep exported Axure pages from showing black margins on wide screens. */
+html,
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+  background: #f5f7fb !important;
+}
+
+body {
+  width: 100% !important;
+  overflow-x: hidden;
+}
+
+#base {
+  min-width: 100vw;
+}
+
+.proto-login-tip {
+  position: fixed;
+  left: 50%;
+  top: 24px;
+  z-index: 100000;
+  transform: translateX(-50%);
+  padding: 10px 16px;
+  border-radius: 6px;
+  background: rgba(17, 31, 44, 0.88);
+  color: #fff;
+  font-size: 14px;
+  box-shadow: 0 8px 24px rgba(17, 31, 44, 0.18);
+}
+
+.proto-user-trigger {
+  position: fixed;
+  top: 8px;
+  right: 10px;
+  z-index: 99990;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.proto-user-menu {
+  position: fixed;
+  top: 56px;
+  right: 12px;
+  z-index: 99991;
+  display: none;
+  min-width: 136px;
+  padding: 8px;
+  border: 1px solid #e5e7ef;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 12px 28px rgba(17, 31, 44, 0.16);
+  font-family: Inter, "Microsoft YaHei", Arial, sans-serif;
+}
+
+.proto-user-menu.is-open {
+  display: block;
+}
+
+.proto-user-menu__item {
+  height: 36px;
+  line-height: 36px;
+  padding: 0 12px;
+  border-radius: 4px;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.proto-user-menu__item:hover {
+  background: #f2f5ff;
+  color: #315efb;
+}
+
+#u596,
+#u596_div,
+#u596_text {
+  cursor: pointer;
+}
