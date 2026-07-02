@@ -1,0 +1,181 @@
+﻿.ax_default {
+  font-family:"PingFangSC-Regular", "PingFang SC", sans-serif;
+  font-weight:400;
+  font-style:normal;
+  font-size:14px;
+  letter-spacing:normal;
+  color:#333333;
+  vertical-align:none;
+  text-align:center;
+  line-height:normal;
+  text-transform:none;
+}
+._图片 {
+}
+.button {
+}
+.link_button {
+  color:#1E98D7;
+}
+._一级标题 {
+  font-family:"PingFangSC-Regular", "PingFang SC", sans-serif;
+  font-weight:bold;
+  font-style:normal;
+  font-size:32px;
+  text-align:left;
+}
+._二级标题 {
+  font-family:"PingFangSC-Regular", "PingFang SC", sans-serif;
+  font-weight:bold;
+  font-style:normal;
+  font-size:24px;
+  text-align:left;
+}
+._三级标题 {
+  font-family:"PingFangSC-Regular", "PingFang SC", sans-serif;
+  font-weight:bold;
+  font-style:normal;
+  font-size:18px;
+  text-align:left;
+}
+._四级标题 {
+  font-family:"PingFangSC-Regular", "PingFang SC", sans-serif;
+  font-weight:bold;
+  font-style:normal;
+  font-size:14px;
+  text-align:left;
+}
+._五级标题 {
+  font-family:"PingFangSC-Regular", "PingFang SC", sans-serif;
+  font-weight:bold;
+  font-style:normal;
+  text-align:left;
+}
+._六级标题 {
+  font-family:"PingFangSC-Regular", "PingFang SC", sans-serif;
+  font-weight:bold;
+  font-style:normal;
+  font-size:10px;
+  text-align:left;
+}
+._段落 {
+  text-align:left;
+}
+.text_field {
+  color:#000000;
+  text-align:left;
+}
+.text_area {
+  color:#000000;
+  text-align:left;
+}
+.form_hint {
+  color:#999999;
+}
+.form_disabled {
+}
+._表单提示文本 {
+  color:#999999;
+}
+._表单禁用 {
+}
+._流程图形状 {
+}
+._线段 {
+}
+._连接线 {
+  font-family:"PingFangSC-Medium", "PingFang SC Medium", "PingFang SC", sans-serif;
+  font-weight:500;
+  font-style:normal;
+  font-size:13px;
+}
+._便签1 {
+  text-align:left;
+}
+.marker {
+  color:#FFFFFF;
+}
+._形状 {
+}
+._表单样式 {
+  font-family:"PingFangSC-Regular", "PingFang SC", sans-serif;
+  font-weight:400;
+  font-style:normal;
+  font-size:12px;
+  color:#333333;
+  text-align:left;
+}
+._图片_ {
+}
+.box_1 {
+}
+.refs-chart-data {
+  font-family:"ArialMT", "Arial", sans-serif;
+  font-weight:400;
+  font-style:normal;
+}
+._下拉面板样式 {
+}
+.box_2 {
+}
+.ellipse {
+}
+.shape {
+}
+.heading_1 {
+  font-family:"PingFangSC-Semibold", "PingFang SC Semibold", "PingFang SC", sans-serif;
+  font-weight:650;
+  font-style:normal;
+  font-size:32px;
+  text-align:left;
+}
+.box_21 {
+}
+.box_11 {
+  color:#C0C4CC;
+  text-align:left;
+}
+._形状1 {
+  font-family:"PingFangSC-Semibold", "PingFang SC Semibold", "PingFang SC", sans-serif;
+  font-weight:650;
+  font-style:normal;
+  font-size:20px;
+  color:#4EDB7C;
+}
+.box_3 {
+}
+.label {
+  font-size:14px;
+  text-align:left;
+}
+.model_ {
+}
+.content____ {
+}
+.label1 {
+  font-size:14px;
+  text-align:left;
+}
+.line {
+}
+._表单不带位数校验样式 {
+  font-family:"PingFangSC-Regular", "PingFang SC", sans-serif;
+  font-weight:400;
+  font-style:normal;
+  font-size:12px;
+  color:#333333;
+  text-align:left;
+}
+.table_cell {
+}
+.icon {
+}
+.flow_shape {
+}
+.checkbox {
+  text-align:left;
+}
+._文本段落 {
+  text-align:left;
+}
+textarea, select, input, button, div, svg { outline: none; }
