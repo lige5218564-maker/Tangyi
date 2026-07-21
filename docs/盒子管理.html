@@ -4,10 +4,10 @@
     <title>盒子管理</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <link href="resources/custom-menu.css" type="text/css" rel="stylesheet"/>
+    <link href="resources/custom-menu.css?v=20260720-copy8" type="text/css" rel="stylesheet"/>
     <link href="resources/container-management.css" type="text/css" rel="stylesheet"/>
     <link href="resources/auth-flow.css" type="text/css" rel="stylesheet"/>
-    <script src="resources/custom-menu.js"></script>
+    <script src="resources/custom-menu.js?v=20260720-copy8"></script>
   </head>
   <body>
     <div class="cm-page">
@@ -130,27 +130,31 @@
         <div class="cm-form">
           <label><span class="cm-required">*</span>盒子编号</label>
           <input class="cm-input" id="boxCode" placeholder="请输入盒子编号"/>
+          <label><span class="cm-required">*</span>盒子用途</label>
+          <select class="cm-select" id="boxUsage">
+            <option value="">请选择用途</option>
+            <option>入库</option>
+            <option>暂存</option>
+          </select>
           <label><span class="cm-required">*</span>盒子名称</label>
           <input class="cm-input" id="boxName" placeholder="请输入盒子名称"/>
           <label><span class="cm-required">*</span>所属容器</label>
-          <select class="cm-select" id="boxContainer">
-            <option>1号液氮罐</option>
-            <option>-80℃冰箱2号</option>
-            <option>培养箱3号</option>
-          </select>
+          <select class="cm-select" id="boxContainer"></select>
           <label>所在层/架</label>
           <input class="cm-input" id="boxLayer" placeholder="如 1架 / 1层"/>
-          <label>行数</label>
-          <input class="cm-input" id="boxRowsCount" placeholder="如 10"/>
-          <label>列数</label>
-          <input class="cm-input" id="boxColsCount" placeholder="如 10"/>
-          <label>状态</label>
-          <select class="cm-select" id="boxStatus">
+          <label class="box-grid-field">行数</label>
+          <input class="cm-input box-grid-field" id="boxRowsCount" placeholder="如 10"/>
+          <label class="box-position-count-field is-hidden"><span class="cm-required">*</span>孔位数</label>
+          <input class="cm-input box-position-count-field is-hidden" id="boxPositionCount" placeholder="请输入孔位数"/>
+          <label class="box-grid-field">列数</label>
+          <input class="cm-input box-grid-field" id="boxColsCount" placeholder="如 10"/>
+          <label class="box-status-field"><span class="cm-required">*</span>状态</label>
+          <select class="cm-select box-status-field" id="boxStatus">
             <option>正常</option>
             <option>锁定</option>
             <option>停用</option>
           </select>
-          <label>备注</label>
+          <label class="cm-form-remark-label">备注</label>
           <textarea class="cm-textarea cm-form-wide" placeholder="请输入备注"></textarea>
         </div>
         <div class="cm-modal-footer">
@@ -205,6 +209,10 @@
         var activeBoxRow = null;
         var selectedPosition = null;
         var positionStore = {};
+        var containerOptionsByUsage = {
+          '入库': ['1号液氮罐', '-80℃冰箱2号'],
+          '暂存': ['培养箱3号']
+        };
         function showToast(text) {
           toast.textContent = text;
           toast.classList.add('is-open');
@@ -318,27 +326,66 @@
           setStructureFieldsDisabled(false);
           if (!editingRow) {
             document.getElementById('boxCode').value = '';
+            document.getElementById('boxUsage').value = '';
+            updateContainerOptions('', '');
             document.getElementById('boxName').value = '';
-            document.getElementById('boxContainer').value = '1号液氮罐';
             document.getElementById('boxLayer').value = '';
             document.getElementById('boxRowsCount').value = '';
             document.getElementById('boxColsCount').value = '';
+            document.getElementById('boxPositionCount').value = '';
             document.getElementById('boxStatus').value = '正常';
+            updateBoxSizeFields('');
             return;
           }
           var cells = editingRow.children;
-          var size = parseSize(cells[4].textContent);
+          var size = parseSize(cells[5].textContent);
+          var usage = editingRow.getAttribute('data-usage') || '入库';
           document.getElementById('boxCode').value = cells[1].textContent;
+          document.getElementById('boxUsage').value = usage;
+          updateContainerOptions(document.getElementById('boxUsage').value, cells[3].textContent);
           document.getElementById('boxName').value = cells[2].textContent;
-          document.getElementById('boxContainer').value = cells[3].textContent;
           document.getElementById('boxLayer').value = cells[4].textContent;
           document.getElementById('boxRowsCount').value = size.rows;
           document.getElementById('boxColsCount').value = size.cols;
+          document.getElementById('boxPositionCount').value = size.rows * size.cols;
           document.getElementById('boxStatus').value = cells[7].textContent.trim() === '已满' ? '正常' : cells[7].textContent.trim();
+          updateBoxSizeFields(usage);
           setStructureFieldsDisabled(parseUsed(cells[6].textContent) > 0);
         }
+        function updateBoxSizeFields(usage) {
+          var isTemporary = usage === '暂存';
+          Array.prototype.forEach.call(document.querySelectorAll('.box-grid-field'), function (item) {
+            item.classList.toggle('is-hidden', isTemporary);
+          });
+          Array.prototype.forEach.call(document.querySelectorAll('.box-position-count-field'), function (item) {
+            item.classList.toggle('is-hidden', !isTemporary);
+          });
+          Array.prototype.forEach.call(document.querySelectorAll('.box-status-field'), function (item) {
+            item.classList.toggle('is-temporary-status', isTemporary);
+          });
+        }
+        function updateContainerOptions(usage, selectedValue) {
+          var containerSelect = document.getElementById('boxContainer');
+          var options = containerOptionsByUsage[usage] || [];
+          containerSelect.innerHTML = '';
+          if (!usage) {
+            var placeholder = document.createElement('option');
+            placeholder.value = '';
+            placeholder.textContent = '请先选择盒子用途';
+            containerSelect.appendChild(placeholder);
+            containerSelect.disabled = true;
+            return;
+          }
+          containerSelect.disabled = false;
+          options.forEach(function (name) {
+            var option = document.createElement('option');
+            option.textContent = name;
+            containerSelect.appendChild(option);
+          });
+          containerSelect.value = options.indexOf(selectedValue) >= 0 ? selectedValue : (options[0] || '');
+        }
         function setStructureFieldsDisabled(disabled) {
-          ['boxCode', 'boxContainer', 'boxLayer', 'boxRowsCount', 'boxColsCount'].forEach(function (id) {
+          ['boxCode', 'boxContainer', 'boxLayer', 'boxRowsCount', 'boxColsCount', 'boxPositionCount'].forEach(function (id) {
             document.getElementById(id).disabled = disabled;
           });
         }
@@ -353,6 +400,7 @@
         function upsertRow(row, data) {
           var statusText = data.status;
           var cls = statusClass(statusText);
+          row.setAttribute('data-usage', data.usage);
           row.innerHTML = '<td><input type="checkbox" class="box-check"/></td><td>' + data.code + '</td><td>' + data.name + '</td><td>' + data.container + '</td><td>' + data.layer + '</td><td>' + data.rows + ' × ' + data.cols + '</td><td>' + data.used + ' / ' + (data.rows * data.cols) + '</td><td><span class="cm-status' + cls + '">' + statusText + '</span></td><td>' + nowText() + '</td><td>' + renderActionHtml(statusText) + '</td>';
         }
         function openPositions(row) {
@@ -374,6 +422,10 @@
         document.getElementById('cancelBox').addEventListener('click', closeModal);
         document.getElementById('closePositionModal').addEventListener('click', closePositions);
         document.getElementById('closePositionFooter').addEventListener('click', closePositions);
+        document.getElementById('boxUsage').addEventListener('change', function () {
+          updateContainerOptions(this.value, '');
+          updateBoxSizeFields(this.value);
+        });
         function updateBoxSelection() {
           var checks = document.querySelectorAll('.box-check');
           var selected = document.querySelectorAll('.box-check:checked').length;
@@ -415,15 +467,25 @@
         });
         document.getElementById('saveBox').addEventListener('click', function () {
           var code = document.getElementById('boxCode').value || 'BX-NEW-001';
+          var usage = document.getElementById('boxUsage').value;
+          if (!usage) {
+            showToast('请选择盒子用途');
+            return;
+          }
           var name = document.getElementById('boxName').value || '新冻存盒';
-          var container = document.getElementById('boxContainer').value || '1号液氮罐';
+          var container = document.getElementById('boxContainer').value;
           var layer = document.getElementById('boxLayer').value || '-';
-          var rows = Number(document.getElementById('boxRowsCount').value || 10);
-          var cols = Number(document.getElementById('boxColsCount').value || 10);
+          var positionCount = Number(document.getElementById('boxPositionCount').value || 0);
+          if (usage === '暂存' && positionCount <= 0) {
+            showToast('请输入孔位数');
+            return;
+          }
+          var rows = usage === '暂存' ? 1 : Number(document.getElementById('boxRowsCount').value || 10);
+          var cols = usage === '暂存' ? positionCount : Number(document.getElementById('boxColsCount').value || 10);
           var status = document.getElementById('boxStatus').value || '正常';
           var row = editingRow || document.createElement('tr');
           var used = editingRow ? Math.min(parseUsed(editingRow.children[6].textContent), rows * cols) : 0;
-          upsertRow(row, { code: code, name: name, container: container, layer: layer, rows: rows, cols: cols, used: used, status: status });
+          upsertRow(row, { code: code, usage: usage, name: name, container: container, layer: layer, rows: rows, cols: cols, used: used, status: status });
           if (!editingRow) document.getElementById('boxRows').prepend(row);
           closeModal();
           updateBoxSelection();

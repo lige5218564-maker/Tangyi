@@ -234,7 +234,8 @@
   padding:18px;
   align-items:center;
   max-height:calc(100vh - 190px);
-  overflow:auto;
+  overflow-x:hidden;
+  overflow-y:auto;
 }
 .cm-form label {
   color:#606266;
@@ -247,6 +248,18 @@
 }
 .cm-form-wide {
   grid-column:2 / 5;
+}
+.cm-form-remark-label {
+  grid-column:1;
+}
+.cm-form .is-hidden {
+  display:none;
+}
+.cm-form label.box-status-field.is-temporary-status {
+  grid-column:3;
+}
+.cm-form select.box-status-field.is-temporary-status {
+  grid-column:4;
 }
 .cm-required {
   color:#f56c6c;

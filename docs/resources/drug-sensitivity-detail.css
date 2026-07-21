@@ -1,0 +1,327 @@
+#drugSensitivityDetail {
+  position: absolute;
+  left: 0;
+  top: 174px;
+  z-index: 1000;
+  box-sizing: border-box;
+  width: 1212px;
+  max-width: 1212px;
+  min-height: 566px;
+  padding: 0 28px 34px;
+  background: #fff;
+  color: #606366;
+  font-family: "PingFangSC-Regular", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 14px;
+  overflow-x: hidden;
+}
+
+#drugSensitivityDetail * {
+  box-sizing: border-box;
+}
+
+.ds-section-title {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  margin: 0 0 12px 40px;
+  color: #303133;
+  font-family: "PingFangSC-Medium", "PingFang SC Medium", "PingFang SC", sans-serif;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.ds-section-title::before {
+  content: "";
+  width: 4px;
+  height: 17px;
+  margin-right: 12px;
+  border-radius: 0 2px 2px 0;
+  background: #315efb;
+}
+
+.ds-card-row {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  width: 100%;
+  margin-left: 0;
+}
+
+.ds-card {
+  flex: 1 1 auto;
+  width: auto;
+  min-width: 0;
+  min-height: 250px;
+  padding: 28px 42px 34px 18px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.22);
+}
+
+.ds-form-grid {
+  display: grid;
+  grid-template-columns:minmax(300px, 360px) minmax(300px, 1fr) 132px;
+  column-gap: 28px;
+  row-gap: 26px;
+  align-items: center;
+}
+
+.ds-field {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  align-items: center;
+  min-height: 37px;
+}
+
+.ds-field label {
+  padding-right: 10px;
+  color: #111;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.ds-required {
+  color: #f85959;
+  margin-right: 0;
+}
+
+.ds-control,
+.ds-unit-field input {
+  width: 100%;
+  height: 37px;
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  background: #f4f5f7;
+  color: #333;
+  font: inherit;
+  padding: 0 12px;
+}
+
+.ds-control:focus,
+.ds-unit-field:focus-within {
+  box-shadow: 0 0 0 1px #315efb inset;
+}
+
+.ds-unit-field {
+  display: grid;
+  grid-template-columns: minmax(0, 157px) 68px;
+  align-items: center;
+  gap: 10px;
+}
+
+.ds-unit-field select {
+  height: 37px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  background: #fff;
+  color: #111;
+  font: inherit;
+  font-size: 11px;
+  padding: 0 7px;
+  outline: none;
+}
+
+.ds-unit-field select:focus {
+  border-color: #315efb;
+}
+
+.ds-pair-list {
+  display: contents;
+}
+
+.ds-pair {
+  display: contents;
+}
+
+.ds-pair-actions {
+  display: flex;
+  align-items: center;
+  gap: 52px;
+  height: 37px;
+}
+
+.ds-circle-btn {
+  position: relative;
+  width: 31px;
+  height: 31px;
+  border: 3px solid #2388ff;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  color: transparent;
+  font-size: 0;
+}
+
+.ds-circle-btn::before,
+.ds-circle-btn::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  right: 6px;
+  top: 12px;
+  height: 3px;
+  border-radius: 3px;
+  background: #2388ff;
+}
+
+.ds-circle-btn::after {
+  transform: rotate(90deg);
+}
+
+.ds-circle-btn.remove {
+  border-color: #c7352d;
+}
+
+.ds-circle-btn.remove::before {
+  background: #c7352d;
+}
+
+.ds-circle-btn.remove::after {
+  display: none;
+}
+
+.ds-add-drug {
+  flex: 0 0 79px;
+  width: 79px;
+  height: 44px;
+  border: 0;
+  border-radius: 3px;
+  background: #315efb;
+  color: #fff;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.ds-result-title {
+  margin-top: 25px;
+  margin-bottom: 42px;
+}
+
+.ds-result-wrap {
+  width: min(840px, calc(100% - 80px));
+  height: 127px;
+  margin-left: 40px;
+  overflow: hidden;
+  border-bottom: 5px solid #aeb6c0;
+  border-radius: 2px;
+}
+
+.ds-result-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  color: #303133;
+  font-size: 11px;
+}
+
+.ds-result-table th {
+  height: 33px;
+  background: #f1f3f7;
+  color: #303133;
+  font-weight: 600;
+  text-align: center;
+}
+
+.ds-result-table td {
+  height: 34px;
+  border-bottom: 1px solid #f0f2f5;
+  text-align: center;
+}
+
+.ds-result-table tbody tr:nth-child(even) td {
+  background: #f3f8ff;
+}
+
+.ds-delete {
+  border: 0;
+  background: transparent;
+  color: #f85959;
+  font: inherit;
+  cursor: pointer;
+}
+
+.ds-upload-row {
+  display: grid;
+  grid-template-columns: 82px 1fr;
+  align-items: center;
+  width: min(845px, calc(100% - 80px));
+  margin: 17px 0 0 40px;
+  color: #606366;
+  font-size: 13px;
+}
+
+.ds-upload {
+  height: 41px;
+  border: 0;
+  border-radius: 3px;
+  background: #f4f5f7;
+  color: #303133;
+  font: inherit;
+  cursor: pointer;
+}
+
+.ds-upload-icon {
+  display: block;
+  color: #aaa;
+  font-size: 28px;
+  line-height: 18px;
+}
+
+.ds-bottom-actions {
+  display: flex;
+  justify-content: center;
+  gap: 64px;
+  margin-top: 38px;
+}
+
+.ds-bottom-actions button {
+  width: 86px;
+  height: 38px;
+  border: 0;
+  border-radius: 4px;
+  font: inherit;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+@media (max-width: 1280px) {
+  #drugSensitivityDetail {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .ds-section-title {
+    margin-left: 20px;
+  }
+
+  .ds-card-row {
+    gap: 16px;
+  }
+
+  .ds-card {
+    padding-right: 24px;
+  }
+
+  .ds-form-grid {
+    grid-template-columns:minmax(260px, 1fr) minmax(280px, 1fr) 112px;
+    column-gap: 18px;
+  }
+
+  .ds-result-wrap,
+  .ds-upload-row {
+    width: calc(100% - 40px);
+    margin-left: 20px;
+  }
+}
+
+.ds-save {
+  background: #315efb;
+  color: #fff;
+}
+
+.ds-cancel {
+  background: #f0f2f5;
+  color: #303133;
+}
